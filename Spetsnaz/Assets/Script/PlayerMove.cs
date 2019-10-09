@@ -34,6 +34,7 @@ public class PlayerMove : MonoBehaviour
 
         velocity.x = direction.x;
         velocity.z = direction.z;
+       
     }
     private void FixedUpdate()
     {
