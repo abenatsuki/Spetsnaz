@@ -9,9 +9,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField, Tooltip("自機の速度")]
     float moveSpeed = 5f;
-    Vector3 forward;
     Vector3 velocity;
-    bool isGround;
     Rigidbody rigidbody3D;
     
     // Start is called before the first frame update
@@ -23,12 +21,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //float x=Input.GetAxis("Horizontal");
-        //float z= Input.GetAxis("Vertical");
-        //Vector3 direction = new Vector3(x, 0, z) * moveSpeed;
-        //  velocity.x = direction.x;
-        //  velocity.z = direction.z;
+        //自機の移動
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
         velocity*= moveSpeed;
     }
