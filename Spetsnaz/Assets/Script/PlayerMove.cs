@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField, Tooltip("自機の速度")]
     float moveSpeed = 5f;
-
+    Vector3 forward;
     Vector3 velocity;
     bool isGround;
     Rigidbody rigidbody3D;
@@ -23,23 +23,17 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        float x=Input.GetAxis("Horizontal");
-        float z= Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(x, 0, z) * moveSpeed;
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0)
-        {
-          
-        }
-        velocity.x = direction.x;
-        velocity.z = direction.z;
-       
+
+        //float x=Input.GetAxis("Horizontal");
+        //float z= Input.GetAxis("Vertical");
+        //Vector3 direction = new Vector3(x, 0, z) * moveSpeed;
+        //  velocity.x = direction.x;
+        //  velocity.z = direction.z;
+        velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
+        velocity*= moveSpeed;
     }
     private void FixedUpdate()
     {
-        
-        
-        //velocity = velocity + transform.forward;
-        rigidbody3D.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
+         rigidbody3D.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
     }
 }
