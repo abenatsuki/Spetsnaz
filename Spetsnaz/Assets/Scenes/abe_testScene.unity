@@ -232,7 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   workSpeed: 10
-  dashSpeed: 0
+  dashSpeed: 30
+  eimSpeed: 2
 --- !u!54 &716229341
 Rigidbody:
   m_ObjectHideFlags: 0
