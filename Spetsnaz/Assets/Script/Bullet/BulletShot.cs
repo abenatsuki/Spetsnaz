@@ -14,9 +14,9 @@ public class BulletShot : MonoBehaviour
     int itowburstflg = 0; //2点バーストの制御用フラグ
 
     //音を入れるための宣言
-    private AudioSource sound1;
-    private AudioSource sound2;
-    private AudioSource sound3;
+    //private AudioSource sound1;
+    //private AudioSource sound2;
+    //private AudioSource sound3;
 
     void Start()
     {
@@ -38,13 +38,13 @@ public class BulletShot : MonoBehaviour
                 Rigidbody shellRb = shell.GetComponent<Rigidbody>();
 
                 // forward（青軸＝Z軸）の方向に力を加える。
-                shellRb.AddForce(transform.forward * -fshotspeed);
+                shellRb.AddForce(force: transform.forward * -fshotspeed);
 
-                // 発射した砲弾を３秒後に破壊する。
+                // 発射した銃弾を３秒後に削除する。
                 Destroy(shell, 3.0f);
 
                 //サウンド
-                sound1.PlayOneShot(sound1.clip);
+                //sound1.PlayOneShot(sound1.clip);
             }
         }
 
@@ -72,7 +72,7 @@ public class BulletShot : MonoBehaviour
                 Destroy(shell, 3.0f);
 
                 //サウンド
-                sound2.PlayOneShot(sound2.clip);
+                //sound2.PlayOneShot(sound2.clip);
             }
         }
 
@@ -99,7 +99,7 @@ public class BulletShot : MonoBehaviour
                 Destroy(shell, 3.0f);
 
                 //サウンド
-                sound2.PlayOneShot(sound2.clip);
+                //sound2.PlayOneShot(sound2.clip);
             }
         }
     }
