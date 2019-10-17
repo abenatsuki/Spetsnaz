@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_Burst : BulletClass
-{
+public class Bullet_Burst : MonoBehaviour { 
     // Start is called before the first frame update
     void Start()
     {
