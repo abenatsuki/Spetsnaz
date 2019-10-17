@@ -6,8 +6,8 @@ public enum PlayerStateEnum
     WORK,//歩き
     DASH,//ダッシュ
     EIM,//エイム
-    CLIMB,//梯子上り
-    DOWN,//梯子下り
+    GRABBING,//梯子をつかんでいる
+    
 
 };
 
@@ -38,6 +38,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // Debug.Log(playerState);
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
         if (Input.GetMouseButton(1))
@@ -50,6 +51,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            if(playerState!=PlayerStateEnum.GRABBING)
             playerState = PlayerStateEnum.WORK;
         }
 
@@ -64,11 +66,7 @@ public class PlayerMove : MonoBehaviour
             case PlayerStateEnum.DASH://ダッシュ
                 DashUpdate();
                 break;
-            case PlayerStateEnum.CLIMB://梯子上り
-                ClimbUpdate();
-                break;
-            case PlayerStateEnum.DOWN://梯子下り
-                DownUpdate();
+            case PlayerStateEnum.GRABBING://梯子つかんでいる
                 break;
         }
     }
@@ -79,9 +77,6 @@ public class PlayerMove : MonoBehaviour
 
     private void WorkUpdate()
     {
-        if (!shotFlag)
-            LadderHitCheck();
-
         velocity *= workSpeed;
     }
     private void EimUpdate()
@@ -90,34 +85,22 @@ public class PlayerMove : MonoBehaviour
     }
     private void DashUpdate()
     {
-        if (!shotFlag)
-            LadderHitCheck();
-
         velocity *= dashSpeed;
     }
-    private void ClimbUpdate()
+    private void GrabbingUpdate()
     {
 
     }
-    private void DownUpdate()
-    {
-
-    }
-    private void LadderHitCheck()
-    {
-
-
-    }
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Ladder")
         {
-            Debug.Log("当たった");
-            
+            playerState = PlayerStateEnum.GRABBING;
+            Debug.Log(playerState);
         }
-        
+
 
     }
-    
+
 
 }
