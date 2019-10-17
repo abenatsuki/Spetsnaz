@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletClass : MonoBehaviour
+public class BulletMove : MonoBehaviour
 {
-    abstract class BulletState //純粋仮想関数
-    {
-        public abstract void Update();
-    } 
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +13,9 @@ public class BulletClass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += transform.forward * Time.deltaTime *100;
+
+        //発射した弾を３秒後に削除する。
+        Destroy(this.gameObject, 3.0f);
     }
 }
