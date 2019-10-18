@@ -22,11 +22,14 @@ public class PlayerMove : MonoBehaviour
     float dashSpeed = .0f;
     [SerializeField, Tooltip("自機がエイム時の移動速度")]
     float eimSpeed = .0f;
+    [SerializeField,Tooltip("自機の梯子を上り下りする速度")]
+    float RiseFallSpeed=.0f;
 
     public bool shotFlag { get; private set; }//撃っているかどうか
     public PlayerStateEnum playerState { get; private set; }//自機の状態
     Vector3 velocity;
     Rigidbody rigidbody3D;
+    bool jumpFlag = false;//自機が地面に設置していたらtrue
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
        // Debug.Log(playerState);
+     if(playerState!=PlayerStateEnum.GRABBING)
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
         if (Input.GetMouseButton(1))
@@ -67,6 +71,7 @@ public class PlayerMove : MonoBehaviour
                 DashUpdate();
                 break;
             case PlayerStateEnum.GRABBING://梯子つかんでいる
+                GrabbingUpdate();
                 break;
         }
     }
@@ -89,18 +94,38 @@ public class PlayerMove : MonoBehaviour
     }
     private void GrabbingUpdate()
     {
-
+        velocity = (transform.up * Input.GetAxis("Vertical")).normalized;
+        velocity *= RiseFallSpeed;
     }
-    private void OnCollisionStay(Collision other)
+    //触れているあいだ呼ばれ続けるあたり判定
+    private void OnCollisionStay(Collision _other)
     {
-        if (other.gameObject.tag == "Ladder")
+        //梯子あたり判定
+        if (_other.gameObject.tag == "Ladder")
         {
             playerState = PlayerStateEnum.GRABBING;
-            Debug.Log(playerState);
+            rigidbody3D.useGravity = false;//重力を無効にする
+           
         }
 
+        
+    }
+    //離れたら
+    private void OnCollisionExit(Collision _other)
+    {
+        //梯子あたり判定
+        if (_other.gameObject.tag == "Ladder")
+        {
+            rigidbody3D.useGravity = true;
+        }
+        //グラウンドあたり判定
+        if (_other.gameObject.tag == "Stage"&&playerState==PlayerStateEnum.GRABBING)
+        {
+            jumpFlag = true;
+        }
 
     }
+    
 
 
 }

@@ -124,8 +124,8 @@ GameObject:
   - component: {fileID: 7065890}
   - component: {fileID: 7065889}
   m_Layer: 0
-  m_Name: Terrain
-  m_TagString: Untagged
+  m_Name: Stage
+  m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -234,6 +234,7 @@ MonoBehaviour:
   workSpeed: 10
   dashSpeed: 30
   eimSpeed: 2
+  RiseFallSpeed: 2
 --- !u!54 &716229341
 Rigidbody:
   m_ObjectHideFlags: 0
