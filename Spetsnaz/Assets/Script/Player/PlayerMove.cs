@@ -7,8 +7,6 @@ public enum PlayerStateEnum
     DASH,//ダッシュ
     EIM,//エイム
     GRABBING,//梯子をつかんでいる
-    
-
 };
 
 [RequireComponent(typeof(Rigidbody))] //Rigidbody追加
@@ -27,9 +25,10 @@ public class PlayerMove : MonoBehaviour
 
     public bool shotFlag { get; private set; }//撃っているかどうか
     public PlayerStateEnum playerState { get; private set; }//自機の状態
-    Vector3 velocity;
+    Vector3 velocity;//速度
     Rigidbody rigidbody3D;
-    bool jumpFlag = false;//自機が地面に設置していたらtrue
+    bool jumpFlag = false;//降りたフラグ
+    bool ladderGrabbing = false;//梯子と触れているかどうかフラグ
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +40,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(playerState);
-     if(playerState!=PlayerStateEnum.GRABBING)
+        Debug.Log(jumpFlag);
+     
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
         if (Input.GetMouseButton(1))
@@ -55,8 +54,10 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            if(playerState!=PlayerStateEnum.GRABBING)
-            playerState = PlayerStateEnum.WORK;
+            if (!jumpFlag && !ladderGrabbing)
+            {
+              playerState = PlayerStateEnum.WORK;
+            }  
         }
 
         switch (playerState)
@@ -94,7 +95,15 @@ public class PlayerMove : MonoBehaviour
     }
     private void GrabbingUpdate()
     {
-        velocity = (transform.up * Input.GetAxis("Vertical")).normalized;
+        if (jumpFlag)
+        {
+            velocity = (transform.up * Input.GetAxis("Vertical")).normalized;
+        }
+        else
+        {
+            velocity = (transform.up * Input.GetAxis("Climb ") +transform.forward*Input.GetAxis("Down")+ transform.right * Input.GetAxis("Horizontal")).normalized;
+        }
+        
         velocity *= RiseFallSpeed;
     }
     //触れているあいだ呼ばれ続けるあたり判定
@@ -105,10 +114,14 @@ public class PlayerMove : MonoBehaviour
         {
             playerState = PlayerStateEnum.GRABBING;
             rigidbody3D.useGravity = false;//重力を無効にする
-           
+            ladderGrabbing = true;
+        }
+        
+        if (_other.gameObject.tag == "Stage")
+        {
+            jumpFlag = false;
         }
 
-        
     }
     //離れたら
     private void OnCollisionExit(Collision _other)
@@ -117,15 +130,13 @@ public class PlayerMove : MonoBehaviour
         if (_other.gameObject.tag == "Ladder")
         {
             rigidbody3D.useGravity = true;
+            ladderGrabbing = false;
         }
         //グラウンドあたり判定
-        if (_other.gameObject.tag == "Stage"&&playerState==PlayerStateEnum.GRABBING)
+        if (_other.gameObject.tag == "Stage")
         {
             jumpFlag = true;
         }
-
     }
     
-
-
 }
