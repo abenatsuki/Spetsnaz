@@ -20,8 +20,8 @@ public class PlayerMove : MonoBehaviour
     float dashSpeed = .0f;
     [SerializeField, Tooltip("自機がエイム時の移動速度")]
     float eimSpeed = .0f;
-    [SerializeField,Tooltip("自機の梯子を上り下りする速度")]
-    float RiseFallSpeed=.0f;
+    [SerializeField, Tooltip("自機の梯子を上り下りする速度")]
+    float RiseFallSpeed = .0f;
 
     public bool shotFlag { get; private set; }//撃っているかどうか
     public PlayerStateEnum playerState { get; private set; }//自機の状態
@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         Debug.Log(jumpFlag);
-     
+
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
         if (Input.GetMouseButton(1))
@@ -56,8 +56,8 @@ public class PlayerMove : MonoBehaviour
         {
             if (!jumpFlag && !ladderGrabbing)
             {
-              playerState = PlayerStateEnum.WORK;
-            }  
+                playerState = PlayerStateEnum.WORK;
+            }
         }
 
         switch (playerState)
@@ -101,13 +101,13 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            velocity = (transform.up * Input.GetAxis("Climb ") +transform.forward*Input.GetAxis("Down")+ transform.right * Input.GetAxis("Horizontal")).normalized;
+            velocity = (transform.up * Input.GetAxis("Climb ") + transform.forward * Input.GetAxis("Down") + transform.right * Input.GetAxis("Horizontal")).normalized;
         }
-        
+
         velocity *= RiseFallSpeed;
-    }
-    //触れているあいだ呼ばれ続けるあたり判定
-    private void OnCollisionStay(Collision _other)
+    } 
+    // 触れているあいだ呼ばれ続けるあたり判定
+    private void OnTriggerStay(Collider _other)
     {
         //梯子あたり判定
         if (_other.gameObject.tag == "Ladder")
@@ -116,15 +116,19 @@ public class PlayerMove : MonoBehaviour
             rigidbody3D.useGravity = false;//重力を無効にする
             ladderGrabbing = true;
         }
-        
+       
+
+    }
+    private void OnCollisionStay(Collision _other)
+    {
         if (_other.gameObject.tag == "Stage")
         {
             jumpFlag = false;
         }
-
     }
     //離れたら
-    private void OnCollisionExit(Collision _other)
+
+    private void OnTriggerExit(Collider _other)
     {
         //梯子あたり判定
         if (_other.gameObject.tag == "Ladder")
@@ -132,11 +136,17 @@ public class PlayerMove : MonoBehaviour
             rigidbody3D.useGravity = true;
             ladderGrabbing = false;
         }
+        
+    }
+
+    private void OnCollisionExit(Collision _other)
+    {
         //グラウンドあたり判定
         if (_other.gameObject.tag == "Stage")
         {
             jumpFlag = true;
         }
     }
-    
+
+
 }
