@@ -7,8 +7,8 @@ public class Bullet_Semi : MonoBehaviour
     GameObject Player;
     PlayerDataProvider GetPlayerDataProvider;
     public GameObject Bullet;
+    public GameObject Muzzle;
 
-    private float shotcooltimer; //再度弾を打つためのカウントタイム
     private int ammocnt; //残弾数
 
     // Start is called before the first frame update
@@ -20,22 +20,11 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // タイマーの時間を動かす
-        shotcooltimer += Time.deltaTime;
-
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && ammocnt >0)
         {
             ammocnt--;
-            shotcooltimer = 0.0f;
-            Instantiate(Bullet, transform.position, transform.rotation);
-        }
-        //腰うち
-        else if(Input.GetMouseButtonDown(0) && ammocnt > 0)
-        {
-            ammocnt--;
-            shotcooltimer = 0.0f;
-            Instantiate(Bullet, transform.position, transform.rotation);
+            Instantiate(Bullet, Muzzle.transform.position,transform.rotation);
         }
 
         //弾のリロード
