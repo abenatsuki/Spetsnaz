@@ -23,7 +23,7 @@ public class CameraRotation : MonoBehaviour
         float xRotation = Input.GetAxis("Mouse X");
         float yRotation = Input.GetAxis("Mouse Y");
 
-        verRotation.transform.Rotate(0, xRotation*sensitivityX, 0);
-        horRotation.transform.Rotate(-yRotation*sensitivityY, 0, 0);
+        verRotation.transform.Rotate(0, xRotation * sensitivityX, 0);
+        horRotation.transform.Rotate(-yRotation * sensitivityY, 0, 0);
     }
 }
