@@ -17,7 +17,7 @@ public class Bullet_Semi : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
-        script = player.GetComponent<PlayerDataProvider>();
+        script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         ammocnt = 8;
     }
 
@@ -25,8 +25,8 @@ public class Bullet_Semi : MonoBehaviour
     void Update()
     {
 
-        playerStateEnum = script.IsPlayerStateEnum;
-        //Debug.Log(playerStateEnum);
+        playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
+        //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM)
         {

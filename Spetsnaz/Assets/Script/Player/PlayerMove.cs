@@ -11,6 +11,10 @@ public enum PlayerStateEnum
 
 [RequireComponent(typeof(Rigidbody))] //Rigidbody追加
 [RequireComponent(typeof(Collider))]//Collider追加
+//スクリプトアタッチ
+[RequireComponent(typeof(PlayerDataProvider))]
+[RequireComponent(typeof(PlayerInput))]
+
 
 public class PlayerMove : MonoBehaviour
 {
@@ -93,7 +97,7 @@ public class PlayerMove : MonoBehaviour
     {
         velocity *= dashSpeed;
     }
-    private void GrabbingUpdate()
+    private void GrabbingUpdate()//梯子昇り降り更新
     {
         if (jumpFlag)
         {
