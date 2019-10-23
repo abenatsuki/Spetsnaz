@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bullet_Semi : MonoBehaviour
 {
-    GameObject player;
     PlayerDataProvider script;
+    GameObject player;
+    
 
     public GameObject Bullet;
     public GameObject Muzzle;
@@ -16,7 +17,7 @@ public class Bullet_Semi : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        script = GetComponent<PlayerDataProvider>();
+        script = player.GetComponent<PlayerDataProvider>();
         ammocnt = 8;
     }
 
@@ -25,9 +26,9 @@ public class Bullet_Semi : MonoBehaviour
     {
 
         playerStateEnum = script.IsPlayerStateEnum;
-        Debug.Log(playerStateEnum);
+        //Debug.Log(playerStateEnum);
         //弾の発射 エイム時
-        if (Input.GetMouseButtonDown(0) && ammocnt > 0 /*&& playerStateEnum == PlayerStateEnum.EIM*/)
+        if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM)
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
