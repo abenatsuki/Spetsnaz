@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Tooltip("自機の走る速さ")]
     float dashSpeed = .0f;
     [SerializeField, Tooltip("自機がエイム時の移動速度")]
-    float eimSpeed = .0f;
+    float eimMoveSpeed = .0f;
     [SerializeField, Tooltip("自機の梯子を上り下りする速度")]
     float RiseFallSpeed = .0f;
 
@@ -91,7 +91,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void EimUpdate()
     {
-        velocity *= eimSpeed;
+        velocity *= eimMoveSpeed;
     }
     private void DashUpdate()
     {
