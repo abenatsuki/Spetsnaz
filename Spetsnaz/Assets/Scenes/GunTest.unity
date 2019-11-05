@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workSpeed: 3
   dashSpeed: 6
-  eimSpeed: 2
+  eimMoveSpeed: 0
   RiseFallSpeed: 2
 --- !u!54 &1979926975
 Rigidbody:
