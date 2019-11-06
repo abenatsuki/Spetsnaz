@@ -12,7 +12,7 @@ public class Bullet_Semi : MonoBehaviour
 
     private int ammocnt; //残弾数
 
-    private float ReloadTime;
+    private float ReloadTime;// リロードの待機時間
 
     PlayerStateEnum playerStateEnum;
     // Start is called before the first frame update
@@ -29,6 +29,7 @@ public class Bullet_Semi : MonoBehaviour
     {
         //リロードできるまでの時間
         ReloadTime--;
+
 
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
