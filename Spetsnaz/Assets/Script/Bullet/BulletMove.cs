@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public bool reaction;
+    
     // Start is called before the first frame update
     void Start()
     {
-        reaction = true;
+
     }
 
     // Update is called once per frame
