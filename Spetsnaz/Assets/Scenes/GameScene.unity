@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78cb335b7301ac34c803d86c16aa0772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workSpeed: 4
+  warkSpeed: 4
   dashSpeed: 6
   eimMoveSpeed: 2
   RiseFallSpeed: 2
@@ -834,7 +834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fd17d2d86e4a942a1f33a70d2db737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: []
+  image:
+  - {fileID: 357542250}
+  - {fileID: 1308530295}
   numberFont:
   - {fileID: 21300000, guid: 45d126889ed0b384b818046da89d8c7c, type: 3}
   - {fileID: 21300002, guid: 45d126889ed0b384b818046da89d8c7c, type: 3}

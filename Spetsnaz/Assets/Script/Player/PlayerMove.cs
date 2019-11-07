@@ -19,7 +19,7 @@ public enum PlayerStateEnum
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField, Tooltip("自機の歩きの速さ")]
-    float workSpeed = .0f;
+    float warkSpeed = .0f;
     [SerializeField, Tooltip("自機の走る速さ")]
     float dashSpeed = .0f;
     [SerializeField, Tooltip("自機がエイム時の移動速度")]
@@ -87,7 +87,7 @@ public class PlayerMove : MonoBehaviour
 
     private void WorkUpdate()
     {
-        velocity *= workSpeed;
+        velocity *= warkSpeed;
     }
     private void EimUpdate()
     {
