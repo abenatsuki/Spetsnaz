@@ -27,11 +27,6 @@ public class TargetMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (counter < (getUpTime * 60))
-        {
-          counter++;
-        }
-        else { flag = true; }
        
     }
     void Update()
@@ -40,16 +35,9 @@ public class TargetMove : MonoBehaviour
         {
             if (flag == false)
             {
-                if (counter < (getUpTime * 60))
-                {
-                    rotation.x -= 90 / (60 * getUpTime);
+                    rotation.x -= 90;
                     transform.Rotate(rotation.x, rotation.y, rotation.z);
-                    //flag = true;
-                }
-                else
-                {
-                   // flag = true;
-                }
+                    flag = true;
                
             }
 
