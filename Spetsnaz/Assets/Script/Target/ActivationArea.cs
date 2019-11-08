@@ -17,14 +17,20 @@ public class ActivationArea : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision _collision)
+    //private void OnCollisionEnter(Collision _collision)
+    //{
+    //    if (_collision.gameObject.tag == "Player")
+    //    {
+    //        activationFlag = true;
+    //    }
+    //}
+    private void OnTriggerEnter(Collider _collision)
     {
         if (_collision.gameObject.tag == "Player")
         {
             activationFlag = true;
         }
     }
-        
-    
+
 
 }
