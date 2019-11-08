@@ -5,14 +5,12 @@ public class TargetMove : MonoBehaviour
     GameObject target;
     ActivationArea activationAreaScript;
 
-
     [SerializeField, Tooltip("ターゲットの回転値")]
     Vector3 rotation;
     [SerializeField, Tooltip("起き上がるまでの時間")]
     float getUpTime;
 
     bool flag = false;
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,24 +20,17 @@ public class TargetMove : MonoBehaviour
     }
 
     // Update is called once per frame
-
-    private void FixedUpdate()
-    {
-       
-    }
     void Update()
     {
         if (activationAreaScript.activationFlag)
         {
             if (flag == false)
             {
-                    rotation.x -= 90;
-                    transform.Rotate(rotation.x, rotation.y, rotation.z);
-                    flag = true;
-               
+                rotation.x -= 90;
+                transform.Rotate(rotation.x, rotation.y, rotation.z);
+                flag = true;
+
             }
-
-
         }
     }
 }

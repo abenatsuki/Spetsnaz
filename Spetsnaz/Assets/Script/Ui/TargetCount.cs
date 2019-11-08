@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 
 public class TargetCount : MonoBehaviour
 {
     
-    private  int targetCount;
-    public Image[] image;
+    private int targetCount;
     [SerializeField]
-    private Sprite[] numberFont;
+    private List<Image> image = new List<Image>();
+    [SerializeField]
+    private List<Sprite> numberFont = new List<Sprite>();
 
     int maxTargetCount;
     int NumberOfTargetsBroken;//壊したターゲット数
@@ -19,7 +17,7 @@ public class TargetCount : MonoBehaviour
     void Start()
     {
         maxTargetCount = 5;
-        foreach(var counter in image)
+        foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
         }

@@ -123,9 +123,9 @@ public class PlayerMove : MonoBehaviour
        
 
     }
-    private void OnCollisionStay(Collision _other)
+    private void OnCollisionStay(Collision _collision)
     {
-        if (_other.gameObject.tag == "Stage")
+        if (_collision.gameObject.tag == "Stage")
         {
             jumpFlag = false;
         }
@@ -143,10 +143,10 @@ public class PlayerMove : MonoBehaviour
         
     }
 
-    private void OnCollisionExit(Collision _other)
+    private void OnCollisionExit(Collision _collision)
     {
         //グラウンドあたり判定
-        if (_other.gameObject.tag == "Stage")
+        if (_collision.gameObject.tag == "Stage")
         {
             jumpFlag = true;
         }
