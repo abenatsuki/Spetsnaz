@@ -11,14 +11,12 @@ public class TargetMove : MonoBehaviour
     [SerializeField, Tooltip("起き上がるまでの時間")]
     float getUpTime;
 
-    int counter;
     bool flag = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        counter = 0;
         target = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
     }
