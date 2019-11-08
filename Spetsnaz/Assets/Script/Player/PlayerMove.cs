@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(jumpFlag);
+        // Debug.Log(jumpFlag);
 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         velocity *= RiseFallSpeed;
-    } 
+    }
     // 触れているあいだ呼ばれ続けるあたり判定
     private void OnTriggerStay(Collider _other)
     {
@@ -120,7 +120,7 @@ public class PlayerMove : MonoBehaviour
             rigidbody3D.useGravity = false;//重力を無効にする
             ladderGrabbing = true;
         }
-       
+
 
     }
     private void OnCollisionStay(Collision _collision)
@@ -140,7 +140,7 @@ public class PlayerMove : MonoBehaviour
             rigidbody3D.useGravity = true;
             ladderGrabbing = false;
         }
-        
+
     }
 
     private void OnCollisionExit(Collision _collision)

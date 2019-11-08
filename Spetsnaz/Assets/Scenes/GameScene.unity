@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 357542251}
   - component: {fileID: 357542250}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TargetMaxCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 1308530296}
   - component: {fileID: 1308530295}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BrokenTargetCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
