@@ -11,6 +11,7 @@ public class Bullet_Semi : MonoBehaviour
     public GameObject Muzzle;
 
     private int ammocnt; //残弾数
+    public float BulletSpeed = 0;
 
     private float ReloadTime;// リロードの待機時間
 
@@ -23,6 +24,16 @@ public class Bullet_Semi : MonoBehaviour
         ammocnt = 8;
         ReloadTime = 120;
     }
+
+    public void BulletShoot()
+    {
+        //弾道ブレ率と速度追加
+        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100),
+                Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100), 0);
+        GetComponent<Rigidbody>().AddForce(transform.forward * BulletSpeed / 10f, ForceMode.Impulse);
+
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -45,6 +56,8 @@ public class Bullet_Semi : MonoBehaviour
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            //弾道ブレ率と速度追加
+            BulletShoot();
         }
 
         //弾のリロード
