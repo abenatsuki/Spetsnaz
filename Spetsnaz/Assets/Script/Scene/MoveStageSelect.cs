@@ -16,7 +16,7 @@ public class MoveStageSelect : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("HandGunGameScene");
         }
         
     }
