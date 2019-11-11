@@ -42,7 +42,7 @@ public class Bullet_Semi : MonoBehaviour
         ReloadTime--;
 
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
-        Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
+        //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && ammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
         {
