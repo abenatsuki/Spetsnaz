@@ -117,7 +117,7 @@ TextureImporter:
       name: score_03_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
         width: 33
         height: 60
@@ -157,7 +157,7 @@ TextureImporter:
       name: score_03_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 101
         y: 0
         width: 33
         height: 60
@@ -177,7 +177,7 @@ TextureImporter:
       name: score_03_4
       rect:
         serializedVersion: 2
-        x: 131
+        x: 134
         y: 0
         width: 33
         height: 60
@@ -197,7 +197,7 @@ TextureImporter:
       name: score_03_5
       rect:
         serializedVersion: 2
-        x: 164
+        x: 166
         y: 0
         width: 33
         height: 60
@@ -257,7 +257,7 @@ TextureImporter:
       name: score_03_8
       rect:
         serializedVersion: 2
-        x: 264
+        x: 266
         y: 0
         width: 33
         height: 60
@@ -283,7 +283,7 @@ TextureImporter:
         height: 60
       alignment: 1
       pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
