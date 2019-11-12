@@ -11,6 +11,16 @@ public class BulletMove : MonoBehaviour
 
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        //ぶつかった弾がターゲットだったら弾オブジェクトを破壊する
+        if (collision.gameObject.tag == "Target")
+        {
+            Destroy(gameObject);
+        }
+       
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -20,10 +30,5 @@ public class BulletMove : MonoBehaviour
         //発射した弾を３秒後に削除する。
         Destroy(this.gameObject, 3.0f);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //ぶつかった弾オブジェクトを破壊する.
-        Destroy(this.transform.gameObject);
-    }
+ 
 }
