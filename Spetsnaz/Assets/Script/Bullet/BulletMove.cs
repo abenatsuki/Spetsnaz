@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +15,15 @@ public class BulletMove : MonoBehaviour
     void Update()
     {
 
-        transform.position += transform.forward * Time.deltaTime *100;
+        transform.position += transform.forward * Time.deltaTime * 100;
 
         //発射した弾を３秒後に削除する。
         Destroy(this.gameObject, 3.0f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //ぶつかった弾オブジェクトを破壊する.
+        Destroy(this.transform.gameObject);
     }
 }
