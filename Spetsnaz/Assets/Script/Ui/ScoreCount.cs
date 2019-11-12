@@ -9,14 +9,36 @@ public class ScoreCount : MonoBehaviour
     [SerializeField]
     private List<Sprite> numberFont = new List<Sprite>();
 
+    PlayerDataProvider playerScript;
+    GameObject player;
+
     int score = 123456;
+
+     private List<Vector3> color=new List<Vector3>();
+
+    float alfa;
+    float speed = 0.01f;
+    //Vector3 color;
     // Start is called before the first frame update
     void Start()
     {
+       
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<PlayerDataProvider>();
+        
+
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
+           
         }
+        for (int i = 0; i < 6; i++)
+        {
+            Vector3 colors = new Vector3(image[i].GetComponent<Image>().color.r, image[i].GetComponent<Image>().color.g, image[i].GetComponent<Image>().color.b);
+            color.Add(colors);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -28,6 +50,17 @@ public class ScoreCount : MonoBehaviour
         image[3].sprite = numberFont[(score / 1000) % 10];
         image[4].sprite = numberFont[(score / 10000) % 10];
         image[5].sprite = numberFont[score / 100000];
+
+        if (playerScript.IsCheckPointFlag)
+        {
+        for (int i = 0; i < color.Count; i++)
+        {
+            image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z,alfa);
+        }
+        alfa += speed;
+        }
+       
+       
 
     }
 
