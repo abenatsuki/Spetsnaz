@@ -2,7 +2,7 @@
 
 public class PlayerDataProvider : MonoBehaviour
 {
-    [SerializeField] private PlayerMove playerMove;
+    [SerializeField] private PlayerMove playerMove=null;
 
     public PlayerStateEnum IsPlayerStateEnum { get { return playerMove.playerState; } }//自機の状態
 }
