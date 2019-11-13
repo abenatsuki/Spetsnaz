@@ -9,6 +9,7 @@ TagManager:
   - Target
   - TargetArea
   - Bullet
+  - Gun
   layers:
   - Default
   - TransparentFX
