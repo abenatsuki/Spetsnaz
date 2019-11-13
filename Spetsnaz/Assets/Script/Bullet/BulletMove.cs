@@ -19,11 +19,11 @@ public class BulletMove : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("当たった1");
+        Debug.Log("なにかに当たった");
         //ぶつかった弾がターゲットだったら弾オブジェクトを破壊する
         if (collision.gameObject.tag == "Target")
         {
-            Debug.Log("当たった2");
+            Debug.Log("ターゲットに当たった");
             Destroy(this.gameObject);
         }
     }

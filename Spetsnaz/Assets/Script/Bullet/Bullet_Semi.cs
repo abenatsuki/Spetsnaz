@@ -18,6 +18,7 @@ public class Bullet_Semi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         ammocnt = 8;

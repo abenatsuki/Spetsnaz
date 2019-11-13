@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 788051826}
   m_Layer: 0
   m_Name: TargetGizmo
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -636,6 +636,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 3f44e4974b713cc42ace8ba4f0a33d35, type: 3}
       propertyPath: m_Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3f44e4974b713cc42ace8ba4f0a33d35, type: 3}
+      propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3f44e4974b713cc42ace8ba4f0a33d35, type: 3}
@@ -936,8 +940,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 962892106}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1990123282
-BoxCollider:
+--- !u!64 &1990123280
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -946,9 +950,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.48, y: 0.088167496, z: 0.8}
-  m_Center: {x: 0, y: 0.044083748, z: 0.9}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 3f44e4974b713cc42ace8ba4f0a33d35, type: 3}
 --- !u!114 &1990123283
 MonoBehaviour:
   m_ObjectHideFlags: 0

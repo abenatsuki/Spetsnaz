@@ -152,6 +152,14 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-   
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Target")
+        {
+            Debug.Log("aaa");
+        }
+    }
+
+
 
 }
