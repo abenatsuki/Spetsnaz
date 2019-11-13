@@ -4,29 +4,33 @@ using UnityEngine.UI;
 
 public class ScoreCount : MonoBehaviour
 {
+    
     [SerializeField]
     private List<Image> image = new List<Image>();
     [SerializeField]
     private List<Sprite> numberFont = new List<Sprite>();
-
-    PlayerDataProvider playerScript;
+    [SerializeField]
+    private float speed=0.01f;
+    [SerializeField,Tooltip("表示時間")]
+    int count;
+    
     GameObject player;
+    PlayerDataProvider playerScript;
 
     int score = 123456;
 
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
-    float speed = 0.01f;
-    //Vector3 color;
-    // Start is called before the first frame update
+
+    // Start is called before the 
+    
     void Start()
     {
-       
+        count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         
-
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
@@ -38,12 +42,12 @@ public class ScoreCount : MonoBehaviour
             color.Add(colors);
         }
 
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         image[0].sprite = numberFont[score % 10];
         image[1].sprite = numberFont[(score / 10) % 10];
         image[2].sprite = numberFont[(score / 100) % 10];
@@ -53,15 +57,22 @@ public class ScoreCount : MonoBehaviour
 
         if (playerScript.IsCheckPointFlag)
         {
+            count++;
         for (int i = 0; i < color.Count; i++)
         {
             image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z,alfa);
         }
-        alfa += speed;
+            if (count < 100)
+            {
+                alfa += speed;
+            }
+            else
+            {
+                alfa -= speed;
+            }
+       
         }
        
-       
-
     }
 
   
