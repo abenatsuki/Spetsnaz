@@ -9,12 +9,12 @@ public class TargetCollision : MonoBehaviour
     {
         
     }
-
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("弾当たり1");
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
+            Debug.Log("弾当たり2");
         }
     }
 
