@@ -10,8 +10,7 @@ public class Bullet_Semi : MonoBehaviour
     public GameObject Bullet;
     public GameObject Muzzle;
 
-    private int ammocnt; //残弾数
-    public float BulletSpeed = 0;
+    public int ammocnt { get; private set; } //残弾数
 
     private float ReloadTime;// リロードの待機時間
 

@@ -5,30 +5,26 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        //ぶつかった弾がターゲットだったら弾オブジェクトを破壊する
-        if (collision.gameObject.tag == "Target")
-        {
-            Destroy(gameObject);
-        }
-       
-    }
-
+    // 当たった時に呼ばれる関数
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Hit"); // ログを表示する
+    //}
     // Update is called once per frame
     void Update()
-    {
-
+    { 
         transform.position += transform.forward * Time.deltaTime * 100;
-
         //発射した弾を３秒後に削除する。
         Destroy(this.gameObject, 3.0f);
     }
- 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("当たった1");
+        //ぶつかった弾がターゲットだったら弾オブジェクトを破壊する
+        if (collision.gameObject.tag == "Target")
+        {
+            Debug.Log("当たった2");
+            Destroy(this.gameObject);
+        }
+    }
 }
