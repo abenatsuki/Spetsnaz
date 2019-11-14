@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class TargetCollision : MonoBehaviour
 {
+    GameObject target;
+    ActivationArea activationAreaScript;
+
+    bool Hitflg;
+
+    [SerializeField, Tooltip("ターゲットの回転値")]
+    Vector3 rotation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = transform.Find("ActivationArea").gameObject;//孫オブジェクトを取得
+        activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
+        Hitflg = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("弾当たり1");
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
-            Destroy(this.gameObject);
-            Debug.Log("弾当たり2");
+            rotation.x += 90;
+            transform.Rotate(rotation.x, rotation.y, rotation.z);
+            Debug.Log("倒れた");
+            Hitflg = true;
         }
     }
 

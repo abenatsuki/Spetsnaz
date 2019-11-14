@@ -23,8 +23,9 @@ public class BulletMove : MonoBehaviour
         //ぶつかった弾がターゲットだったら弾オブジェクトを破壊する
         if (collision.gameObject.tag == "Target")
         {
+             Destroy(this.gameObject);
             Debug.Log("ターゲットに当たった");
-            Destroy(this.gameObject);
+           
         }
     }
 }
