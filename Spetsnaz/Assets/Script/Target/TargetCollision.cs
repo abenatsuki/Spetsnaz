@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+GameObject target;
+ActivationArea activationAreaScript;
+
 public class TargetCollision : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,6 +17,7 @@ public class TargetCollision : MonoBehaviour
         Debug.Log("弾当たり1");
         if (collision.gameObject.tag == "Bullet")
         {
+
             Debug.Log("弾当たり2");
         }
     }
