@@ -10,6 +10,9 @@ public class CameraRotation : MonoBehaviour
     float sensitivityX=1.0f;
     [SerializeField, Tooltip("カメラ感度縦感度")]
     float sensitivityY = 1.0f;
+
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +23,34 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xRotation = Input.GetAxis("Mouse X");
-        float yRotation = Input.GetAxis("Mouse Y");
+        float xRotation = Input.GetAxis("Mouse X")*sensitivityX;
+        float yRotation = Input.GetAxis("Mouse Y")*sensitivityY;
 
-        verRotation.transform.Rotate(0, xRotation * sensitivityX, 0);
-        horRotation.transform.Rotate(-yRotation * sensitivityY, 0, 0);
+
+
+        Rotate(xRotation, yRotation, 60);
+       
+    }
+    void Rotate(float _inputX,float _inputY,float _limit)
+    {
+        float maxLimit = 60.0f, minLimit = 360 - maxLimit;
+        var localAngle = transform.localEulerAngles;
+        localAngle.x -= _inputY;
+
+        if (localAngle.x > maxLimit && localAngle.x < 180)
+        {
+            localAngle.x = maxLimit;
+        }
+
+        if (localAngle.x < minLimit && localAngle.x > 180)
+        {
+            localAngle.x = minLimit;
+        }
+
+        transform.localEulerAngles = localAngle;
+
+        var angle = transform.eulerAngles;
+        angle.y += _inputX;
+        transform.eulerAngles = angle;
     }
 }
