@@ -14,7 +14,6 @@ public class TargetCollision : MonoBehaviour
         Debug.Log("弾当たり1");
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(this.gameObject);
             Debug.Log("弾当たり2");
         }
     }
