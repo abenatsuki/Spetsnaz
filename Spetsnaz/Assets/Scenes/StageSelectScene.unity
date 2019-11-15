@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 357614146}
   - component: {fileID: 357614145}
   - component: {fileID: 357614144}
+  - component: {fileID: 357614147}
   m_Layer: 5
   m_Name: Hundgun
   m_TagString: Untagged
@@ -220,7 +221,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 357614145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 357614147}
+        m_MethodName: HandGunOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &357614145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +268,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357614142}
   m_CullTransparentMesh: 0
+--- !u!114 &357614147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357614142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0fc0a6b4870f8c46b04f8d9507a5d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &638737394
 GameObject:
   m_ObjectHideFlags: 0

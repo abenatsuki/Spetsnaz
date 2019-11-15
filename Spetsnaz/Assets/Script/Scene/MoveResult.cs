@@ -14,9 +14,9 @@ public class MoveResult : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-           // SceneManager.LoadScene("ResultScene");
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }
