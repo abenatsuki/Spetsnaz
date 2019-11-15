@@ -33,7 +33,7 @@ public class CameraRotation : MonoBehaviour
     }
     void Rotate(float _inputX,float _inputY,float _limit)
     {
-        float maxLimit = 60.0f, minLimit = 360 - maxLimit;
+        float maxLimit = _limit, minLimit = 360 - maxLimit;
         var localAngle = transform.localEulerAngles;
         localAngle.x -= _inputY;
 
@@ -41,7 +41,6 @@ public class CameraRotation : MonoBehaviour
         {
             localAngle.x = maxLimit;
         }
-
         if (localAngle.x < minLimit && localAngle.x > 180)
         {
             localAngle.x = minLimit;
@@ -51,6 +50,7 @@ public class CameraRotation : MonoBehaviour
 
         var angle = transform.eulerAngles;
         angle.y += _inputX;
-        transform.eulerAngles = angle;
+      //  transform.eulerAngles = angle;
+        verRotation.transform.Rotate(0, _inputX, 0);
     }
 }
