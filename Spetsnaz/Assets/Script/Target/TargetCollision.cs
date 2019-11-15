@@ -7,6 +7,8 @@ public class TargetCollision : MonoBehaviour
     GameObject target;
     ActivationArea activationAreaScript;
 
+    public int Score { get; private set; } //スコア
+
     bool Hitflg;
 
     [SerializeField, Tooltip("ターゲットの回転値")]
@@ -23,9 +25,11 @@ public class TargetCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
+            Score += 100;
             rotation.x += 90;
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Debug.Log("倒れた");
+            Debug.Log(Score);
             Hitflg = true;
         }
     }
