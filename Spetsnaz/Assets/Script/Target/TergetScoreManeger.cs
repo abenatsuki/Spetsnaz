@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class TergetScoreManeger : MonoBehaviour
 {
-    TargetCollision script;
-    GameObject target;
+
+    public int Score { get;  set; } //スコア
     
     // Start is called before the first frame update
     void Start()
     {
-        target = transform.Find("Target").gameObject;//孫オブジェクトを取得
-        script = target.GetComponent<TargetCollision>();//孫オブジェクトからスクリプトを持ってくる
+        Score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(Score);
     }
 }
