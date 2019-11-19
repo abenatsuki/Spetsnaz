@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetCollision : MonoBehaviour
 {
     GameObject target;
+    GameObject targetg;
     GameObject manager;
 
     ActivationArea activationAreaScript;
@@ -18,7 +19,8 @@ public class TargetCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = transform.Find("Target").gameObject;
+        targetg = GameObject.Find("TargetGizmo").gameObject;
+        manager = targetg.transform.Find("Target").gameObject;
         script = manager.GetComponent<TergetScoreManeger>();
         target = transform.Find("ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
@@ -28,7 +30,7 @@ public class TargetCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
+        if (collision.gameObject.tag == "Bullet" && /*activationAreaScript.activationFlag &&*/ !Hitflg)
         {
             script.Score += 100;
             rotation.x += 90;
