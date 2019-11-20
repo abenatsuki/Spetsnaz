@@ -365,15 +365,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.89
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.71
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_LocalRotation.x
@@ -393,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -413,8 +413,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a665d51878dc700479999e4b8d960ca2, type: 2}
     - target: {fileID: 9500000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24472917a7ed6a64ea9fd871abacc394, type: 3}
 --- !u!1 &185107328
@@ -1380,7 +1384,7 @@ Transform:
   m_LocalScale: {x: 0.3953895, y: 1, z: 0.22734}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &957601769
 GameObject:
