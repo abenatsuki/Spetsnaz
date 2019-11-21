@@ -1,28 +1,112 @@
 fileFormatVersion: 2
-guid: 24472917a7ed6a64ea9fd871abacc394
+guid: ba896f0a398a0a44b96753fb3ba863cf
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube17
-    100004: pCube18
-    100006: pCylinder13
-    100008: transform1
-    100010: transform2
+    100002: joint1
+    100004: joint10
+    100006: joint11
+    100008: joint12
+    100010: joint13
+    100012: joint14
+    100014: joint15
+    100016: joint16
+    100018: joint17
+    100020: joint18
+    100022: joint19
+    100024: joint2
+    100026: joint20
+    100028: joint21
+    100030: joint22
+    100032: joint23
+    100034: joint24
+    100036: joint25
+    100038: joint26
+    100040: joint27
+    100042: joint28
+    100044: joint29
+    100046: joint3
+    100048: joint30
+    100050: joint31
+    100052: joint32
+    100054: joint33
+    100056: joint34
+    100058: joint35
+    100060: joint36
+    100062: joint37
+    100064: joint38
+    100066: joint39
+    100068: joint4
+    100070: joint40
+    100072: joint41
+    100074: joint42
+    100076: joint43
+    100078: joint44
+    100080: joint45
+    100082: joint46
+    100084: joint47
+    100086: joint5
+    100088: joint6
+    100090: joint7
+    100092: joint8
+    100094: joint9
+    100096: l_wrist1
+    100098: r_arm
+    100100: r_wrist1
     400000: //RootNode
-    400002: pCube17
-    400004: pCube18
-    400006: pCylinder13
-    400008: transform1
-    400010: transform2
-    2100000: lambert3
-    2100002: lambert4
-    2300000: pCube18
-    3300000: pCube18
-    4300000: pCube18
+    400002: joint1
+    400004: joint10
+    400006: joint11
+    400008: joint12
+    400010: joint13
+    400012: joint14
+    400014: joint15
+    400016: joint16
+    400018: joint17
+    400020: joint18
+    400022: joint19
+    400024: joint2
+    400026: joint20
+    400028: joint21
+    400030: joint22
+    400032: joint23
+    400034: joint24
+    400036: joint25
+    400038: joint26
+    400040: joint27
+    400042: joint28
+    400044: joint29
+    400046: joint3
+    400048: joint30
+    400050: joint31
+    400052: joint32
+    400054: joint33
+    400056: joint34
+    400058: joint35
+    400060: joint36
+    400062: joint37
+    400064: joint38
+    400066: joint39
+    400068: joint4
+    400070: joint40
+    400072: joint41
+    400074: joint42
+    400076: joint43
+    400078: joint44
+    400080: joint45
+    400082: joint46
+    400084: joint47
+    400086: joint5
+    400088: joint6
+    400090: joint7
+    400092: joint8
+    400094: joint9
+    400096: l_wrist1
+    400098: r_arm
+    400100: r_wrist1
+    7400000: Take 001
     9500000: //RootNode
-    11100000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +127,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -90,37 +174,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 2
     human: []
-    skeleton:
-    - name: arm_test(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pCube17
-      parentName: arm_test(Clone)
-      position: {x: -0, y: 0.04640695, z: -0.2817033}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pCylinder13
-      parentName: pCube17
-      position: {x: -0.18812318, y: -0.0101638315, z: 0.17147788}
-      rotation: {x: 0.28613284, y: -0.014306651, z: -0.5141439, w: 0.80844253}
-      scale: {x: 1, y: 1, z: 1}
-    - name: transform1
-      parentName: pCylinder13
-      position: {x: 0.18812318, y: -0.03624312, z: 0.10570336}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: transform2
-      parentName: pCube17
-      position: {x: -0, y: -0.04640695, z: 0.2817033}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: pCube18
-      parentName: arm_test(Clone)
-      position: {x: 0.0000011157989, y: 0.04326952, z: -0.28176233}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -130,7 +184,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
