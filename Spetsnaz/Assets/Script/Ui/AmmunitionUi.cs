@@ -21,7 +21,8 @@ public class AmmunitionUi : MonoBehaviour
         gun = GameObject.FindGameObjectWithTag("Gun");
         bulletScript = gun.GetComponent<Bullet_Semi>();
 
-        ammuniton =30 /*bulletScript.*/;
+        
+        Debug.Log(bulletScript.ammocnt);
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
@@ -31,6 +32,7 @@ public class AmmunitionUi : MonoBehaviour
 
     private void Update()
     {
+        ammuniton = bulletScript.ammocnt;
         image[0].sprite = numberFont[ammuniton % 10];
         image[1].sprite = numberFont[(ammuniton / 10) % 10];
     }

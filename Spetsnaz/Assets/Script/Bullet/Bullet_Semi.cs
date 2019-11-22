@@ -40,6 +40,7 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
