@@ -10,6 +10,8 @@ TagManager:
   - TargetArea
   - Bullet
   - Gun
+  - CheckPoint
+  - Arm
   layers:
   - Default
   - TransparentFX
