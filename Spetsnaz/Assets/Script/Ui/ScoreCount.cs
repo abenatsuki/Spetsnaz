@@ -30,6 +30,8 @@ public class ScoreCount : MonoBehaviour
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
+
+
         
         foreach (var counter in image)
         {
