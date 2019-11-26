@@ -13,16 +13,21 @@ public class ScoreCount : MonoBehaviour
     private float speed=0.01f;
     [SerializeField,Tooltip("表示時間")]
     int count;
+
+    TergetScoreManeger scoreManager;
+    GameObject target;
     
     GameObject player;
     PlayerDataProvider playerScript;
 
     int score = 123456;
+    static int resultScore;//リザルトに持っていくスコア
 
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
 
+    static readonly int aaa;
     // Start is called before the 
     
     void Start()
@@ -30,9 +35,10 @@ public class ScoreCount : MonoBehaviour
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
+        target = GameObject.FindGameObjectWithTag("Target");
+        resultScore = 0;
+       // scoreManager = target.GetComponent<TargetScoreManager>();
 
-
-        
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
@@ -49,7 +55,12 @@ public class ScoreCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SpriteUpdate();//スプライトの更新
+        ShowHiddenUpdate();//表示非表示
+    }
+
+    void SpriteUpdate()
+    {
         image[0].sprite = numberFont[score % 10];
         image[1].sprite = numberFont[(score / 10) % 10];
         image[2].sprite = numberFont[(score / 100) % 10];
@@ -57,13 +68,16 @@ public class ScoreCount : MonoBehaviour
         image[4].sprite = numberFont[(score / 10000) % 10];
         image[5].sprite = numberFont[score / 100000];
 
+    }
+    void ShowHiddenUpdate()
+    {
         if (playerScript.IsCheckPointFlag)
         {
             count++;
-        for (int i = 0; i < color.Count; i++)
-        {
-            image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z,alfa);
-        }
+            for (int i = 0; i < color.Count; i++)
+            {
+                image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z, alfa);
+            }
             if (count < 100)
             {
                 alfa += speed;
@@ -72,10 +86,8 @@ public class ScoreCount : MonoBehaviour
             {
                 alfa -= speed;
             }
-       
+
         }
-       
     }
 
-  
 }
