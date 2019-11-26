@@ -20,13 +20,13 @@ public class ScoreCount : MonoBehaviour
     GameObject player;
     PlayerDataProvider playerScript;
 
-    int score = 123456;
-    static int resultScore;//リザルトに持っていくスコア
+    int score =0;
+    public static int resultScore;//リザルトに持っていくスコア
 
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
-    public static readonly int aaa=100;
+    
     // Start is called before the 
     
     void Start()
@@ -35,9 +35,10 @@ public class ScoreCount : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         target = GameObject.FindGameObjectWithTag("Target");
-        resultScore = 0;
-       // scoreManager = target.GetComponent<TargetScoreManager>();
+        scoreManager = target.GetComponent<TergetScoreManeger>();
 
+       
+      
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
@@ -56,6 +57,10 @@ public class ScoreCount : MonoBehaviour
     {
         SpriteUpdate();//スプライトの更新
         ShowHiddenUpdate();//表示非表示
+
+        score = scoreManager.Score;
+        resultScore = scoreManager.Score;
+
     }
 
     void SpriteUpdate()

@@ -14,7 +14,8 @@ public class ResultScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = ScoreCount.aaa;
+        score = ScoreCount.resultScore;
+
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
