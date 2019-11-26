@@ -30,8 +30,9 @@ public class TargetCollision : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet" && !Hitflg)
+        if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
+            rotation.x += 90;
             script.Score += 5000;
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Debug.Log("倒れた");
@@ -42,9 +43,9 @@ public class TargetCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activationAreaScript.activationFlag && !Hitflg)
-        {
-            rotation.x += 90;
-        }
+        //if(activationAreaScript.activationFlag && !Hitflg)
+        //{
+        //    rotation.x += 90;
+        //}
     }
 }
