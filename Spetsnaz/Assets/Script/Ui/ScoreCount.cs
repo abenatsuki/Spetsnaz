@@ -26,8 +26,7 @@ public class ScoreCount : MonoBehaviour
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
-
-    static readonly int aaa;
+    public static readonly int aaa=100;
     // Start is called before the 
     
     void Start()
