@@ -22,7 +22,7 @@ public class AmmunitionUi : MonoBehaviour
         bulletScript = gun.GetComponent<Bullet_Semi>();
 
         
-        Debug.Log(bulletScript.ammocnt);
+        //Debug.Log(bulletScript.ammocnt);
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];

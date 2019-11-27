@@ -36,8 +36,7 @@ public class ScoreCount : MonoBehaviour
         playerScript = player.GetComponent<PlayerDataProvider>();
         target = GameObject.FindGameObjectWithTag("TargetManager");
         scoreManager = target.GetComponent<TergetScoreManeger>();
-        if (scoreManager == null)
-            Debug.Log("nullやで");
+       
 
 
         foreach (var counter in image)
@@ -72,6 +71,7 @@ public class ScoreCount : MonoBehaviour
         image[3].sprite = numberFont[(score / 1000) % 10];
         image[4].sprite = numberFont[(score / 10000) % 10];
         image[5].sprite = numberFont[score / 100000];
+
 
     }
     void ShowHiddenUpdate()

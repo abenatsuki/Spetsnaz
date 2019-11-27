@@ -37,7 +37,6 @@ public class TargetCollision : MonoBehaviour
             rotation.x += 90;
             script.Score += 5000;
             transform.Rotate(rotation.x, rotation.y, rotation.z);
-            Debug.Log("倒れた");
             Hitflg = true;
         }
     }

@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MoveResult : MonoBehaviour
 {
+    GameObject targetManager;
+    TergetScoreManeger managerScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetManager = GameObject.FindGameObjectWithTag("TargetManager");
+        managerScript = targetManager.GetComponent<TergetScoreManeger>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (managerScript.clearflg)
         {
             SceneManager.LoadScene("ResultScene");
         }
