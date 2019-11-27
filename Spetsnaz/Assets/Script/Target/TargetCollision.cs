@@ -19,19 +19,21 @@ public class TargetCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         targetg = GameObject.Find("TargetGizmo").gameObject;
-        manager = targetg.transform.Find("Target").gameObject;
+        manager = GameObject.FindGameObjectWithTag("TargetManager");
         script = manager.GetComponent<TergetScoreManeger>();
         target = transform.Find("ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
         
         Hitflg = false;
-        
+        script.TargetCnt += 1;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
+            script.TargetCnt -= 1;
             rotation.x += 90;
             script.Score += 5000;
             transform.Rotate(rotation.x, rotation.y, rotation.z);
@@ -43,9 +45,5 @@ public class TargetCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(activationAreaScript.activationFlag && !Hitflg)
-        //{
-        //    rotation.x += 90;
-        //}
     }
 }

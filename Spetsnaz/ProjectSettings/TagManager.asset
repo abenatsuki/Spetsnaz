@@ -12,6 +12,7 @@ TagManager:
   - Gun
   - CheckPoint
   - Arm
+  - TargetManager
   layers:
   - Default
   - TransparentFX

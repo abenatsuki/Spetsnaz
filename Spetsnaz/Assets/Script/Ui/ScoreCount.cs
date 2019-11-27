@@ -34,11 +34,12 @@ public class ScoreCount : MonoBehaviour
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
-        target = GameObject.FindGameObjectWithTag("Target");
+        target = GameObject.FindGameObjectWithTag("TargetManager");
         scoreManager = target.GetComponent<TergetScoreManeger>();
+        if (scoreManager == null)
+            Debug.Log("nullやで");
 
-       
-      
+
         foreach (var counter in image)
         {
             counter.sprite = numberFont[0];
