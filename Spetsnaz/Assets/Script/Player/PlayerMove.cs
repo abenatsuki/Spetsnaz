@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Tooltip("自機がエイム時の移動速度")]
     float eimMoveSpeed = .0f;
     [SerializeField, Tooltip("自機の梯子を上り下りする速度")]
-    float RiseFallSpeed = .0f;
+    float riseFallSpeed = .0f;
 
     public bool shotFlag { get; private set; }//撃っているかどうか
     public PlayerStateEnum playerState { get; private set; }//自機の状態
@@ -108,7 +108,7 @@ public class PlayerMove : MonoBehaviour
             velocity = (transform.up * Input.GetAxis("Climb ") + transform.forward * Input.GetAxis("Down") + transform.right * Input.GetAxis("Horizontal")).normalized;
         }
 
-        velocity *= RiseFallSpeed;
+        velocity *= riseFallSpeed;
     }
     // 触れているあいだ呼ばれ続けるあたり判定
     private void OnTriggerStay(Collider _other)
