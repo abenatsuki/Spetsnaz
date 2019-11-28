@@ -20,6 +20,8 @@ public class Bullet_Semi : MonoBehaviour
     private float ReloadTime;// リロードの待機時間
 
     PlayerStateEnum playerStateEnum;
+
+    public bool reloadFlag { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Bullet_Semi : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         ammocnt = 8;
         ReloadTime = 120;
+        reloadFlag = false;
     }
 
     public void BulletShoot()
@@ -40,7 +43,7 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+      
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入

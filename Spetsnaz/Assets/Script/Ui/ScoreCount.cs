@@ -47,7 +47,7 @@ public class ScoreCount : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             Vector3 colors = new Vector3(image[i].GetComponent<Image>().color.r, image[i].GetComponent<Image>().color.g, image[i].GetComponent<Image>().color.b);
-            color.Add(colors);
+            color.Add(colors);//要素の追加
         }
 
     }

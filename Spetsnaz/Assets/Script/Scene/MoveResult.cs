@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MoveResult : MonoBehaviour
 {
-    GameObject targetManager;
-    TergetScoreManeger managerScript;
+    GameObject goalPoint;
+    GoalCheck goalScript;
     // Start is called before the first frame update
     void Start()
     {
-        targetManager = GameObject.FindGameObjectWithTag("TargetManager");
-        managerScript = targetManager.GetComponent<TergetScoreManeger>();
+        goalPoint = GameObject.FindGameObjectWithTag("Player");
+        goalScript = goalPoint.GetComponent<GoalCheck>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (managerScript.clearflg)
+        if (goalScript.goalFlag)
         {
             SceneManager.LoadScene("ResultScene");
         }
