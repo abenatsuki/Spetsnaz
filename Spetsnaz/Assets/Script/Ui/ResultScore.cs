@@ -10,7 +10,7 @@ public class ResultScore : MonoBehaviour
     [SerializeField]
     private List<Sprite> numberFont = new List<Sprite>();
 
-    int score = 123456;
+    int score =0;
     // Start is called before the first frame update
     void Start()
     {

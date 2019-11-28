@@ -29,7 +29,7 @@ public class Bullet_Semi : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         ammocnt = 8;
-        ReloadTime = 120;
+        ReloadTime = 0;
         reloadFlag = false;
     }
 
@@ -43,7 +43,7 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
@@ -63,10 +63,13 @@ public class Bullet_Semi : MonoBehaviour
             BulletShoot();
         }
         //弾のリロード
-        if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && ammocnt < 8)
+        if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && ammocnt < 8 && !reloadFlag)
         {
+            reloadFlag = true;
             ammocnt = 8;
             ReloadTime = 120;
         }
+        else if (ReloadTime < 0)
+            reloadFlag = false;
     }
 }

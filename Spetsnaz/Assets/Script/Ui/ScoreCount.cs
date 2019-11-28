@@ -26,11 +26,13 @@ public class ScoreCount : MonoBehaviour
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
+    bool inFlag;
     
     // Start is called before the 
     
     void Start()
     {
+        inFlag = false;
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
@@ -58,7 +60,7 @@ public class ScoreCount : MonoBehaviour
         SpriteUpdate();//スプライトの更新
         ShowHiddenUpdate();//表示非表示
 
-        score = scoreManager.Score;
+        
         resultScore = scoreManager.Score;
 
     }
@@ -78,6 +80,12 @@ public class ScoreCount : MonoBehaviour
     {
         if (playerScript.IsCheckPointFlag)
         {
+            if (!inFlag)
+            {
+                score = scoreManager.Score;
+                inFlag = true;
+            }
+            
             count++;
             for (int i = 0; i < color.Count; i++)
             {
