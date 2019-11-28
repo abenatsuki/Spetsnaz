@@ -10,11 +10,6 @@ public class Bullet_Semi : MonoBehaviour
     public GameObject Bullet;
     public GameObject Muzzle;
 
-    //SE
-    public AudioSource ShotSound;       //撃った時の音
-    public AudioSource ReloadInSound;   //カートリッジを入れたときの音
-    public AudioSource ReloadOutSound;  //カートリッジを抜いた時の音
-
     public int ammocnt { get; private set; } //残弾数
 
     private float ReloadTime;// リロードの待機時間
