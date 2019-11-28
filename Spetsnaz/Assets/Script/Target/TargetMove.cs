@@ -24,15 +24,11 @@ public class TargetMove : MonoBehaviour
     {
         if (activationAreaScript.activationFlag)
         {
-            if (rotation.x < 90.0f)
-            {
-                rotation.x -= 1.0f;
-            }
             if (flag == false)
             {
+                rotation.x -= 90.0f;
                 transform.Rotate(rotation.x, rotation.y, rotation.z);
                 flag = true;
-
             }
         }
     }
