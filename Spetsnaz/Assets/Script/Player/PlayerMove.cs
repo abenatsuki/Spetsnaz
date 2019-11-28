@@ -156,7 +156,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.tag == "Target")
         {
-            Debug.Log("aaa");
+          //  Debug.Log("aaa");
         }
     }
 

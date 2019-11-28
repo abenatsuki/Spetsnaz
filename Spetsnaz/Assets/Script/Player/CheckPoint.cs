@@ -22,7 +22,7 @@ public class CheckPoint : MonoBehaviour
         if (other.gameObject.tag == "CheckPoint")
         {
             checkPointFlag = true;
-            Debug.Log("当たった");
+           // Debug.Log("当たった");
         }
     }
 
