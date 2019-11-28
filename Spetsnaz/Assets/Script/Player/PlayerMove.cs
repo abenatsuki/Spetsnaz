@@ -45,9 +45,9 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // Debug.Log(jumpFlag);
-
+        
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
-
+       
         if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
@@ -60,6 +60,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (!jumpFlag && !ladderGrabbing)
             {
+
                 playerState = PlayerStateEnum.WORK;
             }
         }
