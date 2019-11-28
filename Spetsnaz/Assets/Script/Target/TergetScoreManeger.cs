@@ -9,7 +9,7 @@ public class TergetScoreManeger : MonoBehaviour
     public int TargetMax { get; private set; } //ターゲットの数(定数) 
 
     bool startflg;//定数を代入するためのフラグ
-    bool clearflg; //クリアしたかどうか
+    public bool clearflg { get; private set; } //クリアしたかどうか
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +30,9 @@ public class TergetScoreManeger : MonoBehaviour
         {
             clearflg = true;
         }
-        Debug.Log(TargetMax);
+        //Debug.Log(TargetMax);
 
-        Debug.Log(Score);
-        Debug.Log(TargetCnt);
+        //Debug.Log(Score);
+        //Debug.Log(TargetCnt);
     }
 }

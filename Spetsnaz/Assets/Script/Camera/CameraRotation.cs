@@ -17,7 +17,7 @@ public class CameraRotation : MonoBehaviour
     void Start()
     {
         verRotation = transform.parent;//自機のtransform
-        horRotation = GetComponent<Transform>();//カメラのtransform
+      
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class CameraRotation : MonoBehaviour
 
         var angle = transform.eulerAngles;
         angle.y += _inputX;
-      //  transform.eulerAngles = angle;
+      
         verRotation.transform.Rotate(0, _inputX, 0);
     }
 }
