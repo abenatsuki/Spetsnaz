@@ -19,7 +19,6 @@ public class TargetCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         targetg = GameObject.Find("TargetGizmo").gameObject;
         manager = GameObject.FindGameObjectWithTag("TargetManager");
         script = manager.GetComponent<TergetScoreManeger>();
