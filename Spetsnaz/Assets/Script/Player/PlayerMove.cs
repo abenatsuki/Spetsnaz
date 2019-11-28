@@ -3,7 +3,7 @@
 public enum PlayerStateEnum
 {
     IDLE = 0,
-    WORK,//歩き
+    WARK,//歩き
     DASH,//ダッシュ
     EIM,//エイム
     GRABBING,//梯子をつかんでいる
@@ -43,31 +43,33 @@ public class PlayerMove : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // Debug.Log(jumpFlag);
-        
+    { 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
        
         if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
         }
-        else if (Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.LeftShift)&& playerState == PlayerStateEnum.WARK)
         {
             playerState = PlayerStateEnum.DASH;
         }
         else
         {
             if (!jumpFlag && !ladderGrabbing)
+            { 
+                   playerState = PlayerStateEnum.WARK;
+                
+            if (velocity.x == 0 && velocity.y == 0 && velocity.z == 0)
             {
-
-                playerState = PlayerStateEnum.WORK;
+                playerState = PlayerStateEnum.IDLE;
+            }
             }
         }
 
         switch (playerState)
         {
-            case PlayerStateEnum.WORK://歩き
+            case PlayerStateEnum.WARK://歩き
                 WorkUpdate();
                 break;
             case PlayerStateEnum.EIM://エイム

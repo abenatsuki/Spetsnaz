@@ -30,7 +30,7 @@ public class PlayerAnimation : MonoBehaviour
         playerState = playerScript.IsPlayerStateEnum;
         switch (playerState)
         {
-            case PlayerStateEnum.WORK://歩き
+            case PlayerStateEnum.WARK://歩き
                 playerAnimator.SetInteger("PlayerState", 0);
                 break;
             case PlayerStateEnum.EIM://エイム

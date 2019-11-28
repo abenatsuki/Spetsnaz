@@ -7,6 +7,7 @@ public class MoveHandGun : MonoBehaviour
 {
    public void HandGunOnClick()
     {
+        DontDestroyObjectManager.DestoryAll();
         SceneManager.LoadScene("HandGunGameScene");
     }
 }
