@@ -21,7 +21,10 @@ public class ScoreCount : MonoBehaviour
     PlayerDataProvider playerScript;
 
     int score =0;
-    public static int resultScore;//リザルトに持っていくスコア
+
+    public static int resultScore { get; private set; }//リザルトに持っていくスコア
+    public static float timeScore { get; private set; }//
+    public static float stateTime { get; private set; }//
 
      private List<Vector3> color=new List<Vector3>();
 
@@ -101,6 +104,17 @@ public class ScoreCount : MonoBehaviour
             }
 
         }
+    }
+    void TimeCount()
+    {
+        stateTime = Time.time;
+
+
+
+
+
+
+        timeScore = Time.time;
     }
 
 }

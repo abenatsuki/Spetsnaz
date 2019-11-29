@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f09d1ded75474a49afd6633412216c4
+guid: 17840ee772944264cb7a2dd30c6f7977
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -50,10 +50,17 @@ ModelImporter:
     100088: joint7
     100090: joint8
     100092: joint9
-    100094: l_wrist1
-    100096: r_arm
-    100098: r_wrist1
-    100100: //RootNode
+    100094: l_arm
+    100096: l_wrist1
+    100098: mag2
+    100100: mag3
+    100102: mag4
+    100104: Makarov
+    100106: polySurface10
+    100108: polySurface11
+    100110: r_arm
+    100112: r_wrist1
+    100114: //RootNode
     400000: joint1
     400002: joint10
     400004: joint11
@@ -101,10 +108,33 @@ ModelImporter:
     400088: joint7
     400090: joint8
     400092: joint9
-    400094: l_wrist1
-    400096: r_arm
-    400098: r_wrist1
-    400100: //RootNode
+    400094: l_arm
+    400096: l_wrist1
+    400098: mag2
+    400100: mag3
+    400102: mag4
+    400104: Makarov
+    400106: polySurface10
+    400108: polySurface11
+    400110: r_arm
+    400112: r_wrist1
+    400114: //RootNode
+    2100000: lambert5
+    2300000: mag2
+    2300002: mag3
+    2300004: mag4
+    2300006: polySurface10
+    2300008: polySurface11
+    3300000: mag2
+    3300002: mag3
+    3300004: mag4
+    3300006: polySurface10
+    3300008: polySurface11
+    4300000: mag2
+    4300002: mag3
+    4300004: polySurface10
+    4300006: mag4
+    4300008: polySurface11
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}

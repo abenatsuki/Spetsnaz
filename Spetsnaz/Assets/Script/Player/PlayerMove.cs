@@ -6,6 +6,7 @@ public enum PlayerStateEnum
     WARK,//歩き
     DASH,//ダッシュ
     EIM,//エイム
+    RELOAD,
     GRABBING,//梯子をつかんでいる
 };
 
@@ -33,10 +34,14 @@ public class PlayerMove : MonoBehaviour
     Rigidbody rigidbody3D;
     bool jumpFlag = false;//降りたフラグ
     bool ladderGrabbing = false;//梯子と触れているかどうかフラグ
+    GameObject bullet;
+    Bullet_Semi bulletScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        bullet = GameObject.FindGameObjectWithTag("Gun");
+        bulletScript = bullet.GetComponent<Bullet_Semi>();
         shotFlag = false;//弾を撃っているかフラグ
         rigidbody3D = GetComponent<Rigidbody>();
     }
@@ -45,11 +50,17 @@ public class PlayerMove : MonoBehaviour
     void Update()
     { 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
-       
-        if (Input.GetMouseButton(1))
+
+      //  Debug.Log(playerState);
+        if (bulletScript.reloadFlag)
+        {
+            playerState = PlayerStateEnum.RELOAD;
+        }
+       else if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
         }
+
         else if (Input.GetKey(KeyCode.LeftShift)&& playerState == PlayerStateEnum.WARK)
         {
             playerState = PlayerStateEnum.DASH;
@@ -69,6 +80,8 @@ public class PlayerMove : MonoBehaviour
 
         switch (playerState)
         {
+            case PlayerStateEnum.RELOAD:
+            case PlayerStateEnum.IDLE:
             case PlayerStateEnum.WARK://歩き
                 WorkUpdate();
                 break;
