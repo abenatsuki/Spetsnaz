@@ -20,6 +20,7 @@ public class ScoreCount : MonoBehaviour
     GameObject player;
     PlayerDataProvider playerScript;
 
+    float timeMagnification = 3.00f;
     int score =0;
 
     public static int resultScore { get; private set; }//リザルトに持っていくスコア
@@ -87,6 +88,7 @@ public class ScoreCount : MonoBehaviour
             if (!inFlag)
             {
                 score = scoreManager.Score;
+
                 inFlag = true;
             }
             
@@ -109,7 +111,8 @@ public class ScoreCount : MonoBehaviour
     void TimeCount()
     {
         stateTime = Time.time;
-        timeScore = Time.time;
+        
+        
     }
 
 }
