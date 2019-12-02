@@ -63,6 +63,7 @@ public class ScoreCount : MonoBehaviour
         SpriteUpdate();//スプライトの更新
         ShowHiddenUpdate();//表示非表示
 
+        TimeCount();//時間計測
         
         resultScore = scoreManager.Score;
 
@@ -108,12 +109,6 @@ public class ScoreCount : MonoBehaviour
     void TimeCount()
     {
         stateTime = Time.time;
-
-
-
-
-
-
         timeScore = Time.time;
     }
 

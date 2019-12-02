@@ -8,7 +8,6 @@ public class ReloadUi : MonoBehaviour
     [SerializeField]
     Image reloadImage;
 
-
     GameObject player;
     PlayerDataProvider playerScript;
 
