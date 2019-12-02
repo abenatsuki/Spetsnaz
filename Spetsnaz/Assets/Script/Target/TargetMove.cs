@@ -10,6 +10,9 @@ public class TargetMove : MonoBehaviour
     [SerializeField, Tooltip("起き上がるまでの時間")]
     float getUpTime;
 
+    float minAngle = 0.0f;
+    float maxAngle = 90.0f;
+
     bool flag = false;
 
     // Start is called before the first frame update
@@ -22,11 +25,13 @@ public class TargetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //float angle = Mathf.LerpAngle(minAngle, maxAngle, Time.time);
+        //transform.localEulerAngles = new Vector3(-angle, 0, 0);
         if (activationAreaScript.activationFlag)
         {
             if (flag == false)
             {
-                rotation.x -= 90.0f;
+                rotation.x -= -90;
                 transform.Rotate(rotation.x, rotation.y, rotation.z);
                 flag = true;
             }
