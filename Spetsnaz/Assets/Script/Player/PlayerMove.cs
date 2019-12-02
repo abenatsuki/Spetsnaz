@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour
     { 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
-      //  Debug.Log(playerState);
+        Debug.Log(playerState);
         if (bulletScript.reloadFlag)
         {
             playerState = PlayerStateEnum.RELOAD;
