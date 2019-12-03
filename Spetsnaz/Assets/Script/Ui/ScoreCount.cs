@@ -14,7 +14,7 @@ public class ScoreCount : MonoBehaviour
     [SerializeField,Tooltip("表示時間")]
     int count;
 
-    TergetScoreManeger scoreManager;
+    TergetScoreManeger targetScoreManager;
     GameObject target;
     
     GameObject player;
@@ -31,6 +31,7 @@ public class ScoreCount : MonoBehaviour
 
     float alfa;
     bool inFlag;
+    float ftime=0.0000000f;
     
     // Start is called before the 
     
@@ -41,7 +42,7 @@ public class ScoreCount : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         target = GameObject.FindGameObjectWithTag("TargetManager");
-        scoreManager = target.GetComponent<TergetScoreManeger>();
+        targetScoreManager = target.GetComponent<TergetScoreManeger>();
        
 
 
@@ -66,7 +67,7 @@ public class ScoreCount : MonoBehaviour
 
         TimeCount();//時間計測
         
-        resultScore = scoreManager.Score;
+        resultScore = targetScoreManager.Score;
 
     }
 
@@ -87,7 +88,7 @@ public class ScoreCount : MonoBehaviour
         {
             if (!inFlag)
             {
-                score = scoreManager.Score;
+                score = targetScoreManager.Score;
 
                 inFlag = true;
             }
@@ -97,6 +98,7 @@ public class ScoreCount : MonoBehaviour
             {
                 image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z, alfa);
             }
+
             if (count < 100)
             {
                 alfa += speed;
@@ -110,8 +112,18 @@ public class ScoreCount : MonoBehaviour
     }
     void TimeCount()
     {
-        stateTime = Time.time;
-        
+        stateTime -= Time.deltaTime;
+        if (stateTime <= 0.0)
+        {
+            stateTime = 1.0f;
+
+
+
+
+
+        }
+       
+        Debug.Log(stateTime);
         
     }
 
