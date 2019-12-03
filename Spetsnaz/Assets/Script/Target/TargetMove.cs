@@ -31,7 +31,7 @@ public class TargetMove : MonoBehaviour
         {
             if (flag == false)
             {
-                rotation.x -= -90;
+                rotation.x -= 90;
                 transform.Rotate(rotation.x, rotation.y, rotation.z);
                 flag = true;
             }
