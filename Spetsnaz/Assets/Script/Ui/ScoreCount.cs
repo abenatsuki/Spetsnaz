@@ -13,35 +13,41 @@ public class ScoreCount : MonoBehaviour
     private float speed=0.01f;
     [SerializeField,Tooltip("表示時間")]
     int count;
+    [SerializeField]
+    float magnification;
 
-    TergetScoreManeger scoreManager;
+    TergetScoreManeger targetScoreManager;
     GameObject target;
     
     GameObject player;
     PlayerDataProvider playerScript;
 
-    float timeMagnification = 3.00f;
+  //  float timeMagnification = 3.00f;//タイムボーナス倍率
     int score =0;
 
     public static int resultScore { get; private set; }//リザルトに持っていくスコア
-    public static float timeScore { get; private set; }//
-    public static float stateTime { get; private set; }//
+
+    public static float clearTime { get; private set; }//
+    
+    public static float timeMagnification { get; private set; }
 
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
     bool inFlag;
+    float leftTime;
     
     // Start is called before the 
     
     void Start()
     {
+        timeMagnification = magnification;
         inFlag = false;
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         target = GameObject.FindGameObjectWithTag("TargetManager");
-        scoreManager = target.GetComponent<TergetScoreManeger>();
+        targetScoreManager = target.GetComponent<TergetScoreManeger>();
        
 
 
@@ -66,7 +72,7 @@ public class ScoreCount : MonoBehaviour
 
         TimeCount();//時間計測
         
-        resultScore = scoreManager.Score;
+        resultScore = targetScoreManager.Score;
 
     }
 
@@ -87,7 +93,7 @@ public class ScoreCount : MonoBehaviour
         {
             if (!inFlag)
             {
-                score = scoreManager.Score;
+                score = targetScoreManager.Score;
 
                 inFlag = true;
             }
@@ -97,6 +103,7 @@ public class ScoreCount : MonoBehaviour
             {
                 image[i].GetComponent<Image>().color = new Color(color[i].x, color[i].y, color[i].z, alfa);
             }
+
             if (count < 100)
             {
                 alfa += speed;
@@ -110,9 +117,15 @@ public class ScoreCount : MonoBehaviour
     }
     void TimeCount()
     {
-        stateTime = Time.time;
-        
-        
+        clearTime = Time.time;
+
+        leftTime -= Time.deltaTime;
+        if (leftTime <= 0.0)
+        {
+            leftTime = .1f;
+            timeMagnification -= .002f;//ボーナス倍率を下げる
+        }
+       
     }
 
 }
