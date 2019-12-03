@@ -13,6 +13,8 @@ public class ScoreCount : MonoBehaviour
     private float speed=0.01f;
     [SerializeField,Tooltip("表示時間")]
     int count;
+    [SerializeField]
+    float magnification;
 
     TergetScoreManeger targetScoreManager;
     GameObject target;
@@ -20,23 +22,26 @@ public class ScoreCount : MonoBehaviour
     GameObject player;
     PlayerDataProvider playerScript;
 
-    float timeMagnification = 3.00f;
+  //  float timeMagnification = 3.00f;//タイムボーナス倍率
     int score =0;
 
     public static int resultScore { get; private set; }//リザルトに持っていくスコア
-    public static float timeScore { get; private set; }//
-    public static float stateTime { get; private set; }//
+
+    public static float clearTime { get; private set; }//
+    
+    public static float timeMagnification { get; private set; }
 
      private List<Vector3> color=new List<Vector3>();
 
     float alfa;
     bool inFlag;
-    float ftime=0.0000000f;
+    float leftTime;
     
     // Start is called before the 
     
     void Start()
     {
+        timeMagnification = magnification;
         inFlag = false;
         count = 0;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -112,19 +117,15 @@ public class ScoreCount : MonoBehaviour
     }
     void TimeCount()
     {
-        stateTime -= Time.deltaTime;
-        if (stateTime <= 0.0)
+        clearTime = Time.time;
+
+        leftTime -= Time.deltaTime;
+        if (leftTime <= 0.0)
         {
-            stateTime = 1.0f;
-
-
-
-
-
+            leftTime = .1f;
+            timeMagnification -= .002f;//ボーナス倍率を下げる
         }
        
-        Debug.Log(stateTime);
-        
     }
 
 }
