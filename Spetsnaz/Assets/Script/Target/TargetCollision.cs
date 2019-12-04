@@ -43,5 +43,6 @@ public class TargetCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 }
