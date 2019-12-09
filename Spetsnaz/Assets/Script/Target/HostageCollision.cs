@@ -31,9 +31,9 @@ public class HostageCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
-            script.TargetCnt -= 1;
             rotation.x += 90;
             script.Score -= 5000;
+            //Debug.Log("-5000減った");
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Hitflg = true;
         }
