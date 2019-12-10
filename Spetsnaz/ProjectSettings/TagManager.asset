@@ -14,6 +14,7 @@ TagManager:
   - Arm
   - TargetManager
   - GoalPoint
+  - TargetHead
   layers:
   - Default
   - TransparentFX
