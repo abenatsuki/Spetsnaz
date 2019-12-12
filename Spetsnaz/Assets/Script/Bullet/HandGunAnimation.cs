@@ -29,11 +29,20 @@ public class HandGunAnimation : MonoBehaviour
         playerState = playerScript.IsPlayerStateEnum;
         switch (playerState)
         {
-          
+           case PlayerStateEnum.IDLE:
+            case PlayerStateEnum.WARK://歩き
+            case PlayerStateEnum.EIM://エイム
+            case PlayerStateEnum.DASH://ダッシュ
+            case PlayerStateEnum.GRABBING://梯子つかんでいる
+                handGunAnimator.SetInteger("HandGunState", 0);
+                break;
             case PlayerStateEnum.RELOAD:
                 handGunAnimator.SetInteger("HandGunState", 1);
                 break;
+           
+           
                
+
         }
 
 
