@@ -24,7 +24,6 @@ public class TargetHedCollision : MonoBehaviour
         if (collision.gameObject.tag == "Bullet" && !Hitflg)
         {
             script.Score += 10000;
-            Debug.Log("倒れた");
             Hitflg = true;
         }
     }
