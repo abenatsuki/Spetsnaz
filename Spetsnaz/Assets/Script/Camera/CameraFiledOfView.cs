@@ -9,6 +9,7 @@ public class CameraFiledOfView : MonoBehaviour
     GameObject player;
     PlayerDataProvider playerScript;
     PlayerStateEnum playerState;
+    
 
     [SerializeField,Tooltip("どれぐらいズームするかの値")]
     float zoomMaximam;
@@ -27,7 +28,6 @@ public class CameraFiledOfView : MonoBehaviour
     {
         playerState = playerScript.IsPlayerStateEnum;
 
-      
 
 
         if (playerState==PlayerStateEnum.EIM)
@@ -37,7 +37,8 @@ public class CameraFiledOfView : MonoBehaviour
             {
                 camera.fieldOfView -= zoomSpeed;
             }
-            
+              transform.forward *= zoomSpeed;
+          
         }
         else
         {
@@ -45,7 +46,11 @@ public class CameraFiledOfView : MonoBehaviour
             {
                 camera.fieldOfView += zoomSpeed;
             }
-            //camera.fieldOfView = zoomDefault;
+            //camera.fieldOfView = zoomDefault; 
+           
         }
+       
+
     }
+   
 }
