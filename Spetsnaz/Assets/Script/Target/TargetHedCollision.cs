@@ -17,6 +17,7 @@ public class TargetHedCollision : MonoBehaviour
     {
         TargetHed = transform.Find("TargetHed").gameObject;
         TargetCollisionScript = TargetHed.GetComponent<TargetCollision>();
+        Hitflg = false;
     }
 
     private void OnCollisionEnter(Collision collision)

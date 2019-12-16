@@ -23,7 +23,7 @@ public class Bullet_Fullauto : MonoBehaviour
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
-        fullammocnt = 30;
+        fullammocnt = 300;
         ReloadTime = 0;
         reloadFlag = false;
     }
