@@ -9,8 +9,8 @@ public class PlayerDataProvider : MonoBehaviour
     public PlayerStateEnum IsPlayerStateEnum { get { return playerMove.playerState; } }//自機の状態
     public bool IsCheckPointFlag { get { return checkPoint.checkPointFlag; } }//チェックポイントを通ったかフラグ
     public Animator IsPlayerAnimator { get { return playerAnimation.playerAnimator; } }//プレイヤーのアニメーター
-    public int IsPlayerReloadFrame { get { return playerAnimation.reloadFrame; } }
-
+    public int IsPlayerReloadFrame { get { return playerAnimation.reloadFrame; } }//リロードアニメーションのフレーム数
+    //デバッグ用
     private void Update()
     {
       //  Debug.Log(IsPlayerAnimator);

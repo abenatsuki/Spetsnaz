@@ -28,8 +28,6 @@ public class CameraFiledOfView : MonoBehaviour
     {
         playerState = playerScript.IsPlayerStateEnum;
 
-
-
         if (playerState==PlayerStateEnum.EIM)
         {
             //camera.fieldOfView = 50;
@@ -37,7 +35,7 @@ public class CameraFiledOfView : MonoBehaviour
             {
                 camera.fieldOfView -= zoomSpeed;
             }
-              transform.forward *= zoomSpeed;
+          //  transform.localPosition=new Vector3(0, 0, 0.45f);
           
         }
         else

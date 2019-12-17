@@ -22,7 +22,6 @@ public class PlayerAnimation : MonoBehaviour
         playerScript = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         playerState = playerScript.IsPlayerStateEnum;
 
-        Debug.Log(playerAnimator);
     }
 
     // Update is called once per frame
@@ -59,20 +58,5 @@ public class PlayerAnimation : MonoBehaviour
        
       
     }
-    private float ReadTimeFromAnimator(Animator animator, string clipname)
-    {
-        if (animator != null)
-        {
-            RuntimeAnimatorController ac = animator.runtimeAnimatorController;
-            AnimationClip clip = System.Array.Find<AnimationClip>(ac.animationClips, (AnimatiorClip) =>
-            AnimatiorClip.name.Equals(clipname));
-
-            if (clip != null)
-            {
-                return clipname.Length;
-            }
-
-        }
-        return 0.0f;
-    }
+   
 }
