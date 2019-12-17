@@ -653,6 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMove: {fileID: 192642555}
   checkPoint: {fileID: 192642558}
+  playerAnimation: {fileID: 1263579541}
 --- !u!114 &192642558
 MonoBehaviour:
   m_ObjectHideFlags: 0

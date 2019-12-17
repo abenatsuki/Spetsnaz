@@ -2,7 +2,7 @@
 
 public class PlayerDataProvider : MonoBehaviour
 {
-    [SerializeField] private PlayerMove playerMove=null;
+    [SerializeField] private PlayerMove playerMove = null;
     [SerializeField] private CheckPoint checkPoint = null;
     [SerializeField] private PlayerAnimation playerAnimation = null;
 

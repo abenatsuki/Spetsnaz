@@ -33,8 +33,8 @@ public class Bullet_Burst : MonoBehaviour {
     public void BulletShoot()
     {
         //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100),
-                Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100), 0);
+        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 0, Muzzle.transform.position.y / 100),
+                Random.Range(-Muzzle.transform.position.x / 0, Muzzle.transform.position.y / 100), 0);
     }
 
     // Update is called once per frame
@@ -43,16 +43,16 @@ public class Bullet_Burst : MonoBehaviour {
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
-                                                   // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
-                                                   //弾の発射 エイム時
-        if (Input.GetMouseButtonDown(0) && burstammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
+        //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
+        //弾の発射 エイム時
+        if (Input.GetMouseButton(0) && burstammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
         {
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //腰うち
-        else if (Input.GetMouseButtonDown(0) && burstammocnt > 0 && ReloadTime < 0)
+        else if (Input.GetMouseButton(0) && burstammocnt > 0 && ReloadTime < 0)
         {
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
