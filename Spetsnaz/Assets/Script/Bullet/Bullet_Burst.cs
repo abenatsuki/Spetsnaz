@@ -33,13 +33,14 @@ public class Bullet_Burst : MonoBehaviour {
     public void BulletShoot()
     {
         //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 0, Muzzle.transform.position.y / 100),
-                Random.Range(-Muzzle.transform.position.x / 0, Muzzle.transform.position.y / 100), 0);
+        transform.eulerAngles += new Vector3(Random.Range(-Bullet.transform.position.x / 100, Bullet.transform.position.y / 100),
+                Random.Range(-Bullet.transform.position.x / 100, Bullet.transform.position.y / 100), 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //BulletShoot();
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
@@ -57,7 +58,7 @@ public class Bullet_Burst : MonoBehaviour {
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             //弾道ブレ率と速度追加
-            BulletShoot();
+            //BulletShoot();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && burstammocnt < 8 && !burstreloadFlag)

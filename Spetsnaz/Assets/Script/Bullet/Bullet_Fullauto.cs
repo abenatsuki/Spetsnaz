@@ -55,7 +55,7 @@ public class Bullet_Fullauto : MonoBehaviour
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             //弾道ブレ率と速度追加
-            BulletShoot();
+            //BulletShoot();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && fullammocnt < 30 && !reloadFlag)
