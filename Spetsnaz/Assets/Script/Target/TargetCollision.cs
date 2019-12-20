@@ -30,9 +30,9 @@ public class TargetCollision : MonoBehaviour
         Hitflg = false;
         script.TargetCnt += 1;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
+        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
             script.TargetCnt -= 1;
             rotation.x += 90;
@@ -41,7 +41,7 @@ public class TargetCollision : MonoBehaviour
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Hitflg = true;
         }
-        else if (collision.gameObject.tag == "Bullet" && targethead.gameObject.tag == "TargetHead" && !Hitflg)
+        else if (other.gameObject.tag == "Bullet" && targethead.gameObject.tag == "TargetHead" && !Hitflg)
         {
             script.TargetCnt -= 1;
             rotation.x += 90;

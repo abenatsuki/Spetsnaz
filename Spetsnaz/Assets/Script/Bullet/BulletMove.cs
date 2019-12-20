@@ -21,11 +21,13 @@ public class BulletMove : MonoBehaviour
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
 
         //弾道ブレ率
-        if (playerStateEnum != PlayerStateEnum.EIM)
-            transform.eulerAngles += new Vector3(Random.Range(-BulletMOA / 100, BulletMOA / 100), 
-                Random.Range(-BulletMOA / 100, BulletMOA / 100), 0);
-        GetComponent<Rigidbody>().AddForce(transform.forward * BulletSpeed / 10f, ForceMode.Impulse);
-        transform.position += transform.forward * Time.deltaTime * 70;
+        if (playerStateEnum != PlayerStateEnum.EIM) 
+        {
+            transform.eulerAngles += new Vector3(Random.Range(-BulletMOA / 100, BulletMOA / 100), Random.Range(-BulletMOA / 100, BulletMOA / 100), 0);
+            GetComponent<Rigidbody>().AddForce(transform.forward * BulletSpeed / 10f, ForceMode.Impulse);
+        }
+        else
+            transform.position += transform.forward * Time.deltaTime * 70;
         //発射した弾を３秒後に削除する。
         Destroy(this.gameObject, 3.0f);
     }
