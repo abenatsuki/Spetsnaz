@@ -20,9 +20,9 @@ public class TargetHedCollision : MonoBehaviour
         Hitflg = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Bullet" && !Hitflg)
+        if (other.gameObject.tag == "Bullet" && !Hitflg)
         {
             script.Score += 10000;
             Hitflg = true;

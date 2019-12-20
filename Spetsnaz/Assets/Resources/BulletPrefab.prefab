@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec6be55fd018c342b42f207d55de59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletMOA: 100
+  BulletSpeed: 500
 --- !u!54 &6920367681915106728
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,7 +118,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8911603509087186023}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

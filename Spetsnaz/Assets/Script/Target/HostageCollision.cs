@@ -27,9 +27,9 @@ public class HostageCollision : MonoBehaviour
         Hitflg = false;
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
+        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
         {
             rotation.x += 90;
             script.Score -= 5000;
