@@ -12,9 +12,9 @@ public class CameraFiledOfView : MonoBehaviour
     
 
     [SerializeField,Tooltip("どれぐらいズームするかの値")]
-    float zoomMaximam;
+    float zoomMaximam=0.0f;
     [SerializeField,Tooltip("ズームする速度")]
-    float zoomSpeed;
+    float zoomSpeed=0.0f;
     // Start is called before the first frame update
     void Start()
     {

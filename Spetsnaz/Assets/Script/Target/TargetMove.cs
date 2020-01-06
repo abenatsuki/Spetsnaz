@@ -7,17 +7,17 @@ public class TargetMove : MonoBehaviour
 
     [SerializeField, Tooltip("ターゲットの回転値")]
     Vector3 rotation;
-    [SerializeField, Tooltip("起き上がるまでの時間")]
-    float getUpTime;
+   
 
     float minAngle = 0.0f;
     float maxAngle = 90.0f;
 
-    bool flag = false;
-
+   
+    float xRotation=0.0f;
     // Start is called before the first frame update
     void Start()
     {
+       
         target = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
     }
@@ -29,12 +29,13 @@ public class TargetMove : MonoBehaviour
         //transform.localEulerAngles = new Vector3(-angle, 0, 0);
         if (activationAreaScript.activationFlag)
         {
-            if (flag == false)
+            if (Mathf.Abs(xRotation - 90f) > 0.1f)
             {
-                rotation.x -= 90;
-                transform.Rotate(rotation.x, rotation.y, rotation.z);
-                flag = true;
+                xRotation += 5f;
+                transform.eulerAngles += new Vector3(-5f, 0f, 0f);
             }
+          
+          
         }
     }
 }
