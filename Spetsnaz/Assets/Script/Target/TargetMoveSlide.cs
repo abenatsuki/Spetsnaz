@@ -17,7 +17,7 @@ public class TargetMoveSlide : MonoBehaviour
     public Transform endMarker;
 
     // スピード
-    public float speed = 1.0F;
+    public float speed = 1.0f;
 
     //二点間の距離を入れる
     private float distance_two;
@@ -39,13 +39,11 @@ public class TargetMoveSlide : MonoBehaviour
             {
                 xRotation += 5f;
                 transform.eulerAngles += new Vector3(-5f, 0f, 0f);
-                
-                // 現在の位置
-                float present_Location = (Time.time * speed) / distance_two;
-                // オブジェクトの移動
-                transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
             }
+            // 現在の位置
+            float present_Location = (Time.time * speed) / distance_two;
+            // オブジェクトの移動
+            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
         }
-       
     }
 }

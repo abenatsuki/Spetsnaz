@@ -30,35 +30,26 @@ public class Bullet_Burst : MonoBehaviour {
         burstreloadFlag = false;
     }
 
-    public void BulletShoot()
-    {
-        //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Bullet.transform.position.x / 100, Bullet.transform.position.y / 100),
-                Random.Range(-Bullet.transform.position.x / 100, Bullet.transform.position.y / 100), 0);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        //BulletShoot();
         //リロードできるまでの時間
         ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
         //弾の発射 エイム時
-        if (Input.GetMouseButton(0) && burstammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
+        if (Input.GetMouseButton(0) && burstammocnt >=1 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
         {
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //腰うち
-        else if (Input.GetMouseButton(0) && burstammocnt > 0 && ReloadTime < 0)
+        else if (Input.GetMouseButton(0) && burstammocnt >= 1 && burstammocnt > 0 && ReloadTime < 0)
         {
+            burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            //弾道ブレ率と速度追加
-            //BulletShoot();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && burstammocnt < 8 && !burstreloadFlag)
@@ -70,6 +61,6 @@ public class Bullet_Burst : MonoBehaviour {
         else if (ReloadTime < 0)
             burstreloadFlag = false;
         else if (Input.GetMouseButtonUp(0))
-            burstcnt = 2;
+            burstcnt = 0;
     }
 }

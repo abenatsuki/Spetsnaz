@@ -41,15 +41,15 @@ public class TargetCollision : MonoBehaviour
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Hitflg = true;
         }
-        else if (other.gameObject.tag == "Bullet" && targethead.gameObject.tag == "TargetHead" && !Hitflg)
-        {
-            script.TargetCnt -= 1;
-            rotation.x += 90;
-            script.Score += 10000;
-            Debug.Log("あたま当たった");
-            transform.Rotate(rotation.x, rotation.y, rotation.z);
-            Hitflg = true;
-        }
+        //else if (other.gameObject.tag == "Bullet" && targethead.gameObject.tag == "TargetHead" && !Hitflg)
+        //{
+        //    script.TargetCnt -= 1;
+        //    rotation.x += 90;
+        //    script.Score += 10000;
+        //    Debug.Log("あたま当たった");
+        //    transform.Rotate(rotation.x, rotation.y, rotation.z);
+        //    Hitflg = true;
+        //}
     }
 
     // Update is called once per frame
