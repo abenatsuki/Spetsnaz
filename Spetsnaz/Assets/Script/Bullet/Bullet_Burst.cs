@@ -38,29 +38,33 @@ public class Bullet_Burst : MonoBehaviour {
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
         //弾の発射 エイム時
-        if (Input.GetMouseButton(0) && burstammocnt >=1 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
+        if (Input.GetMouseButton(0) && burstcnt >= 0 && burstammocnt > 0 && 
+            ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
         {
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //腰うち
-        else if (Input.GetMouseButton(0) && burstammocnt >= 1 && burstammocnt > 0 && ReloadTime < 0)
+        else if (Input.GetMouseButton(0) && burstcnt >= 0 &&
+            burstammocnt > 0 && ReloadTime < 0)
         {
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //弾のリロード
-        if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && burstammocnt < 8 && !burstreloadFlag)
+        else if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && burstammocnt < 30 && 
+            !burstreloadFlag && playerStateEnum == PlayerStateEnum.RELOAD)
         {
             burstreloadFlag = true;
             burstammocnt = 30;
             ReloadTime = 120;
         }
-        else if (ReloadTime < 0)
+        else
+        {
+            burstcnt = 2;
             burstreloadFlag = false;
-        else if (Input.GetMouseButtonUp(0))
-            burstcnt = 0;
+        }
     }
 }
