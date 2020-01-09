@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet_Reaction : MonoBehaviour
 {
+    CameraRotation cameraRotation;
     GameObject MainCamera;
 
 
@@ -11,7 +12,7 @@ public class Bullet_Reaction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void FullAuto()
