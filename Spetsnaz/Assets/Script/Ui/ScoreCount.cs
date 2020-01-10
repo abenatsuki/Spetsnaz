@@ -124,6 +124,8 @@ public class ScoreCount : MonoBehaviour
         {
             leftTime = .1f;
             timeMagnification -= .002f;//ボーナス倍率を下げる
+            if (timeMagnification <= 0)
+                timeMagnification = 0.1f;
         }
        
     }
