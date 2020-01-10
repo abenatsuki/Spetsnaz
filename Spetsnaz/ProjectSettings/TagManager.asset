@@ -15,6 +15,7 @@ TagManager:
   - TargetManager
   - GoalPoint
   - TargetHead
+  - GazePoint
   layers:
   - Default
   - TransparentFX
