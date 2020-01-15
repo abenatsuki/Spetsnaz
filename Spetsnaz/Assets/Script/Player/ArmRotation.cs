@@ -10,13 +10,12 @@ public class ArmRotation : MonoBehaviour
     void Start()
     {
         muzzle = GameObject.FindGameObjectWithTag("GazePoint");
-        Debug.Log(muzzle);
     }
 
     // Update is called once per frame
     void Update()
     {
        
-         this.transform.LookAt(muzzle.transform.position);
+        transform.LookAt(muzzle.transform.position);
     }
 }
