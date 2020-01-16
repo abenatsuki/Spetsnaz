@@ -11,6 +11,7 @@ public class PlayerAnimation : MonoBehaviour
 
     PlayerStateEnum playerState;
     public int reloadFrame { get; private set; }
+    public int eimFrame { get; private set; }
 
     // Start is called before the first frame update
     void Start()

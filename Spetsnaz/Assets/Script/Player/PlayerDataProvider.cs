@@ -10,6 +10,8 @@ public class PlayerDataProvider : MonoBehaviour
     public bool IsCheckPointFlag { get { return checkPoint.checkPointFlag; } }//チェックポイントを通ったかフラグ
     public Animator IsPlayerAnimator { get { return playerAnimation.playerAnimator; } }//プレイヤーのアニメーター
     public int IsPlayerReloadFrame { get { return playerAnimation.reloadFrame; } }//リロードアニメーションのフレーム数
+    public int IsPlayerEimFrame { get { return playerAnimation.eimFrame; } }//エイムアニメーションのフレーム数
+    
     //デバッグ用
     private void Update()
     {
