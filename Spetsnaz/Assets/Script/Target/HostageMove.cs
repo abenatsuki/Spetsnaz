@@ -10,11 +10,8 @@ public class HostageMove : MonoBehaviour
     [SerializeField, Tooltip("ターゲットの回転値")]
     Vector3 rotation;
     [SerializeField, Tooltip("起き上がるまでの時間")]
-    float getUpTime;
 
-    float minAngle = 0.0f;
-    float maxAngle = 90.0f;
-
+    float xRotation = 0.0f;
     bool flag = false;
 
     // Start is called before the first frame update
@@ -27,16 +24,14 @@ public class HostageMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float angle = Mathf.LerpAngle(minAngle, maxAngle, Time.time);
-        //transform.localEulerAngles = new Vector3(-angle, 0, 0);
         if (activationAreaScript.activationFlag)
         {
-            if (flag == false)
+            if (Mathf.Abs(xRotation - 90f) > 0.1f)
             {
-                rotation.x -= 90;
-                transform.Rotate(rotation.x, rotation.y, rotation.z);
-                flag = true;
+                xRotation += 5f;
+                transform.eulerAngles += new Vector3(-5f, 0f, 0f);
             }
         }
+
     }
 }

@@ -33,7 +33,6 @@ public class HostageCollision : MonoBehaviour
         {
             rotation.x += 90;
             script.Score -= 5000;
-            //Debug.Log("-5000減った");
             transform.Rotate(rotation.x, rotation.y, rotation.z);
             Hitflg = true;
         }
