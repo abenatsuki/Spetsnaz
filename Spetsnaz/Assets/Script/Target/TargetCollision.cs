@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class TargetCollision : MonoBehaviour
 {
+    public BoxCollider Body;
     GameObject target;
-    GameObject targethead;
-    GameObject targetg;
-    GameObject manager;
 
     ActivationArea activationAreaScript;
     TergetScoreManeger script;
 
-    bool Hitflg; //フラグ
+    public bool BodyHitflg { get; private set; }//フラグ
 
     [SerializeField, Tooltip("ターゲットの回転値")]
     Vector3 rotation;
@@ -20,36 +18,18 @@ public class TargetCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetg = GameObject.Find("TargetGizmo").gameObject;
-        targethead = GameObject.Find("TargetHead").gameObject;
-        manager = GameObject.FindGameObjectWithTag("TargetManager");
-        script = manager.GetComponent<TergetScoreManeger>();
-        target = transform.Find("ActivationArea").gameObject;//孫オブジェクトを取得
+        target = GameObject.FindGameObjectWithTag("TargetArea");//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
-        
-        Hitflg = false;
-        script.TargetCnt += 1;
+
+        BodyHitflg = false;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
+        if(other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !BodyHitflg)
         {
-            script.TargetCnt -= 1;
-            rotation.x += 90;
-            script.Score += 5000;
-            Debug.Log("当たった");
-            transform.Rotate(rotation.x, rotation.y, rotation.z);
-            Hitflg = true;
+            BodyHitflg = true;
+            Debug.Log("からだあたたたたたた");
         }
-        //else if (other.gameObject.tag == "Bullet" && targethead.gameObject.tag == "TargetHead" && !Hitflg)
-        //{
-        //    script.TargetCnt -= 1;
-        //    rotation.x += 90;
-        //    script.Score += 10000;
-        //    Debug.Log("あたま当たった");
-        //    transform.Rotate(rotation.x, rotation.y, rotation.z);
-        //    Hitflg = true;
-        //}
     }
 
     // Update is called once per frame

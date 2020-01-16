@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class ArmRotation : MonoBehaviour
 {
-    private GameObject muzzle;
+    //private GameObject muzzle;
     
     // Start is called before the first frame update
     void Start()
     {
-        muzzle = GameObject.FindGameObjectWithTag("GazePoint");
+        //muzzle = GameObject.FindGameObjectWithTag("GazePoint");
+        //Debug.Log(muzzle);
     }
 
     // Update is called once per frame
     void Update()
     {
        
-        transform.LookAt(muzzle.transform.position);
+         //this.transform.LookAt(muzzle.transform.position);
     }
 }

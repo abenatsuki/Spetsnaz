@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class TargetHedCollision : MonoBehaviour
 {
-    GameObject TargetHed; //頭
-    GameObject manager;
+    public BoxCollider Head; //頭
+    GameObject target;
 
-    TergetScoreManeger script;
-    TargetCollision TargetCollisionScript;
+    ActivationArea activationAreaScript;
 
-    bool Hitflg; //フラグ
+    public bool HeadHitflg { get; private set; } //フラグ
 
     // Start is called before the first frame update
     void Start()
     {
-        TargetHed = transform.Find("TargetHed").gameObject;
-        TargetCollisionScript = TargetHed.GetComponent<TargetCollision>();
-        Hitflg = false;
+        HeadHitflg = false;
+        target = GameObject.FindGameObjectWithTag("TargetArea");//孫オブジェクトを取得
+        activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet" && !Hitflg)
+        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !HeadHitflg)
         {
-            script.Score += 10000;
-            Hitflg = true;
+            HeadHitflg = true;
+            Debug.Log("あたまあたたたた");
         }
     }
 
