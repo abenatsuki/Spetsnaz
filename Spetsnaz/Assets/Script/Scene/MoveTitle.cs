@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveTitle : MonoBehaviour
 {
+    MoveSceneManager moveSceneManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class MoveTitle : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            
             SceneManager.LoadScene("TitleScene");
         }
     }

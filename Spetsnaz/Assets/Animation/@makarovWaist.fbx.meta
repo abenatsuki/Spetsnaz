@@ -1,77 +1,106 @@
 fileFormatVersion: 2
-guid: 1097e778c4537904f87652a84f07dcd0
+guid: 0077192f622c2644086b6bca0931c16a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: l_arm
-    100002: l_wrist1
-    100004: mag2
-    100006: mag3
-    100008: mag4
-    100010: Makarov
-    100012: pCube3
-    100014: pCube4
-    100016: pCylinder1
-    100018: pCylinder2
-    100020: polySurface1
-    100022: polySurface10
-    100024: polySurface11
-    100026: polySurface2
-    100028: r_arm
-    100030: r_wrist1
-    100032: //RootNode
-    400000: l_arm
-    400002: l_wrist1
-    400004: mag2
-    400006: mag3
-    400008: mag4
-    400010: Makarov
-    400012: pCube3
-    400014: pCube4
-    400016: pCylinder1
-    400018: pCylinder2
-    400020: polySurface1
-    400022: polySurface10
-    400024: polySurface11
-    400026: polySurface2
-    400028: r_arm
-    400030: r_wrist1
-    400032: //RootNode
-    2100000: lambert2
-    2100002: lambert5
-    2300000: mag2
-    2300002: mag3
-    2300004: mag4
-    2300006: pCube3
-    2300008: pCube4
-    2300010: pCylinder1
-    2300012: pCylinder2
-    2300014: polySurface1
-    2300016: polySurface10
-    2300018: polySurface11
-    2300020: polySurface2
-    3300000: mag2
-    3300002: mag3
-    3300004: mag4
-    3300006: pCube3
-    3300008: pCube4
-    3300010: pCylinder1
-    3300012: pCylinder2
-    3300014: polySurface1
-    3300016: polySurface10
-    3300018: polySurface11
-    3300020: polySurface2
-    4300000: polySurface2
-    4300002: pCylinder1
-    4300004: pCube3
-    4300006: pCube4
-    4300008: pCylinder2
-    4300010: polySurface1
-    4300012: mag2
-    4300014: mag3
-    4300016: polySurface10
-    4300018: mag4
-    4300020: polySurface11
+    100000: //RootNode
+    100002: joint1
+    100004: joint10
+    100006: joint11
+    100008: joint12
+    100010: joint13
+    100012: joint14
+    100014: joint15
+    100016: joint16
+    100018: joint17
+    100020: joint18
+    100022: joint19
+    100024: joint2
+    100026: joint20
+    100028: joint21
+    100030: joint22
+    100032: joint23
+    100034: joint24
+    100036: joint25
+    100038: joint26
+    100040: joint27
+    100042: joint28
+    100044: joint29
+    100046: joint3
+    100048: joint30
+    100050: joint31
+    100052: joint32
+    100054: joint33
+    100056: joint34
+    100058: joint35
+    100060: joint36
+    100062: joint37
+    100064: joint38
+    100066: joint39
+    100068: joint4
+    100070: joint40
+    100072: joint41
+    100074: joint42
+    100076: joint43
+    100078: joint44
+    100080: joint45
+    100082: joint46
+    100084: joint47
+    100086: joint5
+    100088: joint6
+    100090: joint7
+    100092: joint8
+    100094: joint9
+    400000: //RootNode
+    400002: joint1
+    400004: joint10
+    400006: joint11
+    400008: joint12
+    400010: joint13
+    400012: joint14
+    400014: joint15
+    400016: joint16
+    400018: joint17
+    400020: joint18
+    400022: joint19
+    400024: joint2
+    400026: joint20
+    400028: joint21
+    400030: joint22
+    400032: joint23
+    400034: joint24
+    400036: joint25
+    400038: joint26
+    400040: joint27
+    400042: joint28
+    400044: joint29
+    400046: joint3
+    400048: joint30
+    400050: joint31
+    400052: joint32
+    400054: joint33
+    400056: joint34
+    400058: joint35
+    400060: joint36
+    400062: joint37
+    400064: joint38
+    400066: joint39
+    400068: joint4
+    400070: joint40
+    400072: joint41
+    400074: joint42
+    400076: joint43
+    400078: joint44
+    400080: joint45
+    400082: joint46
+    400084: joint47
+    400086: joint5
+    400088: joint6
+    400090: joint7
+    400092: joint8
+    400094: joint9
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -124,8 +153,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -152,7 +181,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
