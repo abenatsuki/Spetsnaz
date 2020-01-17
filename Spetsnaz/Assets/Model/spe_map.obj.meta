@@ -1,27 +1,16 @@
 fileFormatVersion: 2
-guid: cf1fcf3e3816d9648bbd6ee3deee9d7b
+guid: 15e49f5e8b3c6e949977be39cf49ae92
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: mag2
-    100002: mag3
-    100004: Makarov
-    100006: r_wrist1
-    100008: //RootNode
-    400000: mag2
-    400002: mag3
-    400004: Makarov
-    400006: r_wrist1
-    400008: //RootNode
-    2100000: lambert5
-    2300000: mag2
-    2300002: mag3
-    3300000: mag2
-    3300002: mag3
-    4300000: mag2
-    4300002: mag3
-    7400000: Take 001
-    9500000: //RootNode
+    100000: polySurface43
+    100002: //RootNode
+    400000: polySurface43
+    400002: //RootNode
+    2100000: polySurface43Mat
+    2300000: polySurface43
+    3300000: polySurface43
+    4300000: polySurface43
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -74,8 +63,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -102,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

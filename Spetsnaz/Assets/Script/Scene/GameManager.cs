@@ -27,6 +27,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
         DontDestroyOnLoad(gameObject);
     }
+    public void LoadComponents()
+    {
+        score = 0;
+    }
     void Start()
     {
 

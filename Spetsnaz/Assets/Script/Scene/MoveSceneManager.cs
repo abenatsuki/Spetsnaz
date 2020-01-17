@@ -59,7 +59,7 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
     {
         if (StageName != "Title")
         {
-           // gameManager.LoadComponents();
+             gameManager.LoadComponents();
         }
     }
     //シーンの読み込みと待機を行うコルーチン
@@ -84,4 +84,5 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
         //コルーチンを実行
         StartCoroutine(WaitForLoadScene(sceneNum));
     }
+   
 }

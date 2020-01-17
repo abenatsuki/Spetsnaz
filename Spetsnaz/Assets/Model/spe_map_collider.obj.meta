@@ -1,32 +1,22 @@
 fileFormatVersion: 2
-guid: c7368aa87f88f96419ee6d0235dcfc42
+guid: e4d0afece23e9634fb3150c00703a440
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: l_arm
-    100002: l_wrist1
+    100000: group3_pCube108_group4
+    100002: group4_group3_pPlane7
     100004: //RootNode
-    100006: mag4
-    100008: polySurface10
-    100010: polySurface11
-    400000: l_arm
-    400002: l_wrist1
+    400000: group3_pCube108_group4
+    400002: group4_group3_pPlane7
     400004: //RootNode
-    400006: mag4
-    400008: polySurface10
-    400010: polySurface11
-    2100000: lambert5
-    2300000: mag4
-    2300002: polySurface10
-    2300004: polySurface11
-    3300000: mag4
-    3300002: polySurface10
-    3300004: polySurface11
-    4300000: polySurface10
-    4300002: mag4
-    4300004: polySurface11
-    7400000: Take 001
-    9500000: //RootNode
+    2100000: group3_pCube108_group4Mat
+    2100002: group4_group3_pPlane7Mat
+    2300000: group3_pCube108_group4
+    2300002: group4_group3_pPlane7
+    3300000: group3_pCube108_group4
+    3300002: group4_group3_pPlane7
+    4300000: group3_pCube108_group4
+    4300002: group4_group3_pPlane7
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -79,8 +69,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -107,7 +97,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

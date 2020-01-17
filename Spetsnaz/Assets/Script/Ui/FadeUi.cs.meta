@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 2f1094f1c0be15b40a9821245b9b2d38
+guid: d403ba4894a948442af6f2e9a96c7425
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - fadeCanvasPrefab: {instanceID: 0}
+  - canvas: {fileID: 4645394058560256698, guid: da363a43d730e0d45bd24bd704e9bf72,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 357614145}
   - component: {fileID: 357614144}
   - component: {fileID: 357614147}
+  - component: {fileID: 357614148}
   m_Layer: 5
   m_Name: Hundgun
   m_TagString: Untagged
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -280,6 +281,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fc0a6b4870f8c46b04f8d9507a5d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &357614148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357614142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d403ba4894a948442af6f2e9a96c7425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: 1
+  image: {fileID: 357614145}
+  fadeSpeed: 0.02
 --- !u!1 &638737394
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +780,7 @@ GameObject:
   - component: {fileID: 1416444293}
   - component: {fileID: 1416444292}
   - component: {fileID: 1416444295}
+  - component: {fileID: 1416444296}
   m_Layer: 5
   m_Name: Standard
   m_TagString: Untagged
@@ -855,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -889,3 +906,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6d001a4c6292a42af7a7f285b7b7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1416444296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416444290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d403ba4894a948442af6f2e9a96c7425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fade: 1
+  image: {fileID: 1416444293}
+  fadeSpeed: 0.02

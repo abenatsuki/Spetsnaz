@@ -40,6 +40,7 @@ public class FadeCanvas : MonoBehaviour
         {
             FadeOut();
         }
+    
     }
     //フェードイン
     void FadeIn()

@@ -389,10 +389,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 400692263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba3d755c5fc03e4fa561bf82677fda0, type: 3}
+  m_Script: {fileID: 11500000, guid: 39ba9c38e2d3d4a4f8c9cee32a1f51a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degree: 90
+  degree: 10
 --- !u!1 &502697994
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,10 +849,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1949063289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba3d755c5fc03e4fa561bf82677fda0, type: 3}
+  m_Script: {fileID: 11500000, guid: 39ba9c38e2d3d4a4f8c9cee32a1f51a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degree: 50
+  degree: 10
 --- !u!1001 &2070789382
 PrefabInstance:
   m_ObjectHideFlags: 0
