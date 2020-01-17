@@ -3935,6 +3935,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TargetGizmo
       objectReference: {fileID: 0}
+    - target: {fileID: 7302556439664401736, guid: e607a4b70f9a74a4ca6c70b756a23104,
+        type: 3}
+      propertyPath: m_TagString
+      value: TargetHead
+      objectReference: {fileID: 0}
     - target: {fileID: 3072453490488669019, guid: e607a4b70f9a74a4ca6c70b756a23104,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4040,11 +4045,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.986
       objectReference: {fileID: 0}
-    - target: {fileID: 7302556439664401736, guid: e607a4b70f9a74a4ca6c70b756a23104,
-        type: 3}
-      propertyPath: m_TagString
-      value: TargetHead
-      objectReference: {fileID: 0}
     - target: {fileID: 1183400347865003692, guid: e607a4b70f9a74a4ca6c70b756a23104,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4053,7 +4053,7 @@ PrefabInstance:
     - target: {fileID: 1183400347865003692, guid: e607a4b70f9a74a4ca6c70b756a23104,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8
+      value: 1.125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e607a4b70f9a74a4ca6c70b756a23104, type: 3}

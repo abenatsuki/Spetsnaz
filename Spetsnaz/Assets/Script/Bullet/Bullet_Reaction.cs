@@ -5,14 +5,23 @@ using UnityEngine;
 public class Bullet_Reaction : MonoBehaviour
 {
     CameraRotation cameraRotation;
-    GameObject MainCamera;
+    GameObject ude;
+    GameObject HGun;
+    GameObject AGun;
 
+    Bullet_Burst burst;
+    Bullet_Fullauto fullauto;
+    Bullet_Semi semi;
 
+    float Reaction;
 
     // Start is called before the first frame update
     void Start()
     {
-        MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        Reaction = .0f;
+        ude = transform.Find("udeRot").gameObject;
+        HGun = (GameObject)Resources.Load("makarov");
+        AGun = (GameObject)Resources.Load("asval");
     }
 
     void FullAuto()
