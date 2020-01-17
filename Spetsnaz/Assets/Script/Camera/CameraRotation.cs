@@ -11,6 +11,9 @@ public class CameraRotation : MonoBehaviour
     [SerializeField, Tooltip("カメラ感度縦感度")]
     float sensitivityY = 1.0f;
 
+    //反動のための情報
+    Bullet_Reaction reactionscript;
+
     
     
     // Start is called before the first frame update
