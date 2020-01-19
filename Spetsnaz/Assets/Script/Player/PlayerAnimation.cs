@@ -23,6 +23,8 @@ public class PlayerAnimation : MonoBehaviour
         playerScript = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         playerState = playerScript.IsPlayerStateEnum;
 
+        
+
     }
 
     // Update is called once per frame
@@ -59,5 +61,7 @@ public class PlayerAnimation : MonoBehaviour
        
       
     }
+
+   
    
 }
