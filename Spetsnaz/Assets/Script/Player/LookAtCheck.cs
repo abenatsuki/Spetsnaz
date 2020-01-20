@@ -26,6 +26,7 @@ public class LookAtCheck : MonoBehaviour
        // Debug.Log(LookAtFlag);
        // LookAtFlag = false;
 
+
       // Debug.Log( ReadTimeFromAnimator(playerAnimator, "makarovAim"));
     }
     void LookAt()
@@ -36,6 +37,10 @@ public class LookAtCheck : MonoBehaviour
     {
         LookAtFlag = false;
         //ここでカメラのローテーションを修正する
+        //var armRotation=Camera.main.GetComponent<ArmRotation>();
+        //armRotation.ResetRotation()
+
+
 
     }
     private float ReadTimeFromAnimator(Animator animator, string clipname)

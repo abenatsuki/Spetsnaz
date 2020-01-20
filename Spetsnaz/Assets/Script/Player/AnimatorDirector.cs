@@ -9,8 +9,7 @@ public class AnimatorDirector : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //新しいステートに移り変わった時に実行
-       
+      
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -18,8 +17,7 @@ public class AnimatorDirector : StateMachineBehaviour
         //ステートが次のステートに移り変わる直前に実行
         if (stateInfo.IsName("Aim"))//解除
         {
-            LookAtCheck lookAtCheck = GameObject.Find("ude_00").GetComponent<LookAtCheck>();
-            lookAtCheck.NonLookAt();
+           
         }
     }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerAnimation : MonoBehaviour
 {
     GameObject player;
@@ -22,8 +21,6 @@ public class PlayerAnimation : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         playerScript = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         playerState = playerScript.IsPlayerStateEnum;
-
-        
 
     }
 
