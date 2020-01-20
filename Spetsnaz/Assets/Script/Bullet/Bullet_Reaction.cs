@@ -13,7 +13,9 @@ public class Bullet_Reaction : MonoBehaviour
 
     Bullet_Burst burst;
     Bullet_Fullauto fullauto;
+    Bullet_ASemi aSemi;
     Bullet_Semi semi;
+
 
     float Reaction;
 
@@ -29,20 +31,25 @@ public class Bullet_Reaction : MonoBehaviour
 
         burst = BGun.GetComponent<Bullet_Burst>();
         fullauto = AGun.GetComponent<Bullet_Fullauto>();
+        aSemi = SGun.GetComponent<Bullet_ASemi>();
         semi = HGun.GetComponent<Bullet_Semi>();
     }
 
     void FullAuto()
     {
-        Reaction = 0.9f;
+        Reaction = 0.5f;
     }
     void Burst()
+    {
+        Reaction = 0.4f;
+    }
+    void ASemiAuto()
     {
         Reaction = 0.3f;
     }
     void SemiAuto()
     {
-        Reaction = 0.4f;
+        Reaction = 0.3f;
     }
 
 
