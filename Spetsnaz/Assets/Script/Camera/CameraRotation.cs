@@ -29,8 +29,6 @@ public class CameraRotation : MonoBehaviour
         float xRotation = Input.GetAxis("Mouse X")*sensitivityX;
         float yRotation = Input.GetAxis("Mouse Y")*sensitivityY;
 
-
-
         Rotate(xRotation, yRotation, 60);
        
     }

@@ -8,6 +8,8 @@ public class Bullet_Reaction : MonoBehaviour
     GameObject ude;
     GameObject HGun;
     GameObject AGun;
+    GameObject BGun;
+    GameObject SGun;
 
     Bullet_Burst burst;
     Bullet_Fullauto fullauto;
@@ -22,19 +24,25 @@ public class Bullet_Reaction : MonoBehaviour
         ude = transform.Find("udeRot").gameObject;
         HGun = (GameObject)Resources.Load("makarov");
         AGun = (GameObject)Resources.Load("asval");
+        BGun = (GameObject)Resources.Load("asval(1)");
+        SGun = (GameObject)Resources.Load("asval(2)");
+
+        burst = BGun.GetComponent<Bullet_Burst>();
+        fullauto = AGun.GetComponent<Bullet_Fullauto>();
+        semi = HGun.GetComponent<Bullet_Semi>();
     }
 
     void FullAuto()
     {
-
+        Reaction = 0.9f;
     }
     void Burst()
     {
-
+        Reaction = 0.3f;
     }
     void SemiAuto()
     {
-
+        Reaction = 0.4f;
     }
 
 
