@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ChangeWeapon : MonoBehaviour
 {
-    [SerializeField,Tooltip("武器")]
+    [SerializeField,Tooltip("腕モデル")]
     List<GameObject> weapon = new List<GameObject>();
-    int num;
+   
 
 
 
@@ -14,8 +14,7 @@ public class ChangeWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        num = 0;
-        var we = Instantiate<GameObject>(weapon[num]);
+       
 
 
 
