@@ -7,9 +7,11 @@ public class MoveResult : MonoBehaviour
 {
     GameObject goalPoint;
     GoalCheck goalScript;
+    bool flag;
     // Start is called before the first frame update
     void Start()
     {
+        flag = false;
         goalPoint = GameObject.FindGameObjectWithTag("Player");
         goalScript = goalPoint.GetComponent<GoalCheck>();
     }
@@ -17,9 +19,11 @@ public class MoveResult : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goalScript.goalFlag)
+        if (goalScript.goalFlag&&!flag)
         {
-            SceneManager.LoadScene("ResultScene");
+            MoveSceneManager.Instance.MoveToStage(5);
+            flag = true;
+        //    SceneManager.LoadScene("ResultScene");
         }
     }
 }

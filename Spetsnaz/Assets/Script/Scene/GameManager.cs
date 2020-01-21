@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+enum WeaponEnum
+{
+    Weapon_1,
+    Weapon_2
+}
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
     int maxScore = 999999;
     int score = 0;
+
+    WeaponEnum weapon;//選択武器
+
     public int Score
     {
         set
@@ -30,6 +39,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void LoadComponents()
     {
         score = 0;
+        weapon = WeaponEnum.Weapon_1;
     }
     void Start()
     {

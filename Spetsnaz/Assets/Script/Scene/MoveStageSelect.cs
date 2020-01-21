@@ -19,7 +19,6 @@ public class MoveStageSelect : MonoBehaviour
         {
          
             MoveSceneManager.Instance.MoveToStage(1);
-            //SceneManager.LoadScene("StageSelectScene");
         }
         
     }

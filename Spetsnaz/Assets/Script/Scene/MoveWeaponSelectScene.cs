@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MoveWeaponSelectScene : MonoBehaviour
 {
-    MoveSceneManager moveSceneManager;
+    //MoveSceneManager moveSceneManager;
     public void StandardOnClick()
     {
         DontDestroyObjectManager.DestoryAll();
-       // moveSceneManager.MoveToStage(1);
-        SceneManager.LoadScene("WeaponSelectScene");
+        MoveSceneManager.Instance.MoveToStage(2);
+       // SceneManager.LoadScene("WeaponSelectScene");
     }
 }

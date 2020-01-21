@@ -9,6 +9,6 @@ public class MoveHandGun : MonoBehaviour
     {
         DontDestroyObjectManager.DestoryAll();
         MoveSceneManager.Instance.MoveToStage(4);
-        //SceneManager.LoadScene("HandGunGameScene");
+       
     }
 }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Collider))]//Collider追加
+
 public class ActivationArea : MonoBehaviour
 {
     public bool activationFlag { get; private set; }

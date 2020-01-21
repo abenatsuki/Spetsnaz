@@ -7,7 +7,7 @@ public class ArmRotation : MonoBehaviour
     bool resetFlag = false;
     GameObject player;
     private GameObject muzzle;
-    LookAtCheck lookAtCheck;
+   
 
    
     // Start is called before the first frame update
