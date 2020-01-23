@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         bullet = GameObject.FindGameObjectWithTag("Gun");
-       // bulletScript = bullet.GetComponent<Bullet_Semi>();
+        bulletScript = bullet.GetComponent<Bullet_Semi>();
         shotFlag = false;//弾を撃っているかフラグ
         rigidbody3D = GetComponent<Rigidbody>();
     }
@@ -51,12 +51,12 @@ public class PlayerMove : MonoBehaviour
     { 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
-       // Debug.Log(playerState);
-       // if (bulletScript.reloadFlag)
-       // {
-       //     playerState = PlayerStateEnum.RELOAD;
-       // }
-       /*else*/ if (Input.GetMouseButton(1))
+        // Debug.Log(playerState);
+        if (bulletScript.reloadFlag)
+        {
+            playerState = PlayerStateEnum.RELOAD;
+        }
+    else if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
         }
