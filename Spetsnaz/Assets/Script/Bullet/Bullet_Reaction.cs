@@ -23,7 +23,7 @@ public class Bullet_Reaction : MonoBehaviour
     void Start()
     {
         Reaction = .0f;
-        ude = transform.Find("udeRot").gameObject;
+        ude = transform.Find("ude_00").gameObject;
         HGun = (GameObject)Resources.Load("makarov");
         AGun = (GameObject)Resources.Load("asval");
         BGun = (GameObject)Resources.Load("asval(1)");
@@ -56,6 +56,21 @@ public class Bullet_Reaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(0 <= fullauto.fullammocnt && Input.GetMouseButtonDown(0))
+        {
+            //transform.rotation.y -= FullAuto();
+        }
+        else if(0 <= burst.burstammocnt && Input.GetMouseButtonDown(0))
+        {
+
+        }
+        else if(0 <= aSemi.Asemiammocnt && Input.GetMouseButtonDown(0))
+        {
+
+        }
+        else if(0 <= semi.ammocnt && Input.GetMouseButtonDown(0))
+        {
+
+        }
     }
 }

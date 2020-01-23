@@ -13,8 +13,6 @@ public class CameraRotation : MonoBehaviour
 
     //反動のための情報
     Bullet_Reaction reactionscript;
-
-    
     
     // Start is called before the first frame update
     void Start()
