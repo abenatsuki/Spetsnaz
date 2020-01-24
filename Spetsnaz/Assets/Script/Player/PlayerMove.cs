@@ -30,29 +30,32 @@ public class PlayerMove : MonoBehaviour
 
     public bool shotFlag { get; private set; }//撃っているかどうか
     public PlayerStateEnum playerState { get; private set; }//自機の状態
+    public bool reloadFlag { get; private set; }//リロード中かどうか
     Vector3 velocity;//速度
     Rigidbody rigidbody3D;
     bool jumpFlag = false;//降りたフラグ
     bool ladderGrabbing = false;//梯子と触れているかどうかフラグ
     GameObject bullet;
     Bullet_Semi bulletScript;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        bullet = GameObject.FindGameObjectWithTag("Gun");
-        bulletScript = bullet.GetComponent<Bullet_Semi>();
+        //bullet = GameObject.FindGameObjectWithTag("Gun");
+        //bulletScript = bullet.GetComponent<Bullet_Semi>();
         shotFlag = false;//弾を撃っているかフラグ
         rigidbody3D = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        Debug.Log(reloadFlag);
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
         // Debug.Log(playerState);
-        if (bulletScript.reloadFlag)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             playerState = PlayerStateEnum.RELOAD;
         }
@@ -177,6 +180,13 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-
+    void AnimationStart()
+    {
+        reloadFlag = true;
+    }
+    void AnimationEnd()
+    {
+        reloadFlag = false;
+    }
 
 }

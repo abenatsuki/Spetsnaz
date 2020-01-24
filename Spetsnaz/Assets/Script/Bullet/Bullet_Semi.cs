@@ -12,11 +12,8 @@ public class Bullet_Semi : MonoBehaviour
 
     public int ammocnt { get; private set; } //残弾数
 
-    private float ReloadTime;// リロードの待機時間
-
     PlayerStateEnum playerStateEnum;
 
-    public bool reloadFlag { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +21,7 @@ public class Bullet_Semi : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         ammocnt = 8;
-        ReloadTime = 0;
-        reloadFlag = false;
+       
     }
 
     public void BulletShoot()
@@ -39,18 +35,17 @@ public class Bullet_Semi : MonoBehaviour
     void Update()
     {
 
-        //リロードできるまでの時間
-        ReloadTime--;
+      
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
-       // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
-        //弾の発射 エイム時
-        if (Input.GetMouseButtonDown(0) && ammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
+                                                   // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
+                                                   //弾の発射 エイム時
+        if (Input.GetMouseButtonDown(0) && ammocnt > 0  && playerStateEnum == PlayerStateEnum.EIM)
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //腰うち
-        else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && ReloadTime < 0 )
+        else if (Input.GetMouseButtonDown(0) && ammocnt > 0 )
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
@@ -60,11 +55,8 @@ public class Bullet_Semi : MonoBehaviour
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
-            reloadFlag = true;
             ammocnt = 8;
-            ReloadTime = 120;
         }
-        else if (ReloadTime < 0)
-            reloadFlag = false;
     }
+       
 }

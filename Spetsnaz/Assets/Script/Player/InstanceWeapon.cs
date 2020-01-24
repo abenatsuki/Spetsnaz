@@ -20,13 +20,13 @@ public class InstanceWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //nowWeapon = Now_Weapon.Assult_Rifle;
-        //var weapon = Instantiate(ResouseWeapon[0]);
-        //weapon.SetActive(true);
-        //weapon.transform.parent = transform;
-        //weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
-        //weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
-        //weapon.transform.localScale = new Vector3(1, 1, 1);
+        nowWeapon = Now_Weapon.Assult_Rifle;
+        var weapon = Instantiate(ResouseWeapon[0]);
+        weapon.SetActive(true);
+        weapon.transform.parent = transform;
+        weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
+        weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+        weapon.transform.localScale = new Vector3(1, 1, 1);
 
 
     }
