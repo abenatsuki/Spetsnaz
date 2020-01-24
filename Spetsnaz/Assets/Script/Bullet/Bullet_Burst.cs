@@ -54,8 +54,6 @@ public class Bullet_Burst : MonoBehaviour {
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-                Debug.Log("if文内");
-                Debug.Log(burstcnt);
             }
         }
         //弾のリロード

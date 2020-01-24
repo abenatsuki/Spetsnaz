@@ -5,72 +5,27 @@ using UnityEngine;
 public class Bullet_Reaction : MonoBehaviour
 {
     CameraRotation cameraRotation;
-    GameObject ude;
-    GameObject HGun;
-    GameObject AGun;
-    GameObject BGun;
-    GameObject SGun;
-
-    Bullet_Burst burst;
-    Bullet_Fullauto fullauto;
-    Bullet_ASemi aSemi;
+    public GameObject ude;
+    public GameObject HGun;
+   
     Bullet_Semi semi;
 
-
-    float Reaction;
+    private float Reaction;
 
     // Start is called before the first frame update
     void Start()
     {
-        Reaction = .0f;
-        ude = transform.Find("ude_00").gameObject;
+        Reaction = -1.0f;
         HGun = (GameObject)Resources.Load("makarov");
-        AGun = (GameObject)Resources.Load("asval");
-        BGun = (GameObject)Resources.Load("asval(1)");
-        SGun = (GameObject)Resources.Load("asval(2)");
-
-        burst = BGun.GetComponent<Bullet_Burst>();
-        fullauto = AGun.GetComponent<Bullet_Fullauto>();
-        aSemi = SGun.GetComponent<Bullet_ASemi>();
         semi = HGun.GetComponent<Bullet_Semi>();
     }
-
-    void FullAuto()
-    {
-        Reaction = 0.5f;
-    }
-    void Burst()
-    {
-        Reaction = 0.4f;
-    }
-    void ASemiAuto()
-    {
-        Reaction = 0.3f;
-    }
-    void SemiAuto()
-    {
-        Reaction = 0.3f;
-    }
-
 
     // Update is called once per frame
     void Update()
     {
-        if(0 <= fullauto.fullammocnt && Input.GetMouseButtonDown(0))
-        {
-            //transform.rotation.y -= FullAuto();
-        }
-        else if(0 <= burst.burstammocnt && Input.GetMouseButtonDown(0))
-        {
-
-        }
-        else if(0 <= aSemi.Asemiammocnt && Input.GetMouseButtonDown(0))
-        {
-
-        }
-        else if(0 <= semi.ammocnt && Input.GetMouseButtonDown(0))
-        {
-
-        }
+        //if(0 <= semi.ammocnt && Input.GetMouseButtonDown(0))
+        //{
+        //    ude.transform.rotation = Quaternion.Euler(Reaction, 0.0f, 0.0f);
+        //}
     }
 }

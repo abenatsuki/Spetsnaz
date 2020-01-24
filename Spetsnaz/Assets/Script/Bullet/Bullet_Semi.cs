@@ -58,7 +58,7 @@ public class Bullet_Semi : MonoBehaviour
             BulletShoot();
         }
         //弾のリロード
-        if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && ammocnt < 8 && !reloadFlag)
+        if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
             reloadFlag = true;
             ammocnt = 8;

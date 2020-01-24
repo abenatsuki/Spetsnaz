@@ -10,15 +10,11 @@ public class CameraRotation : MonoBehaviour
     float sensitivityX=1.0f;
     [SerializeField, Tooltip("カメラ感度縦感度")]
     float sensitivityY = 1.0f;
-
-    //反動のための情報
-    Bullet_Reaction reactionscript;
     
     // Start is called before the first frame update
     void Start()
     {
         verRotation = transform.parent;//自機のtransform
-      
     }
 
     // Update is called once per frame
