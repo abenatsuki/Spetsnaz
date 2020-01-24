@@ -411,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149693032}
   - component: {fileID: 149693033}
+  - component: {fileID: 149693034}
   m_Layer: 0
   m_Name: WeaponArm
   m_TagString: Untagged
@@ -447,6 +448,18 @@ MonoBehaviour:
   ResouseWeapon:
   - {fileID: 5627657642776899319, guid: 55ff3adbbfc521944a99421df4a7e256, type: 3}
   - {fileID: 1297872996351472266, guid: 9474cf185bdf9d547b05c98dedeaeaad, type: 3}
+--- !u!114 &149693034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149693031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48e0534fe55e6f49918704c10cf0b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(reloadFlag);
+      //  Debug.Log(reloadFlag);
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
         reloadTime--;
         // Debug.Log(playerState);

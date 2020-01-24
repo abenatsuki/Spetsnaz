@@ -23,11 +23,7 @@ public class InstanceWeapon : MonoBehaviour
         nowWeapon = Now_Weapon.Assult_Rifle;
         var weapon = Instantiate(ResouseWeapon[0]);
         weapon.SetActive(true);
-        weapon.transform.parent = transform;
-        weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
-        weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
-        weapon.transform.localScale = new Vector3(1, 1, 1);
-
+        SetTranceForm(weapon);
 
     }
 
@@ -40,8 +36,6 @@ public class InstanceWeapon : MonoBehaviour
         }
 
     }
-
-
     void ChangeWeapon()
     {
         // Destroy(transform.GetChild(0).gameObject);
@@ -55,10 +49,7 @@ public class InstanceWeapon : MonoBehaviour
             
             var weapon = Instantiate(ResouseWeapon[1]);
             weapon.SetActive(true);
-            weapon.transform.parent = transform;
-            weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
-            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
-            weapon.transform.localScale = new Vector3(1, 1, 1);
+            SetTranceForm(weapon);
         }
         else if (nowWeapon == Now_Weapon.Hand_Gun)
         {
@@ -66,12 +57,20 @@ public class InstanceWeapon : MonoBehaviour
             Destroy(transform.GetChild(0).gameObject);
             var weapon = Instantiate(ResouseWeapon[0]);
             weapon.SetActive(true);
-            weapon.transform.parent = transform;
-            weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
-            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
-            weapon.transform.localScale = new Vector3(1, 1, 1);
+            SetTranceForm(weapon);
+            //weapon.transform.parent = transform;
+            //weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
+            //weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+            //weapon.transform.localScale = new Vector3(1, 1, 1);
         }
         changeFlag = false;
 
+    }
+    void SetTranceForm(GameObject _obj)
+    {
+        _obj.transform.parent = transform;
+        _obj.transform.localPosition = new Vector3(0, 0, 0.5639999f);
+        _obj.transform.localEulerAngles = new Vector3(0, 0, 0);
+        _obj.transform.localScale = new Vector3(1, 1, 1);
     }
 }
