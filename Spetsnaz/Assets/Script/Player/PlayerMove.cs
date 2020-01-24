@@ -16,7 +16,6 @@ public enum PlayerStateEnum
 [RequireComponent(typeof(PlayerDataProvider))]
 [RequireComponent(typeof(PlayerInput))]
 
-
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField, Tooltip("自機の歩きの速さ")]
@@ -37,15 +36,15 @@ public class PlayerMove : MonoBehaviour
     bool ladderGrabbing = false;//梯子と触れているかどうかフラグ
     GameObject bullet;
     Bullet_Semi bulletScript;
+    int reloadTime;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //bullet = GameObject.FindGameObjectWithTag("Gun");
-        //bulletScript = bullet.GetComponent<Bullet_Semi>();
         shotFlag = false;//弾を撃っているかフラグ
         rigidbody3D = GetComponent<Rigidbody>();
+        reloadTime = 0;
     }
 
     // Update is called once per frame
@@ -53,9 +52,14 @@ public class PlayerMove : MonoBehaviour
     {
         Debug.Log(reloadFlag);
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
-
+        reloadTime--;
         // Debug.Log(playerState);
         if (Input.GetKeyDown(KeyCode.R))
+        {
+            reloadTime = 120;
+        }
+
+        if (reloadTime>=0)
         {
             playerState = PlayerStateEnum.RELOAD;
         }
@@ -180,13 +184,5 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    void AnimationStart()
-    {
-        reloadFlag = true;
-    }
-    void AnimationEnd()
-    {
-        reloadFlag = false;
-    }
-
+   
 }

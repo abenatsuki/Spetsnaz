@@ -11,6 +11,8 @@ public class PlayerAnimation : MonoBehaviour
     PlayerStateEnum playerState;
     public int reloadFrame { get; private set; }
     public int eimFrame { get; private set; }
+    public bool reloadFlag { get; private set; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +29,6 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (playerState != PlayerStateEnum.RELOAD)
-        {
-          reloadFrame = 0;
-        }//Debug.Log(reloadFrame);
-        
-     
         playerState = playerScript.IsPlayerStateEnum;
         switch (playerState)
         {
@@ -45,7 +41,6 @@ public class PlayerAnimation : MonoBehaviour
                 break;
             case PlayerStateEnum.RELOAD:
                 playerAnimator.SetInteger("PlayerState", 4);
-                reloadFrame++;
                 break;
               
             //case PlayerStateEnum.DASH://ダッシュ
@@ -55,10 +50,8 @@ public class PlayerAnimation : MonoBehaviour
              
             //    break;
         }
-       
-      
     }
-
+   
    
    
 }

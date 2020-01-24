@@ -36,7 +36,6 @@ public class InstanceWeapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
             ChangeWeapon();
         }
 
@@ -47,9 +46,13 @@ public class InstanceWeapon : MonoBehaviour
     {
         // Destroy(transform.GetChild(0).gameObject);
         changeFlag = true;
+
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             nowWeapon = Now_Weapon.Hand_Gun;
+           
+            Destroy(transform.GetChild(0).gameObject);
+            
             var weapon = Instantiate(ResouseWeapon[1]);
             weapon.SetActive(true);
             weapon.transform.parent = transform;
@@ -60,7 +63,9 @@ public class InstanceWeapon : MonoBehaviour
         else if (nowWeapon == Now_Weapon.Hand_Gun)
         {
             nowWeapon = Now_Weapon.Assult_Rifle;
+            Destroy(transform.GetChild(0).gameObject);
             var weapon = Instantiate(ResouseWeapon[0]);
+            weapon.SetActive(true);
             weapon.transform.parent = transform;
             weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
