@@ -21,13 +21,13 @@ public class ShotSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bulletScript.reloadFlag == false && bulletScript.ammocnt > 0)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                //音(shot)を鳴らす
-                audiosource.PlayOneShot(shot);
-            }
-        }
+        //if (bulletScript.reloadFlag == false && bulletScript.ammocnt > 0)
+        //{
+        //    if (Input.GetMouseButtonDown(0))
+        //    {
+        //        //音(shot)を鳴らす
+        //        audiosource.PlayOneShot(shot);
+        //    }
+        //}
     }
 }

@@ -51,12 +51,12 @@ public class PlayerMove : MonoBehaviour
     { 
         velocity = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")).normalized;
 
-       // Debug.Log(playerState);
+        // Debug.Log(playerState);
         if (bulletScript.reloadFlag)
         {
             playerState = PlayerStateEnum.RELOAD;
         }
-       else if (Input.GetMouseButton(1))
+    else if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
         }
@@ -132,6 +132,7 @@ public class PlayerMove : MonoBehaviour
         //梯子あたり判定
         if (_other.gameObject.tag == "Ladder")
         {
+           
             playerState = PlayerStateEnum.GRABBING;
             rigidbody3D.useGravity = false;//重力を無効にする
             ladderGrabbing = true;
