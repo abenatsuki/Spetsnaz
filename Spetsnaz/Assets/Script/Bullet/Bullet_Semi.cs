@@ -20,8 +20,7 @@ public class Bullet_Semi : MonoBehaviour
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
-        ammocnt = 1000000;
-       
+        ammocnt = 8;
     }
 
     public void BulletShoot()

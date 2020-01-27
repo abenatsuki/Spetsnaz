@@ -17,9 +17,15 @@ public class InstanceWeapon : MonoBehaviour
     public Now_Weapon nowWeapon { get; private set; }
     public bool changeFlag { get; private set; }
 
+    GameObject player;
+    PlayerDataProvider playerScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<PlayerDataProvider>();
+
         nowWeapon = Now_Weapon.Hand_Gun;
         var weapon = Instantiate(ResouseWeapon[1]);
         weapon.SetActive(true);
@@ -30,6 +36,9 @@ public class InstanceWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerScript.IsInFlag) {
+            changeFlag = false;
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             ChangeWeapon();
@@ -40,7 +49,7 @@ public class InstanceWeapon : MonoBehaviour
     {
         // Destroy(transform.GetChild(0).gameObject);
         changeFlag = true;
-
+        Debug.Log(changeFlag);
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             nowWeapon = Now_Weapon.Hand_Gun;
@@ -56,14 +65,11 @@ public class InstanceWeapon : MonoBehaviour
             var weapon = Instantiate(ResouseWeapon[0]);
             weapon.SetActive(true);
             SetTranceForm(weapon);
-            //weapon.transform.parent = transform;
-            //weapon.transform.localPosition = new Vector3(0, 0, 0.5639999f);
-            //weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
-            //weapon.transform.localScale = new Vector3(1, 1, 1);
         }
-        changeFlag = false;
+       // changeFlag = false;
 
     }
+
     void SetTranceForm(GameObject _obj)
     {
         _obj.transform.parent = transform;

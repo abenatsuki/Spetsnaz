@@ -6,7 +6,7 @@ public class BulletManager : MonoBehaviour
 {
     GameObject player;
     PlayerDataProvider playerScript;
-    bool inFlag;
+    public bool inFlag { get; private set; }
     GameObject gun;
     Bullet_Semi bulletSemiScript;
     Bullet_Fullauto fullautoScript;
@@ -14,44 +14,55 @@ public class BulletManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletSemiScript = null;
+        fullautoScript = null;
         inFlag = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+          if (playerScript.IsChangeFlag)
+        {
+            inFlag = false;
+            //Debug.Log("aaa");
+        }
         if (transform.childCount != 0 && !inFlag)
         {
+            StartCoroutine("ScriptLoad");
+        }
+
+    } 
+    //コルーチン
+        IEnumerator ScriptLoad()
+        {
             gun = GameObject.FindGameObjectWithTag("Gun");
-                    //bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-            Debug.Log(gun);
-            Debug.Log(playerScript.IsNowWepon);
+            yield return null;//1フレームまつ
+           
             switch (playerScript.IsNowWepon)
             {
                 case Now_Weapon.Hand_Gun:
-
-                    gun = GameObject.FindGameObjectWithTag("Gun");
+                if (bulletSemiScript == null)
+                {
+                    fullautoScript = null;
                     bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-
+                    Debug.Log(bulletSemiScript);
+                    inFlag = true;
+                }
                     break;
                 case Now_Weapon.Assult_Rifle:
-                    gun = GameObject.FindGameObjectWithTag("Gun");
+                if (fullautoScript == null)
+                {
+                    bulletSemiScript = null;
                     fullautoScript = gun.GetComponent<Bullet_Fullauto>();
+                    Debug.Log(fullautoScript);
+                    inFlag = true;
+                }   
                     break;
             }
-            inFlag = true;
-
+        
         }
-        if (playerScript.IsChangeFlag)
-        {
-            inFlag = false;
-        }
-
-
-    }
 }

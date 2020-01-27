@@ -12,6 +12,7 @@ public class AmmunitionUi : MonoBehaviour
 
     GameObject gun;
     Bullet_Semi bulletScript;
+    Bullet_Fullauto bulletFullauto;
     int ammuniton;//表示する弾数
     GameObject player;
     PlayerDataProvider playerScript;
@@ -31,16 +32,35 @@ public class AmmunitionUi : MonoBehaviour
 
     private void Update()
     {
-       
-        if (playerScript.IsNowWepon!=Now_Weapon.Hand_Gun&&!flag)
+        if (playerScript.IsChangeFlag)
+        {
+            flag = false;
+        }
+
+        if (!flag)
+        {
+        if (playerScript.IsInFlag&&playerScript.IsNowWepon==Now_Weapon.Assult_Rifle)
         {
             gun = GameObject.FindGameObjectWithTag("Gun");
-            bulletScript = gun.GetComponent<Bullet_Semi>();
+            bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
+          //  ammuniton = bulletScript.ammocnt;
             flag = true;
         }
-        
+        else if(playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun )
+        {
+                gun = GameObject.FindGameObjectWithTag("Gun");
+                bulletScript = gun.GetComponent<Bullet_Semi>();
+                ammuniton = bulletScript.ammocnt;
+                flag = true;
+        }
 
+        }
+       if(playerScript.IsInFlag&&playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
         ammuniton = bulletScript.ammocnt;
+     else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
+            ammuniton = bulletFullauto.fullammocnt;
+       
+        
         image[0].sprite = numberFont[ammuniton % 10];
         image[1].sprite = numberFont[(ammuniton / 10) % 10];
     }
