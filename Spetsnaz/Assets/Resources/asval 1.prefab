@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 7432951727022756355}
   - component: {fileID: 7432951727021625539}
   - component: {fileID: 164326847092889509}
+  - component: {fileID: 114323039672884994}
   m_Layer: 0
   m_Name: asval 1
   m_TagString: Untagged
@@ -123,3 +124,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 8911603509087186023, guid: 01720962604976142ad84fd18c38a298, type: 3}
   Muzzle: {fileID: 4002378287315975538}
+--- !u!114 &114323039672884994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7432951727023885827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0b585ac1282024da33255d6ad5a46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ude: {fileID: 4940397275051934823, guid: 202b8c58065ba3042a3fa2b984da5530, type: 3}
+  FGun: {fileID: 7432951727023885827}
