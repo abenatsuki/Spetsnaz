@@ -20,8 +20,8 @@ public class InstanceWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nowWeapon = Now_Weapon.Assult_Rifle;
-        var weapon = Instantiate(ResouseWeapon[0]);
+        nowWeapon = Now_Weapon.Hand_Gun;
+        var weapon = Instantiate(ResouseWeapon[1]);
         weapon.SetActive(true);
         SetTranceForm(weapon);
 
@@ -44,9 +44,7 @@ public class InstanceWeapon : MonoBehaviour
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             nowWeapon = Now_Weapon.Hand_Gun;
-           
             Destroy(transform.GetChild(0).gameObject);
-            
             var weapon = Instantiate(ResouseWeapon[1]);
             weapon.SetActive(true);
             SetTranceForm(weapon);

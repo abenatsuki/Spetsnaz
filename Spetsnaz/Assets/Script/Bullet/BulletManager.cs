@@ -9,6 +9,7 @@ public class BulletManager : MonoBehaviour
     bool inFlag;
     GameObject gun;
     Bullet_Semi bulletSemiScript;
+    Bullet_Fullauto fullautoScript;
 
     // Start is called before the first frame update
     void Start()
@@ -27,29 +28,29 @@ public class BulletManager : MonoBehaviour
         if (transform.childCount != 0 && !inFlag)
         {
             gun = GameObject.FindGameObjectWithTag("Gun");
+                    //bulletSemiScript = gun.GetComponent<Bullet_Semi>();
+            Debug.Log(gun);
+            Debug.Log(playerScript.IsNowWepon);
+            switch (playerScript.IsNowWepon)
+            {
+                case Now_Weapon.Hand_Gun:
+
+                    gun = GameObject.FindGameObjectWithTag("Gun");
                     bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-            Debug.Log(bulletSemiScript);
-            //Debug.Log(playerScript.IsNowWepon);
-            //switch (playerScript.IsNowWepon)
-            //{
-            //    case Now_Weapon.Hand_Gun:
 
-            //        gun = GameObject.FindGameObjectWithTag("Gun");
-            //        bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-
-            //        break;
-            //    case Now_Weapon.Assult_Rifle:
-            //        gun = GameObject.FindGameObjectWithTag("Gun");
-            //        bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-            //        break;
-            //}
-            //inFlag = true;
+                    break;
+                case Now_Weapon.Assult_Rifle:
+                    gun = GameObject.FindGameObjectWithTag("Gun");
+                    fullautoScript = gun.GetComponent<Bullet_Fullauto>();
+                    break;
+            }
+            inFlag = true;
 
         }
-        //if (playerScript.IsChangeFlag)
-        //{
-        //    inFlag = false;
-        //}
+        if (playerScript.IsChangeFlag)
+        {
+            inFlag = false;
+        }
 
 
     }
