@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResouseWeapon:
-  - {fileID: 7432951727023885827, guid: 7e78b8c7fd1f40e4d9b5b8e4881c77ef, type: 3}
+  - {fileID: 4940397275051934823, guid: fd2e4bb69e4d1e04da83969f456262a2, type: 3}
   - {fileID: 5627657642776899319, guid: 55ff3adbbfc521944a99421df4a7e256, type: 3}
 --- !u!114 &149693034
 MonoBehaviour:
@@ -617,6 +617,7 @@ GameObject:
   - component: {fileID: 281845577}
   - component: {fileID: 281845578}
   - component: {fileID: 281845579}
+  - component: {fileID: 281845580}
   m_Layer: 0
   m_Name: UdeRot
   m_TagString: Untagged
@@ -669,6 +670,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ude: {fileID: 5627657642776899319, guid: 55ff3adbbfc521944a99421df4a7e256, type: 3}
   HGun: {fileID: 2883910513799319853, guid: 447e1232cb1603e49abefd7a95d495e1, type: 3}
+--- !u!114 &281845580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281845576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0b585ac1282024da33255d6ad5a46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ude: {fileID: 4940397275051934823, guid: fd2e4bb69e4d1e04da83969f456262a2, type: 3}
+  FGun: {fileID: 7432951727023885827, guid: 7e78b8c7fd1f40e4d9b5b8e4881c77ef, type: 3}
 --- !u!1 &295057877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1230,7 @@ MonoBehaviour:
   checkPoint: {fileID: 366606527}
   playerAnimation: {fileID: 0}
   instanceWeapon: {fileID: 149693033}
+  bulletManager: {fileID: 149693034}
 --- !u!114 &366606529
 MonoBehaviour:
   m_ObjectHideFlags: 0

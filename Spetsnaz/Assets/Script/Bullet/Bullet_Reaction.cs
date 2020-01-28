@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bullet_Reaction : MonoBehaviour
 {
     CameraRotation cameraRotation;
+    PlayerDataProvider script;
+    GameObject player;
+
     public GameObject ude;
     public GameObject HGun;
    
@@ -18,12 +21,14 @@ public class Bullet_Reaction : MonoBehaviour
         Reaction = .0f;
         HGun = (GameObject)Resources.Load("makarov");
         semi = HGun.GetComponent<Bullet_Semi>();
+        player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
+        script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0))
+        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0)&& script.IsNowWepon == Now_Weapon.Hand_Gun)
         {
             Reaction = -3.8f;
             this.transform.Rotate(Reaction, 0.0f, 0.0f);
