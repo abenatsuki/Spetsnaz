@@ -7,6 +7,7 @@ public class BulletManager : MonoBehaviour
     GameObject player;
     PlayerDataProvider playerScript;
     public bool inFlag { get; private set; }
+    public int beforeAmmocnt { get; private set; }
     GameObject gun;
     Bullet_Semi bulletSemiScript;
     Bullet_Fullauto fullautoScript;
@@ -25,6 +26,7 @@ public class BulletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(beforeAmmocnt);
           if (playerScript.IsChangeFlag)
         {
             inFlag = false;
@@ -32,6 +34,16 @@ public class BulletManager : MonoBehaviour
         }
         if (transform.childCount != 0 && !inFlag)
         {
+            if (fullautoScript != null)
+            {
+             beforeAmmocnt = fullautoScript.fullammocnt;
+            }
+            else if (bulletSemiScript != null)
+            {
+             beforeAmmocnt = bulletSemiScript.ammocnt;
+            }
+           
+           
             StartCoroutine("ScriptLoad");
         }
 
@@ -47,6 +59,7 @@ public class BulletManager : MonoBehaviour
                 case Now_Weapon.Hand_Gun:
                 if (bulletSemiScript == null)
                 {
+                   
                     fullautoScript = null;
                     bulletSemiScript = gun.GetComponent<Bullet_Semi>();
                     Debug.Log(bulletSemiScript);
@@ -56,6 +69,7 @@ public class BulletManager : MonoBehaviour
                 case Now_Weapon.Assult_Rifle:
                 if (fullautoScript == null)
                 {
+                   
                     bulletSemiScript = null;
                     fullautoScript = gun.GetComponent<Bullet_Fullauto>();
                     Debug.Log(fullautoScript);

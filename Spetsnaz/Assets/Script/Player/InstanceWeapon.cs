@@ -16,13 +16,18 @@ public class InstanceWeapon : MonoBehaviour
     
     public Now_Weapon nowWeapon { get; private set; }
     public bool changeFlag { get; private set; }
+    
+    
 
     GameObject player;
     PlayerDataProvider playerScript;
+    Bullet_Semi handGunScript;
+    Bullet_Fullauto assultScript;
 
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
 
@@ -30,6 +35,8 @@ public class InstanceWeapon : MonoBehaviour
         var weapon = Instantiate(ResouseWeapon[1]);
         weapon.SetActive(true);
         SetTranceForm(weapon);
+
+       
 
     }
 
@@ -41,6 +48,7 @@ public class InstanceWeapon : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+
             ChangeWeapon();
         }
 
@@ -48,11 +56,14 @@ public class InstanceWeapon : MonoBehaviour
     void ChangeWeapon()
     {
         // Destroy(transform.GetChild(0).gameObject);
+
         changeFlag = true;
         Debug.Log(changeFlag);
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
+            
             nowWeapon = Now_Weapon.Hand_Gun;
+            
             Destroy(transform.GetChild(0).gameObject);
             var weapon = Instantiate(ResouseWeapon[1]);
             weapon.SetActive(true);
@@ -60,7 +71,9 @@ public class InstanceWeapon : MonoBehaviour
         }
         else if (nowWeapon == Now_Weapon.Hand_Gun)
         {
+            
             nowWeapon = Now_Weapon.Assult_Rifle;
+            
             Destroy(transform.GetChild(0).gameObject);
             var weapon = Instantiate(ResouseWeapon[0]);
             weapon.SetActive(true);
@@ -76,5 +89,6 @@ public class InstanceWeapon : MonoBehaviour
         _obj.transform.localPosition = new Vector3(0, 0, 0.5639999f);
         _obj.transform.localEulerAngles = new Vector3(0, 0, 0);
         _obj.transform.localScale = new Vector3(1, 1, 1);
+        
     }
 }

@@ -17,10 +17,11 @@ public class PlayerDataProvider : MonoBehaviour
     public bool IsChangeFlag { get { return instanceWeapon.changeFlag; } }//武器チェンジしているか
     public bool IsReloadFlag { get { return playerMove.reloadFlag; } }
     public bool IsInFlag { get { return bulletManager.inFlag; } }
+    public int IsBeforeAmmocnt { get { return bulletManager.beforeAmmocnt; } }//武器チェン前の弾数
     //デバッグ用
     private void Update()
     {
-        Debug.Log(IsNowWepon);
+      //  Debug.Log(IsNowWepon);
     }
 
 }
