@@ -33,8 +33,6 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-      
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
                                                    // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時
