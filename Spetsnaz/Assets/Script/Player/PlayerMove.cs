@@ -163,6 +163,7 @@ public class PlayerMove : MonoBehaviour
         {
             rigidbody3D.useGravity = true;
             ladderGrabbing = false;
+            playerState = PlayerStateEnum.WARK;
         }
 
     }
@@ -176,13 +177,8 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Target")
-        {
-          //  Debug.Log("aaa");
-        }
-    }
 
+
+   
    
 }
