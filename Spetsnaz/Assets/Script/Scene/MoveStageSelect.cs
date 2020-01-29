@@ -5,20 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MoveStageSelect : MonoBehaviour
 {
-   // MoveSceneManager moveSceneManager;
+    bool flag = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        flag = false;
     }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&!flag)
         {
-         
+        
             MoveSceneManager.Instance.MoveToStage(1);
+            flag = true; ;
         }
         
     }
