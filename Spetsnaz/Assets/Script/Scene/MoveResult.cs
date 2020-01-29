@@ -19,11 +19,17 @@ public class MoveResult : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (goalScript.goalFlag&&!flag)
+        //if (goalScript.goalFlag && !flag)
+        //{
+
+        //    MoveSceneManager.Instance.MoveToStage(4);
+        //    flag = true;
+        //    Debug.Log("aaa");
+        //}
+        if (Input.GetMouseButtonDown(0) && !flag)
         {
-            MoveSceneManager.Instance.MoveToStage(5);
-            flag = true;
-        //    SceneManager.LoadScene("ResultScene");
+           
+            MoveSceneManager.Instance.MoveToStage(4); flag = true;
         }
     }
 }

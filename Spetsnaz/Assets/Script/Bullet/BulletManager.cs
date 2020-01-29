@@ -26,11 +26,10 @@ public class BulletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(beforeAmmocnt);
+        //Debug.Log(beforeAmmocnt);
           if (playerScript.IsChangeFlag)
         {
             inFlag = false;
-            //Debug.Log("aaa");
         }
         if (transform.childCount != 0 && !inFlag)
         {
@@ -42,7 +41,6 @@ public class BulletManager : MonoBehaviour
             {
              beforeAmmocnt = bulletSemiScript.ammocnt;
             }
-           
            
             StartCoroutine("ScriptLoad");
         }
@@ -62,7 +60,6 @@ public class BulletManager : MonoBehaviour
                    
                     fullautoScript = null;
                     bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-                    Debug.Log(bulletSemiScript);
                     inFlag = true;
                 }
                     break;
@@ -72,7 +69,6 @@ public class BulletManager : MonoBehaviour
                    
                     bulletSemiScript = null;
                     fullautoScript = gun.GetComponent<Bullet_Fullauto>();
-                    Debug.Log(fullautoScript);
                     inFlag = true;
                 }   
                     break;

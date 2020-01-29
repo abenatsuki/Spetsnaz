@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WeaponSelectScene.unity
     guid: 2f3b1c2a9ddcde046a3f4845fe867dc0
   - enabled: 1
-    path: Assets/Scenes/StandardGameScene.unity
-    guid: d2e724f59ff6ddc4abc15ba45184394d
-  - enabled: 1
     path: Assets/Scenes/HandGunGameScene.unity
     guid: c1639932d9eebdd4bb15223d75e923e5
   - enabled: 1

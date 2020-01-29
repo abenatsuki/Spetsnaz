@@ -55,8 +55,7 @@ public class InstanceWeapon : MonoBehaviour
     }
     void ChangeWeapon()
     {
-        // Destroy(transform.GetChild(0).gameObject);
-
+       
         changeFlag = true;
         Debug.Log(changeFlag);
         if (nowWeapon == Now_Weapon.Assult_Rifle)
@@ -79,7 +78,7 @@ public class InstanceWeapon : MonoBehaviour
             weapon.SetActive(true);
             SetTranceForm(weapon);
         }
-       // changeFlag = false;
+     
 
     }
 

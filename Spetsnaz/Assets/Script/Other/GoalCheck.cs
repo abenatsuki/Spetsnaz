@@ -22,6 +22,7 @@ public class GoalCheck : MonoBehaviour
             if (managerScript.TargetMax - managerScript.TargetCnt >= managerScript.TargetMax)
             {
                 goalFlag = true;
+              
             }
             
             
