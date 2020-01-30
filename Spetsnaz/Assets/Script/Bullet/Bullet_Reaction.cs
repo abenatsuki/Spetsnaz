@@ -25,13 +25,20 @@ public class Bullet_Reaction : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
     }
 
+    void Reaction_()
+    {
+        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Hand_Gun)
+        {
+            {
+                Reaction = -3.8f;
+                this.transform.Rotate(Reaction, 0.0f, 0.0f);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0)&& script.IsNowWepon == Now_Weapon.Hand_Gun)
-        {
-            Reaction = -3.8f;
-            this.transform.Rotate(Reaction, 0.0f, 0.0f);
-        }
+
     }
 }

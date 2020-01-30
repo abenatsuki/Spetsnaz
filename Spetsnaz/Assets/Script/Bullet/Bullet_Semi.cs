@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Bullet_Semi : MonoBehaviour
 {
+    Bullet_Reaction reaction;
     PlayerDataProvider script;
     GameObject player;
 
     public GameObject Bullet;
     public GameObject Muzzle;
+
+    public GameObject uderot;
 
     public int ammocnt { get; private set; } //残弾数
 
@@ -20,6 +23,8 @@ public class Bullet_Semi : MonoBehaviour
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
+        uderot = GameObject.Find("UdeRot").gameObject;
+        reaction = uderot.GetComponent<Bullet_Reaction>();
         ammocnt = 8;
     }
 
@@ -36,18 +41,19 @@ public class Bullet_Semi : MonoBehaviour
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
                                                    // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時
-        if (Input.GetMouseButtonDown(0) && ammocnt > 0  && playerStateEnum == PlayerStateEnum.EIM)
+        if (Input.GetMouseButtonDown(0) && ammocnt > 0  && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
         //腰うち
-        else if (Input.GetMouseButtonDown(0) && ammocnt > 0 )
+        else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             //弾道ブレ率と速度追加
             BulletShoot();
+            
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)
