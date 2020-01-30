@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet_Semi : MonoBehaviour
 {
-    Bullet_Reaction reaction;
+    Bullet_Reaction hreaction;
     PlayerDataProvider script;
     GameObject player;
 
@@ -24,7 +24,7 @@ public class Bullet_Semi : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
-        reaction = uderot.GetComponent<Bullet_Reaction>();
+        hreaction = uderot.GetComponent<Bullet_Reaction>();
         ammocnt = 8;
     }
 
@@ -45,6 +45,7 @@ public class Bullet_Semi : MonoBehaviour
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+          //  hreaction.HReaction();
         }
         //腰うち
         else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -53,7 +54,7 @@ public class Bullet_Semi : MonoBehaviour
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             //弾道ブレ率と速度追加
             BulletShoot();
-            
+           // hreaction.HReaction();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)

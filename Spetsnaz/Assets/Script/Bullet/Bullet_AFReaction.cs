@@ -25,13 +25,18 @@ public class Bullet_AFReaction : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Areaction()
     {
-        if (0 <= fullauto.fullammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Assult_Rifle)
+        if (0 <= fullauto.fullammocnt && Input.GetMouseButton(0) && script.IsNowWepon == Now_Weapon.Assult_Rifle)
         {
             Reaction = -3.8f;
             ude.transform.Rotate(Reaction, 0.0f, 0.0f);
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
     }
 }

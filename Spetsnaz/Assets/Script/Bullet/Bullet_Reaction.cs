@@ -23,15 +23,16 @@ public class Bullet_Reaction : MonoBehaviour
         semi = HGun.GetComponent<Bullet_Semi>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
+        //Debug.Log(script);
     }
 
-    void Reaction_()
+    public void HReaction()
     {
         if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Hand_Gun)
         {
             {
                 Reaction = -3.8f;
-                this.transform.Rotate(Reaction, 0.0f, 0.0f);
+                ude.transform.Rotate(Reaction, 0.0f, 0.0f);
             }
         }
     }
