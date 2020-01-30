@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+public enum Scene_Enum
+{
+    Title_Scene = 0,
+    Stage_Select_Scene,
+    Weapon_Select_Scene,
+    HandGunGame_Scene,
+    Result_Scene,
+    Help_Scene,
+    Option_Scene
+
+}
 public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
 {
     [SerializeField, Tooltip("フェードイン、フェードアウトの間の待ち時間")]
@@ -79,10 +91,10 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
         CurrentStageNum = sceneNum;
     }
     //任意のステージに移動する処理
-    public void MoveToStage(int sceneNum)
+    public void MoveToStage(Scene_Enum sceneNum)
     {
         //コルーチンを実行
-        StartCoroutine(WaitForLoadScene(sceneNum));
+        StartCoroutine(WaitForLoadScene((int)sceneNum));
     }
    
 }

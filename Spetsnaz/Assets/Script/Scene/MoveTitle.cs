@@ -17,9 +17,14 @@ public class MoveTitle : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)&&!flag)
         {
-            MoveSceneManager.Instance.MoveToStage(0);
+            MoveTitleScene();
             flag = true;
            // SceneManager.LoadScene("TitleScene");
         }
+    }
+
+    public void MoveTitleScene()
+    {
+        MoveSceneManager.Instance.MoveToStage(Scene_Enum.Title_Scene);
     }
 }

@@ -15,14 +15,22 @@ public class MoveStageSelect : MonoBehaviour
    
 
     // Update is called once per frame
-    void Update()
+    void Update() { 
+    //{
+    //    if (Input.GetMouseButtonDown(0)&&!flag)
+    //    {
+        
+    //        MoveSceneManager.Instance.MoveToStage(1);
+    //        flag = true; 
+    //    }
+        
+    }
+   public void MoveStage()
     {
-        if (Input.GetMouseButtonDown(0)&&!flag)
+        if (!flag)
         {
-        
-            MoveSceneManager.Instance.MoveToStage(1);
-            flag = true; ;
+            MoveSceneManager.Instance.MoveToStage(Scene_Enum.Stage_Select_Scene);
+            flag = true;
         }
-        
     }
 }
