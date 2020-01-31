@@ -16,6 +16,7 @@ TagManager:
   - GoalPoint
   - TargetHead
   - GazePoint
+  - Smoke
   layers:
   - Default
   - TransparentFX

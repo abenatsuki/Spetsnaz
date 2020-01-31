@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+public enum StageType
+{
+    None=-1,
+    Standard,
+    HandGun,
+}
 enum WeaponEnum
 {
     Weapon_1,
@@ -14,6 +19,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     int maxScore = 999999;
     int score = 0;
 
+    public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
     WeaponEnum weapon;//選択武器
 
     public int Score
@@ -29,6 +35,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void Awake()
     {
+        
         if (this != Instance)
         {
             Destroy(gameObject);
@@ -40,6 +47,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         score = 0;
         weapon = WeaponEnum.Weapon_1;
+        stageType = StageType.None;
+    }
+    public void SetSceneMode(StageType _stageType)
+    {
+        stageType = _stageType;
     }
     void Start()
     {
