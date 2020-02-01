@@ -7,14 +7,17 @@ public class CameraRotation : MonoBehaviour
     Transform verRotation;
     Transform horRotation;
     [SerializeField,Tooltip("カメラ感度横感度")]
-    float sensitivityX=1.0f;
+    float sensitivityX=GameManager.Instance.LateralSensitivity;
     [SerializeField, Tooltip("カメラ感度縦感度")]
-    float sensitivityY = 1.0f;
+    float sensitivityY = GameManager.Instance.VerticalSensitivity;
     
     // Start is called before the first frame update
     void Start()
     {
         verRotation = transform.parent;//自機のtransform
+
+        sensitivityX = GameManager.Instance.LateralSensitivity;
+        sensitivityY = GameManager.Instance.VerticalSensitivity;
     }
 
     // Update is called once per frame

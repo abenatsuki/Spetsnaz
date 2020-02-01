@@ -17,10 +17,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
     int maxScore = 999999;
+    [SerializeField]
+    int maxSensitivity=10;
+
     int score = 0;
+    int verticalSensitivity;
+    int lateralSensitivity;
 
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
     WeaponEnum weapon;//選択武器
+
+    public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
+    public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
 
     public int Score
     {

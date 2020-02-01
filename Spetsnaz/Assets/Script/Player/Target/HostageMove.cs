@@ -12,7 +12,7 @@ public class HostageMove : MonoBehaviour
     [SerializeField, Tooltip("起き上がるまでの時間")]
 
     float xRotation = 0.0f;
-    bool flag = false;
+  //  bool flag = false;
 
     // Start is called before the first frame update
     void Start()

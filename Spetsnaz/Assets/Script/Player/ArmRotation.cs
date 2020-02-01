@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArmRotation : MonoBehaviour
 {
-    bool resetFlag = false;
+   // bool resetFlag = false;
     GameObject player;
     private GameObject muzzle;
    
@@ -19,7 +19,7 @@ public class ArmRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.LookAt(muzzle.transform.position);
+        transform.LookAt(muzzle.transform.position);
        
 
     }

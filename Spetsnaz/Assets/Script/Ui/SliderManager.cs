@@ -5,27 +5,35 @@ using UnityEngine.UI;
 
 public class SliderManager : MonoBehaviour
 {
+    [SerializeField]
     Slider sensitivitySlider;
     [SerializeField]
-    int maxNum;
+    InputField inputField;
+   
     [SerializeField]
-    int minNum;
+    int minValue;
+    [SerializeField]
+    int maxValue;
+
+    float value;
     // Start is called before the first frame update
     void Start()
     {
-        sensitivitySlider = GetComponent<Slider>();
-
-        sensitivitySlider.maxValue = maxNum;
-        sensitivitySlider.minValue = minNum;
+       
+        sensitivitySlider.maxValue = maxValue;
+        sensitivitySlider.minValue = minValue;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       // Debug.Log(value);
     }
-    void ChangeNum()
+    public void ChangeNum()
     {
+        value =sensitivitySlider.value;
+        inputField.text = ((int)value).ToString();
+        
 
     }
 }

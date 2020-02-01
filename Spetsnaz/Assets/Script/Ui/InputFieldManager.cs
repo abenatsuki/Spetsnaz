@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputFielddManager : MonoBehaviour
+public class InputFieldManager : MonoBehaviour
 {
     InputField inputField;
-
-
+    [SerializeField]
+    Slider slider;
+    string inputValue;
     /// <summary>
     /// Startメソッド
     /// InputFieldコンポーネントの取得および初期化メソッドの実行
@@ -18,6 +19,7 @@ public class InputFielddManager : MonoBehaviour
         inputField = GetComponent<InputField>();
 
         InitInputField();
+
     }
 
     public void SetValue()
@@ -36,11 +38,11 @@ public class InputFielddManager : MonoBehaviour
     public void InputLogger()
     {
 
-        string inputValue = inputField.text;
+       string inputValue = inputField.text;
+      
+        slider.value =float.Parse( inputValue);
 
-        Debug.Log(inputValue);
-
-        InitInputField();
+      
     }
 
 
@@ -55,7 +57,11 @@ public class InputFielddManager : MonoBehaviour
     {
 
         // 値をリセット
-        inputField.text = "";
+        inputField.text = "5";
+
+        inputValue = inputField.text;
+
+        slider.value = float.Parse(inputValue);
 
         // フォーカス
         inputField.ActivateInputField();

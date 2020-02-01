@@ -17,7 +17,7 @@ public class MoveTitle : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)&&!flag)
         {
-            MoveTitleScene();
+           // MoveTitleScene();
             flag = true;
            // SceneManager.LoadScene("TitleScene");
         }
