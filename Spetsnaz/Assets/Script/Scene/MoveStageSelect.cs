@@ -11,6 +11,7 @@ public class MoveStageSelect : MonoBehaviour
     void Start()
     {
         flag = false;
+        Cursor.visible = true;
     }
    
 

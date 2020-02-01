@@ -1311,6 +1311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScore: 999999
+  maxSensitivity: 10
 --- !u!1 &1959893254
 GameObject:
   m_ObjectHideFlags: 0

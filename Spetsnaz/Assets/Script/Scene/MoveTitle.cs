@@ -9,6 +9,7 @@ public class MoveTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = true;
         flag = false;
     }
 
@@ -26,5 +27,12 @@ public class MoveTitle : MonoBehaviour
     public void MoveTitleScene()
     {
         MoveSceneManager.Instance.MoveToStage(Scene_Enum.Title_Scene);
+        if (Time.timeScale == 0)
+        {
+        
+         Time.timeScale = 1f;
+        }
+      
+        
     }
 }

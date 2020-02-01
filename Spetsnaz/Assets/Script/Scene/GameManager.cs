@@ -21,10 +21,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     int maxSensitivity=10;
 
     int score = 0;
-    int verticalSensitivity;
-    int lateralSensitivity;
-
+    int verticalSensitivity=5;
+    int lateralSensitivity=5;
+   
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
+    
     WeaponEnum weapon;//選択武器
 
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度

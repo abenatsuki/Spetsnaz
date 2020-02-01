@@ -1274,7 +1274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMove: {fileID: 366606529}
   checkPoint: {fileID: 366606527}
-  playerAnimation: {fileID: 0}
   instanceWeapon: {fileID: 149693033}
   bulletManager: {fileID: 149693034}
 --- !u!114 &366606529
@@ -2839,6 +2838,7 @@ GameObject:
   - component: {fileID: 1664771247}
   - component: {fileID: 1664771246}
   - component: {fileID: 1664771245}
+  - component: {fileID: 1664771248}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2894,6 +2894,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1664771248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664771244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27946483f13297419cc5d5c653d0639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUIPrefab: {fileID: 1749846052989584278, guid: 96a4857b5198c1941926f9227cbb343f,
+    type: 3}
+  returnButton: {fileID: 0}
 --- !u!1 &1757664898
 GameObject:
   m_ObjectHideFlags: 0

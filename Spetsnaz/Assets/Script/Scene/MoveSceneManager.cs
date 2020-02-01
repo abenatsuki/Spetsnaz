@@ -86,6 +86,7 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
         yield return new WaitForSeconds(fadeWaitTime);
         //シーンを非同期で読込し、読み込まれるまで待機する
         yield return SceneManager.LoadSceneAsync(sceneNum);
+        
         //フェードアウトさせる
         fadeCanvas.fadeOut = true;
         CurrentStageNum = sceneNum;

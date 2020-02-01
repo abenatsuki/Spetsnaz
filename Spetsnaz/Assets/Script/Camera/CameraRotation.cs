@@ -10,10 +10,11 @@ public class CameraRotation : MonoBehaviour
     float sensitivityX=GameManager.Instance.LateralSensitivity;
     [SerializeField, Tooltip("カメラ感度縦感度")]
     float sensitivityY = GameManager.Instance.VerticalSensitivity;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        
         verRotation = transform.parent;//自機のtransform
 
         sensitivityX = GameManager.Instance.LateralSensitivity;
@@ -23,10 +24,19 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+        
+        sensitivityX = GameManager.Instance.LateralSensitivity;
+        sensitivityY = GameManager.Instance.VerticalSensitivity;
+
         float xRotation = Input.GetAxis("Mouse X")*sensitivityX;
         float yRotation = Input.GetAxis("Mouse Y")*sensitivityY;
 
         Rotate(xRotation, yRotation, 60);
+
        
     }
     void Rotate(float _inputX,float _inputY,float _limit)
@@ -50,5 +60,6 @@ public class CameraRotation : MonoBehaviour
         angle.y += _inputX;
       
         verRotation.transform.Rotate(0, _inputX, 0);
+
     }
 }
