@@ -9,6 +9,7 @@ public class MoveWeaponSelectScene : MonoBehaviour
     public void StandardOnClick()
     {
         DontDestroyObjectManager.DestoryAll();
+        GameManager.Instance.SetSceneMode(StageType.Standard);
         MoveSceneManager.Instance.MoveToStage(Scene_Enum.Weapon_Select_Scene);
        // SceneManager.LoadScene("WeaponSelectScene");
     }

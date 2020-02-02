@@ -16,11 +16,17 @@ enum WeaponEnum
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
-    int maxScore = 999999;
+    float maxhandGunGameScore = 999999;
+    //[SerializeField]
+    //int 
+    
+
     [SerializeField]
     int maxSensitivity=10;
 
-    int score = 0;
+   
+    float handGunGameScore = 0;
+    float standardGameScore = 0;
     int verticalSensitivity=5;
     int lateralSensitivity=5;
    
@@ -31,17 +37,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
     public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
 
-    public int Score
-    {
-        set
-        {
-            score = Mathf.Clamp(value, 0, maxScore);
-        }
-        get
-        {
-            return score;
-        }
-    }
+    public float HandGunGameScore{set{ handGunGameScore = value;/* Mathf.Clamp(value, 0, maxhandGunGameScore);*/}get{return handGunGameScore;}}
+    public float StandardGameScore { get { return standardGameScore;  }set { /*standardGameScore = Mathf.Clamp(value, 0, maxhandGunGameScore);*/ } }
+
     public void Awake()
     {
         
@@ -54,7 +52,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void LoadComponents()
     {
-        score = 0;
+        //handGunGameScore = 0;
+        //StandardGameScore = 0;
+        //weapon = WeaponEnum.Weapon_1;
+        //stageType = StageType.None;
+    }
+    public void ResetValue()
+    {
+        handGunGameScore = 0;
+        StandardGameScore = 0;
         weapon = WeaponEnum.Weapon_1;
         stageType = StageType.None;
     }

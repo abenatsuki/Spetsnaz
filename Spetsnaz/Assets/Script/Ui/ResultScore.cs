@@ -10,14 +10,15 @@ public class ResultScore : MonoBehaviour
     [SerializeField]
     private List<Sprite> numberFont = new List<Sprite>();
 
-    int displayScore;
+    public int displayScore { get; private set; }
     float score =0;
     // Start is called before the first frame update
     void Start()
     {
 
         score = ScoreCount.resultScore*ScoreCount.timeMagnification;
-
+       
+           
         displayScore = (int)score;
        
         foreach (var counter in image)
@@ -30,6 +31,15 @@ public class ResultScore : MonoBehaviour
         image[3].sprite = numberFont[(displayScore / 1000) % 10];
         image[4].sprite = numberFont[(displayScore / 10000) % 10];
         image[5].sprite = numberFont[displayScore / 100000];
+
+        if (GameManager.Instance.stageType == StageType.HandGun)
+        {
+           GameManager.Instance.HandGunGameScore = displayScore;
+        }
+        else
+        {
+            GameManager.Instance.StandardGameScore = displayScore;
+        }
 
     }
 

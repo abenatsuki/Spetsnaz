@@ -11,7 +11,9 @@ public enum Scene_Enum
     HandGunGame_Scene,
     Result_Scene,
     Help_Scene,
-    Option_Scene
+    Option_Scene,
+    StandardGame_Scene,
+    Ranking_Scene,
 
 }
 public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
@@ -72,6 +74,10 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
         if (StageName != "Title")
         {
              gameManager.LoadComponents();
+        }
+        if (StageName == "Title")
+        {
+            gameManager.ResetValue();
         }
     }
     //シーンの読み込みと待機を行うコルーチン

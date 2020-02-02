@@ -74,6 +74,8 @@ public class ScoreCount : MonoBehaviour
         
         resultScore = targetScoreManager.Score;
 
+       
+
     }
 
     void SpriteUpdate()
