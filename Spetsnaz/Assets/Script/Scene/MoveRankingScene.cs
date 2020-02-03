@@ -18,6 +18,16 @@ public class MoveRankingScene : MonoBehaviour
 
     public void MoveRanking()
     {
-        MoveSceneManager.Instance.MoveToStage(Scene_Enum.Ranking_Scene);
+        if (GameManager.Instance.stageType == StageType.HandGun)
+        {
+            MoveSceneManager.Instance.MoveToStage(Scene_Enum.HandGunRanking_Scene);
+        }
+        else
+        {
+            MoveSceneManager.Instance.MoveToStage(Scene_Enum.StandardRanking_Scene);
+        }
+        
+
+
     }
 }

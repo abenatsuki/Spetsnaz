@@ -36,7 +36,7 @@ public class ResultScore : MonoBehaviour
         {
            GameManager.Instance.HandGunGameScore = displayScore;
         }
-        else
+        else if(GameManager.Instance.stageType==StageType.Standard)
         {
             GameManager.Instance.StandardGameScore = displayScore;
         }
