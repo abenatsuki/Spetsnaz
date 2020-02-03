@@ -45,7 +45,7 @@ public class Bullet_Semi : MonoBehaviour
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-          //  hreaction.HReaction();
+            hreaction.HReaction();
         }
         //腰うち
         else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -54,7 +54,7 @@ public class Bullet_Semi : MonoBehaviour
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             //弾道ブレ率と速度追加
             BulletShoot();
-           // hreaction.HReaction();
+            hreaction.HReaction();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)

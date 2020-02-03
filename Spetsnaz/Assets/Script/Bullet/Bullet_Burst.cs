@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet_Burst : MonoBehaviour {
 
+
     PlayerDataProvider script;
     GameObject player;
 

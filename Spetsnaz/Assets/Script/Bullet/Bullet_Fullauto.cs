@@ -29,13 +29,6 @@ public class Bullet_Fullauto : MonoBehaviour
         fullammocnt = 30;
     }
 
-    public void BulletShoot()
-    {
-        //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100),
-                Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100), 0);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -46,15 +39,14 @@ public class Bullet_Fullauto : MonoBehaviour
         {
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-           // areaction.Areaction();
+            areaction.Areaction();
         }
         //腰うち
         else if (Input.GetMouseButton(0) && fullammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            BulletShoot();
-          //  areaction.Areaction();
+            areaction.Areaction();
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && fullammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)

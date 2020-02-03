@@ -2,42 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_AFReaction : MonoBehaviour
+public class Bullet_ASReaction : MonoBehaviour
 {
-    PlayerDataProvider script;
     CameraRotation cameraRotation;
+    PlayerDataProvider script;
     GameObject player;
 
     public GameObject ude;
-    public GameObject FGun;
+    public GameObject ASGun;
 
-    Bullet_Fullauto fullauto;
+    Bullet_Semi semi;
 
     private float Reaction;
-
-    private int Reactioncnt;
 
     // Start is called before the first frame update
     void Start()
     {
         Reaction = .0f;
-        Reactioncnt = 3;
-        FGun = (GameObject)Resources.Load("ak74");
-        fullauto = FGun.GetComponent<Bullet_Fullauto>();
+        ASGun = (GameObject)Resources.Load("ak74");
+        semi = ASGun.GetComponent<Bullet_Semi>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
+        //Debug.Log(script);
     }
 
-    public void Areaction()
+    public void HReaction()
     {
-        if (0 <= fullauto.fullammocnt && Input.GetMouseButton(0) && script.IsNowWepon == Now_Weapon.Assult_Rifle)
+        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Hand_Gun)
         {
-            Reactioncnt--;
-            if (Reactioncnt <= 0)
             {
-                Reaction = -2.1f;
+                Reaction = -3.8f;
                 ude.transform.Rotate(Reaction, 0.0f, 0.0f);
-                Reactioncnt = 3;
             }
         }
     }
@@ -45,6 +40,6 @@ public class Bullet_AFReaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 }
