@@ -17,16 +17,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
     float maxhandGunGameScore = 999999;
-    //[SerializeField]
-    //int 
-    
-
+   
     [SerializeField]
     int maxSensitivity=10;
 
-   
     float handGunGameScore = 0;
     float standardGameScore = 0;
+
+    string[] Sensitivity = { "縦感度", "横感度" };
+
     int verticalSensitivity=5;
     int lateralSensitivity=5;
    
@@ -37,8 +36,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
     public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
 
-    public float HandGunGameScore{set{ handGunGameScore = value;/* Mathf.Clamp(value, 0, maxhandGunGameScore);*/}get{return handGunGameScore;}}
-    public float StandardGameScore { get { return standardGameScore;  }set { /*standardGameScore = Mathf.Clamp(value, 0, maxhandGunGameScore);*/ } }
+    public float HandGunGameScore{set{ handGunGameScore = value; }get{return handGunGameScore;}}
+    public float StandardGameScore {set { standardGameScore = value; } get { return standardGameScore;  } }
 
     public void Awake()
     {
@@ -67,6 +66,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void SetSceneMode(StageType _stageType)
     {
         stageType = _stageType;
+    }
+    public void SetSensitivity(int _value)
+    {
+
     }
     void Start()
     {

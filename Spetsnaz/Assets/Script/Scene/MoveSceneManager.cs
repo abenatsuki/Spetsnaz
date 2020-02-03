@@ -13,7 +13,8 @@ public enum Scene_Enum
     Help_Scene,
     Option_Scene,
     StandardGame_Scene,
-    Ranking_Scene,
+    HandGunRanking_Scene,
+    StandardRanking_Scene,
 
 }
 public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>

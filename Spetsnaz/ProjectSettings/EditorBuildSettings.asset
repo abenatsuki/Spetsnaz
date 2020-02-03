@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StandardGameScene.unity
     guid: 996dde7759a811542875dbd104a6221e
   - enabled: 1
-    path: Assets/Scenes/RankingScene.unity
+    path: Assets/Scenes/HandGunRankingScene.unity
     guid: 0c2c749345cfbe8488d3bae1053f24a1
+  - enabled: 1
+    path: Assets/Scenes/StandardRankingScene.unity
+    guid: 9e02d52b4271826458176fdf774f0891
   m_configObjects: {}
