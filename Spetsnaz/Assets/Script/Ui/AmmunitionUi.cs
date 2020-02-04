@@ -10,8 +10,12 @@ public class AmmunitionUi : MonoBehaviour
     private List<Sprite> numberFont = new List<Sprite>();
 
     GameObject gun;
-    Bullet_Semi bulletScript;
+    //バレットスクリプト
+    Bullet_Semi bulletScript;//ハンドガン
     Bullet_Fullauto bulletFullauto;
+    Bullet_ASemi bulletASemi;
+    Bullet_Burst bulletBurst;
+
     int ammuniton;//表示する弾数
     GameObject player;
     PlayerDataProvider playerScript;
@@ -39,9 +43,25 @@ public class AmmunitionUi : MonoBehaviour
         {
             if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
             {
-                gun = GameObject.FindGameObjectWithTag("Gun");
-                bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
-                flag = true;
+                switch(GameManager.Instance.SelectAssault)
+                {
+                    case SelectAssaultEnum.Full:
+                        gun = GameObject.FindGameObjectWithTag("Gun");
+                        bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
+                        flag = true;
+                        break;
+                    case SelectAssaultEnum.Semi:
+                        gun = GameObject.FindGameObjectWithTag("Gun");
+                        bulletASemi = gun.GetComponent<Bullet_ASemi>();
+                        flag = true;
+                        break;
+                    case SelectAssaultEnum.Burst:
+                        gun = GameObject.FindGameObjectWithTag("Gun");
+                        bulletBurst = gun.GetComponent<Bullet_Burst>();
+                        flag = true;
+                        break;
+                }
+               
             }
             else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
             {
@@ -57,9 +77,21 @@ public class AmmunitionUi : MonoBehaviour
         }
         else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
         {
-            ammuniton = bulletFullauto.fullammocnt;
-        }
+            switch (GameManager.Instance.SelectAssault)
+            {
+                case SelectAssaultEnum.Full:
+                    ammuniton = bulletFullauto.fullammocnt;
+                    break;
+                case SelectAssaultEnum.Semi:
+                    ammuniton = bulletASemi.Asemiammocnt;
+                    break;
+                case SelectAssaultEnum.Burst:
+                    ammuniton = bulletBurst.burstammocnt;
+                    break;
 
+            }
+
+        }
 
         image[0].sprite = numberFont[ammuniton % 10];
         image[1].sprite = numberFont[(ammuniton / 10) % 10];

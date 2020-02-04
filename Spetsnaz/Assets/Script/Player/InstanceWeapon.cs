@@ -27,43 +27,43 @@ public class InstanceWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //ResouseWeapon[0] = (GameObject)Resources.Load("makarov_arm");//ハンドガン
+        //ResouseWeapon[1] = (GameObject)Resources.Load("ak74");//フルオート
+        //ResouseWeapon[2] = (GameObject)Resources.Load("asval");//セミオート
+        //ResouseWeapon[3] = (GameObject)Resources.Load("an94");//バースト
+
         //stageType = GameManager.Instance.stageType;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
-
+        Debug.Log(playerScript);
         if (GameManager.Instance.stageType == StageType.HandGun)
         {
             SetHandGun();
-
         }
         else
         {
- SetAssultRifle();
+            SetAssultRifle();
         }
-           
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (stageType == StageType.Standard)
-        //{
-       
 
-            if (playerScript.IsInFlag)
-            {
-                changeFlag = false;
-            }
- if (GameManager.Instance.stageType == StageType.HandGun)
+        if (playerScript.IsInFlag)
+        {
+            changeFlag = false;
+        }
+        if (GameManager.Instance.stageType == StageType.HandGun)
         {
             return;
         }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                ChangeWeapon();
-            }
-       // }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeWeapon();
+        }
+        // }
 
     }
     void ChangeWeapon()
@@ -74,15 +74,11 @@ public class InstanceWeapon : MonoBehaviour
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             SetHandGun();
-
         }
         else if (nowWeapon == Now_Weapon.Hand_Gun)
         {
             SetAssultRifle();
-
         }
-
-
     }
 
     void SetHandGun()
@@ -92,7 +88,7 @@ public class InstanceWeapon : MonoBehaviour
         {
             Destroy(transform.GetChild(0).gameObject);
         }
-        var weapon = Instantiate(ResouseWeapon[1]);
+        var weapon = Instantiate(ResouseWeapon[0]);
         weapon.SetActive(true);
         SetTranceForm(weapon);
     }
@@ -103,7 +99,22 @@ public class InstanceWeapon : MonoBehaviour
         {
             Destroy(transform.GetChild(0).gameObject);
         }
-        var weapon = Instantiate(ResouseWeapon[0]);
+        SelectAssaultEnum selectAssault = SelectAssaultEnum.None;
+        switch (GameManager.Instance.SelectAssault)
+        {
+            case SelectAssaultEnum.Full:
+                selectAssault = SelectAssaultEnum.Full;
+                break;
+            case SelectAssaultEnum.Semi:
+                selectAssault = SelectAssaultEnum.Semi;
+                break;
+            case SelectAssaultEnum.Burst:
+                selectAssault = SelectAssaultEnum.Burst;
+                break;
+
+        }
+
+        var weapon = Instantiate(ResouseWeapon[(int)selectAssault]);
         weapon.SetActive(true);
         SetTranceForm(weapon);
     }

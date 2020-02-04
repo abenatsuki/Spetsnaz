@@ -436,8 +436,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResouseWeapon:
-  - {fileID: 7976150140103786070, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
   - {fileID: 5627657642776899319, guid: 55ff3adbbfc521944a99421df4a7e256, type: 3}
+  - {fileID: 7976150140103786070, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
+  - {fileID: 1747755548712176511, guid: 9474cf185bdf9d547b05c98dedeaeaad, type: 3}
+  - {fileID: 7591269942010657214, guid: 5d4a43976985a3d47b8de25be074c289, type: 3}
 --- !u!114 &149693034
 MonoBehaviour:
   m_ObjectHideFlags: 0
