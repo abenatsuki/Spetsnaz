@@ -15,6 +15,7 @@ public class TargetCount : MonoBehaviour
     TergetScoreManeger managerScript;
 
     int maxTargetCount;
+
     int numberOfTargetsBroken;//壊したターゲット数
 
     bool starteFlag;
