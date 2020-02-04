@@ -9,9 +9,9 @@ public class Bullet_ASReaction : MonoBehaviour
     GameObject player;
 
     public GameObject ude;
-    public GameObject ASGun;
+    public GameObject SGun;
 
-    Bullet_Semi semi;
+    Bullet_ASemi Asemi;
 
     private float Reaction;
 
@@ -19,8 +19,8 @@ public class Bullet_ASReaction : MonoBehaviour
     void Start()
     {
         Reaction = .0f;
-        ASGun = (GameObject)Resources.Load("ak74");
-        semi = ASGun.GetComponent<Bullet_Semi>();
+        SGun = (GameObject)Resources.Load("ak74");
+        Asemi = SGun.GetComponent<Bullet_ASemi>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         //Debug.Log(script);
@@ -28,7 +28,7 @@ public class Bullet_ASReaction : MonoBehaviour
 
     public void HReaction()
     {
-        if (0 <= semi.ammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Hand_Gun)
+        if (0 <= Asemi.Asemiammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Hand_Gun)
         {
             {
                 Reaction = -3.8f;
