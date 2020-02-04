@@ -5,7 +5,7 @@ using UnityEngine;
 public class Smoke : MonoBehaviour
 {
     [SerializeField]
-    GameObject particlePrefab;
+    GameObject particlePrefab=null;
 
     bool OutBreakFlag=false;
 

@@ -7,11 +7,11 @@ public class PauseManager : MonoBehaviour
 {
     [SerializeField]
     //　ポーズした時に表示するUIのプレハブ
-    private GameObject pauseUIPrefab;
+    private GameObject pauseUIPrefab=null;
     [SerializeField]
-    Button returnButton;
+    Button returnButton=null;
     //　ポーズUIのインスタンス
-    private GameObject pauseUIInstance;
+    private GameObject pauseUIInstance=null;
 
     // Update is called once per frame
     

@@ -9,13 +9,13 @@ public class PlayerMoveSound : MonoBehaviour
 {
 
     [SerializeField,Tooltip("歩く足音の間隔")]
-    int walkInterval;
+    int walkInterval=0;
     [SerializeField,Tooltip("走る足音の間隔")]
-    int dashInterval;
+    int dashInterval=0;
     [SerializeField, Tooltip("歩く足音音源")]
-     AudioClip walk;
+     AudioClip walk=null;
     [SerializeField, Tooltip("走る足音音源")]
-     AudioClip run;
+     AudioClip run=null;
 
     AudioSource audioSource;
 

@@ -14,7 +14,7 @@ public class ScoreCount : MonoBehaviour
     [SerializeField,Tooltip("表示時間")]
     int count;
     [SerializeField]
-    float magnification;
+    float magnification=0.0f;
 
     TergetScoreManeger targetScoreManager;
     GameObject target;

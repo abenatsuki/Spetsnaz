@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class FadeUi : MonoBehaviour
 {
     [SerializeField]
-    bool fade;
+    bool fade=false;
   
     [SerializeField]
-    Image image;
+    Image image=null;
     [SerializeField]
     float fadeSpeed = 0.02f;
 

@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class SliderManager : MonoBehaviour
 {
     [SerializeField]
-    Slider sensitivitySlider;
+    Slider sensitivitySlider=null;
     [SerializeField]
-    InputField inputField;
+    InputField inputField=null;
    
     [SerializeField]
-    int minValue;
+    int minValue=0;
     [SerializeField]
-    int maxValue;
+    int maxValue=0;
 
     float value;
     // Start is called before the first frame update

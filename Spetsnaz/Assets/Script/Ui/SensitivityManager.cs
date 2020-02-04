@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class SensitivityManager : MonoBehaviour
 {
     [SerializeField]
-    InputField inputFieldHight;
+    InputField inputFieldHight=null;
     [SerializeField]
-    InputField inputFieldWidth;
+    InputField inputFieldWidth=null;
     // Start is called before the first frame update
     void Start()
     {

@@ -31,16 +31,16 @@ public class InstanceWeapon : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
 
-        //if (GameManager.Instance.stageType == StageType.HandGun)
-        //{
-        //    SetHandGun();
-        //}
-        //else
-        //{
-        //    SetAssultRifle();
-        //}
+        if (GameManager.Instance.stageType == StageType.HandGun)
+        {
+            SetHandGun();
 
-        SetAssultRifle();
+        }
+        else
+        {
+ SetAssultRifle();
+        }
+           
 
     }
 
@@ -49,10 +49,16 @@ public class InstanceWeapon : MonoBehaviour
     {
         //if (stageType == StageType.Standard)
         //{
+       
+
             if (playerScript.IsInFlag)
             {
                 changeFlag = false;
             }
+ if (GameManager.Instance.stageType == StageType.HandGun)
+        {
+            return;
+        }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ChangeWeapon();

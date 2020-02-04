@@ -54,6 +54,7 @@ public class RankingScript : MonoBehaviour
                 var change = rankingValue[i];
                 rankingValue[i] = _value;
                 _value = change;
+                
             }
         }
 
