@@ -35,28 +35,29 @@ public class Bullet_Burst : MonoBehaviour
     {
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
-        if (Input.GetMouseButton(0) && burstcnt > 0 && burstammocnt > 0 &&
-            playerStateEnum == PlayerStateEnum.EIM && 
-            playerStateEnum != PlayerStateEnum.RELOAD)
+        if (Input.GetMouseButton(0) && burstcnt > 0 && burstammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
         }
+        if (Input.GetMouseButton(0) && burstcnt <= 0)
+        {
+            abreaction.ASReaction();
+        }
         //腰うち
-        else if (Input.GetMouseButton(0) && burstammocnt > 0 && 
-            playerStateEnum != PlayerStateEnum.RELOAD)
+        else if (Input.GetMouseButton(0) && burstammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             if (burstcnt > 0)
             {
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                abreaction.ASReaction();
             }
         }
         //弾のリロード
-        else if (Input.GetKeyDown(KeyCode.R) && burstammocnt < 30 &&
-            playerStateEnum == PlayerStateEnum.RELOAD)
+        else if (Input.GetKeyDown(KeyCode.R) && burstammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
             burstammocnt = 30;
         }

@@ -25,16 +25,8 @@ public class Bullet_Semi : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         hreaction = uderot.GetComponent<Bullet_Reaction>();
-        ammocnt = 8;
+        ammocnt = script.IsBeforeAmmocnt;
     }
-
-    public void BulletShoot()
-    {
-        //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100),
-                Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100), 0);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -52,8 +44,6 @@ public class Bullet_Semi : MonoBehaviour
         {
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            //弾道ブレ率と速度追加
-            BulletShoot();
             hreaction.HReaction();
         }
         //弾のリロード
