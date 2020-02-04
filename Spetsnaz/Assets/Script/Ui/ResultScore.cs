@@ -10,6 +10,8 @@ public class ResultScore : MonoBehaviour
     private List<Sprite> numberFont = new List<Sprite>();
 
     public int displayScore { get; private set; }
+    public int displayTime { get; private set; }
+
     float score = 0;
 
     public bool newRecordFlag { get; private set; }

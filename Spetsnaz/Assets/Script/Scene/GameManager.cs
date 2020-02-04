@@ -8,10 +8,13 @@ public enum StageType
     Standard,
     HandGun,
 }
-enum WeaponEnum
+public enum SelectAssaultEnum
 {
-    Weapon_1,
-    Weapon_2
+    Full=1,
+    Semi,
+    Burst,
+    None
+    
 }
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -28,13 +31,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     int verticalSensitivity=5;
     int lateralSensitivity=5;
-    bool newRecordFlag = false;
+    bool newRecordFlag = false;//newRecordが出たかどうか
+    SelectAssaultEnum selectAssault;//選択アサルトライフル
 
     public bool NewRecordFlag { get { return newRecordFlag; } set { newRecordFlag = value; } }
    
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
-    
-    WeaponEnum weapon = WeaponEnum.Weapon_1;//選択武器
+
+    public SelectAssaultEnum SelectAssault { get { return selectAssault; }set { selectAssault = value; } }//選択武器
 
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
     public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
@@ -54,16 +58,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     }
     public void LoadComponents()
     {
-        //handGunGameScore = 0;
-        //StandardGameScore = 0;
-        //weapon = WeaponEnum.Weapon_1;
-        //stageType = StageType.None;
+       //タイトル以外での初期化
     }
+    //タイトル時初期化
     public void ResetValue()
     {
         handGunGameScore = 0;
         StandardGameScore = 0;
-        weapon = WeaponEnum.Weapon_1;
+        selectAssault = SelectAssaultEnum.Burst;
         stageType = StageType.None;
         newRecordFlag = false;
     }
