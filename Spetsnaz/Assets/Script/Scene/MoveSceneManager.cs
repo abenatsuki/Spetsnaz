@@ -22,7 +22,7 @@ public class MoveSceneManager : SingletonMonoBehaviour<MoveSceneManager>
     [SerializeField, Tooltip("フェードイン、フェードアウトの間の待ち時間")]
     float fadeWaitTime = 0;
     [SerializeField, Tooltip("トランジションに使用するカンバスのプレハブ")]
-    GameObject fadeCanvasPrefab;
+    GameObject fadeCanvasPrefab=null;
     int currentStageNum = 0; //現在のステージ番号（0始まり）
     GameObject fadeCanvasObj;
     FadeCanvas fadeCanvas;

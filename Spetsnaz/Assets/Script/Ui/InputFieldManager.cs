@@ -7,8 +7,8 @@ public class InputFieldManager : MonoBehaviour
 {
     InputField inputField;
     [SerializeField]
-    Slider slider;
-    string inputValue;
+    Slider slider=null;
+    string inputValue="";
     /// <summary>
     /// Startメソッド
     /// InputFieldコンポーネントの取得および初期化メソッドの実行

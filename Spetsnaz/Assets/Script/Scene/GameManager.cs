@@ -28,10 +28,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     int verticalSensitivity=5;
     int lateralSensitivity=5;
+    bool newRecordFlag = false;
+
+    public bool NewRecordFlag { get { return newRecordFlag; } set { newRecordFlag = value; } }
    
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
     
-    WeaponEnum weapon;//選択武器
+    WeaponEnum weapon = WeaponEnum.Weapon_1;//選択武器
 
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
     public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
@@ -62,6 +65,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         StandardGameScore = 0;
         weapon = WeaponEnum.Weapon_1;
         stageType = StageType.None;
+        newRecordFlag = false;
     }
     public void SetSceneMode(StageType _stageType)
     {

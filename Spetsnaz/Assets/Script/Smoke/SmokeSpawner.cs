@@ -6,13 +6,13 @@ public class SmokeSpawner : MonoBehaviour
 {
     
     [SerializeField,Tooltip("投げる強さ")]
-    float throwSpeed;
+    float throwSpeed=0.0f;
 
-    GameObject smokeGrenade;
+    GameObject smokeGrenade=null;
     bool spawnFlag = false;
 
 
-    ActivationArea activationAreaScript;
+    ActivationArea activationAreaScript=null;
 
     // Start is called before the first frame update
     void Start()

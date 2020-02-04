@@ -11,7 +11,7 @@ public class FadeCanvas : MonoBehaviour
     public bool fadeOut = false;
 
     [SerializeField]
-    Image panelImage;
+    Image panelImage=null;
     [SerializeField]
     float fadeSpeed = 0.02f;
 

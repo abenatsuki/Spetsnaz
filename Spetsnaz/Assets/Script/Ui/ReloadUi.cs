@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ReloadUi : MonoBehaviour
 {
     [SerializeField]
-    Image reloadImage;
+    Image reloadImage=null;
 
     GameObject player;
     PlayerDataProvider playerScript;

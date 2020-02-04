@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &464283345 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6626614917074761628, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6626614916786185347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827432310
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,12 +458,22 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6626614916045435334, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+    - target: {fileID: 6626614917074761629, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6626614917074761629, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+    - target: {fileID: 6626614915902785993, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 464283345}
+    - target: {fileID: 6626614916279815024, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916045435334, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -461,9 +483,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6626614916279815024, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+    - target: {fileID: 6626614916045435333, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
-      propertyPath: m_AnchorMax.y
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 44139887dbde3bc46920b73618900b1c,
+        type: 3}
+    - target: {fileID: 6626614916045435333, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

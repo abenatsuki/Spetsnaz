@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectRotation : MonoBehaviour
 {
     [SerializeField, Tooltip("1秒間に回転する度数")]
-    float degree;
+    float degree=0.0f;
 
     // Update is called once per frame
     void Update()

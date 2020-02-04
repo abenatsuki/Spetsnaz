@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResouseWeapon:
-  - {fileID: 7976150140103786070, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
+  - {fileID: 100000, guid: d4a33c9e2d1028a489ae7316944f650b, type: 3}
   - {fileID: 5627657642776899319, guid: 55ff3adbbfc521944a99421df4a7e256, type: 3}
 --- !u!114 &149693034
 MonoBehaviour:
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ude: {fileID: 281845576}
-  FGun: {fileID: 744868128696322790, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
+  FGun: {fileID: 7976150140103786070, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
 --- !u!114 &281845580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3410,7 +3410,7 @@ PrefabInstance:
     - target: {fileID: 2744457569674806927, guid: b259b55676b53694182bd8162cade33c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.37
+      value: -13.25
       objectReference: {fileID: 0}
     - target: {fileID: 2744457569674806927, guid: b259b55676b53694182bd8162cade33c,
         type: 3}

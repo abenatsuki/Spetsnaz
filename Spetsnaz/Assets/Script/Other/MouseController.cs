@@ -13,9 +13,9 @@ enum CursorLockState
 public class MouseController : MonoBehaviour
 {
     [SerializeField,Tooltip("マウス表示非表示")]
-    bool cursorVisible;
+    bool cursorVisible=false;
     [SerializeField,Tooltip("マウス設定")]
-    CursorLockState cursorLockState;
+    CursorLockState cursorLockState=CursorLockState.NONE;
 
     // Start is called before the first frame update
     void Start()

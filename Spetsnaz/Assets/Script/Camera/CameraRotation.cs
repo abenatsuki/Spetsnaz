@@ -17,8 +17,10 @@ public class CameraRotation : MonoBehaviour
         
         verRotation = transform.parent;//自機のtransform
 
-        sensitivityX = GameManager.Instance.LateralSensitivity;
-        sensitivityY = GameManager.Instance.VerticalSensitivity;
+        //sensitivityX = GameManager.Instance.LateralSensitivity;
+        //sensitivityY = GameManager.Instance.VerticalSensitivity;
+        sensitivityX = 5;
+        sensitivityY = 5;
     }
 
     // Update is called once per frame
@@ -29,8 +31,8 @@ public class CameraRotation : MonoBehaviour
             return;
         }
         
-        sensitivityX = GameManager.Instance.LateralSensitivity;
-        sensitivityY = GameManager.Instance.VerticalSensitivity;
+        //sensitivityX = GameManager.Instance.LateralSensitivity;
+        //sensitivityY = GameManager.Instance.VerticalSensitivity;
 
         float xRotation = Input.GetAxis("Mouse X")*sensitivityX;
         float yRotation = Input.GetAxis("Mouse Y")*sensitivityY;
