@@ -4,65 +4,52 @@ using UnityEngine;
 
 public class Bullet_ASemi : MonoBehaviour
 {
+    Bullet_ASReaction asreaction;
     PlayerDataProvider script;
     GameObject player;
 
     public GameObject Bullet;
     public GameObject Muzzle;
 
-    public int Asemiammocnt { get; private set; } //残弾数
+    public GameObject uderot;
 
-    private float ReloadTime;// リロードの待機時間
+    public int Asemiammocnt { get; private set; } //残弾数
 
     PlayerStateEnum playerStateEnum;
 
-    public bool reloadFlag { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
+        uderot = GameObject.Find("UdeRot").gameObject;
+        asreaction = uderot.GetComponent<Bullet_ASReaction>();
         Asemiammocnt = 30;
-        ReloadTime = 0;
-        reloadFlag = false;
-    }
-
-    public void BulletShoot()
-    {
-        //弾道ブレ率
-        transform.eulerAngles += new Vector3(Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100),
-                Random.Range(-Muzzle.transform.position.x / 100, Muzzle.transform.position.y / 100), 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //リロードできるまでの時間
-        ReloadTime--;
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
-        if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && ReloadTime < 0 && playerStateEnum == PlayerStateEnum.EIM)
+        if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            asreaction.ASReaction();
         }
         //腰うち
-        else if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && ReloadTime < 0)
+        else if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            //弾道ブレ率と速度追加
-            BulletShoot();
+            asreaction.ASReaction();
         }
         //弾のリロード
-        if (Input.GetKeyDown(KeyCode.R) && ReloadTime < 0 && Asemiammocnt < 8 && !reloadFlag)
+        if (Input.GetKeyDown(KeyCode.R) && Asemiammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
-            reloadFlag = true;
             Asemiammocnt = 30;
-            ReloadTime = 120;
         }
-        else if (ReloadTime < 0)
-            reloadFlag = false;
     }
 }

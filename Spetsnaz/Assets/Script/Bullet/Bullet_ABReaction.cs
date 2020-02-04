@@ -2,37 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_ASReaction : MonoBehaviour
+public class Bullet_ABReaction : MonoBehaviour
 {
     CameraRotation cameraRotation;
     PlayerDataProvider script;
     GameObject player;
 
     public GameObject ude;
-    public GameObject SGun;
+    public GameObject BGun;
 
-    Bullet_ASemi Asemi;
+    Bullet_Burst burst;
 
     private float Reaction;
+    private float Reactioncnt;
 
     // Start is called before the first frame update
     void Start()
     {
         Reaction = .0f;
-        SGun = (GameObject)Resources.Load("asval");
-        Asemi = SGun.GetComponent<Bullet_ASemi>();
+        Reactioncnt = 1.5f;
+    BGun = (GameObject)Resources.Load("an94");
+        burst = BGun.GetComponent<Bullet_Burst>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
-        //Debug.Log(script);
     }
 
     public void ASReaction()
     {
-        if (0 <= Asemi.Asemiammocnt && Input.GetMouseButtonDown(0) && script.IsNowWepon == Now_Weapon.Assult_Rifle)
+        if (0 <= burst.burstammocnt && Input.GetMouseButton(0) && script.IsNowWepon == Now_Weapon.Assult_Rifle)
         {
+            Reactioncnt -= 0.1f;
+            if (Reactioncnt <= 0)
             {
-                Reaction = -3.8f;
+                Reaction = -2.1f;
                 ude.transform.Rotate(Reaction, 0.0f, 0.0f);
+                Reactioncnt = 1.5f;
             }
         }
     }
