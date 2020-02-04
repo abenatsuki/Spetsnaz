@@ -16,7 +16,7 @@ public class AmmunitionUi : MonoBehaviour
     int ammuniton;//表示する弾数
     GameObject player;
     PlayerDataProvider playerScript;
-    bool flag=false;
+    bool flag = false;
 
     private void Start()
     {
@@ -39,28 +39,28 @@ public class AmmunitionUi : MonoBehaviour
 
         if (!flag)
         {
-        if (playerScript.IsInFlag&&playerScript.IsNowWepon==Now_Weapon.Assult_Rifle)
-        {
-            gun = GameObject.FindGameObjectWithTag("Gun");
-            bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
-          //  ammuniton = bulletScript.ammocnt;
-            flag = true;
-        }
-        else if(playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun )
-        {
+            if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
+            {
+                gun = GameObject.FindGameObjectWithTag("Gun");
+                bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
+                //  ammuniton = bulletScript.ammocnt;
+                flag = true;
+            }
+            else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
+            {
                 gun = GameObject.FindGameObjectWithTag("Gun");
                 bulletScript = gun.GetComponent<Bullet_Semi>();
                 ammuniton = bulletScript.ammocnt;
                 flag = true;
-        }
+            }
 
         }
-       if(playerScript.IsInFlag&&playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
-        ammuniton = bulletScript.ammocnt;
-     else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
+        if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
+            ammuniton = bulletScript.ammocnt;
+        else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
             ammuniton = bulletFullauto.fullammocnt;
-       
-        
+
+
         image[0].sprite = numberFont[ammuniton % 10];
         image[1].sprite = numberFont[(ammuniton / 10) % 10];
     }

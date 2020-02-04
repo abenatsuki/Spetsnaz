@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1747755548712176511
+--- !u!1 &3215969195725280681
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9181951545028557554}
-  - component: {fileID: 2929241764113631557}
-  - component: {fileID: 4759307492403631979}
-  - component: {fileID: 6027029259549431165}
+  - component: {fileID: 6594700225094813791}
+  - component: {fileID: 4262129086755235202}
+  - component: {fileID: 7581405836877486329}
+  - component: {fileID: 5112876405387604137}
   m_Layer: 0
   m_Name: asval
   m_TagString: Gun
@@ -19,36 +19,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9181951545028557554
+--- !u!4 &6594700225094813791
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747755548712176511}
+  m_GameObject: {fileID: 3215969195725280681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.29, y: 20.399096, z: 26.924335}
+  m_LocalPosition: {x: -17.050747, y: 3.7294955, z: 13.86706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6449251016084758097}
+  - {fileID: 3442761841911973646}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2929241764113631557
+--- !u!33 &4262129086755235202
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747755548712176511}
+  m_GameObject: {fileID: 3215969195725280681}
   m_Mesh: {fileID: 4300000, guid: fee6efb44b2206844a0e687bd92802a8, type: 3}
---- !u!23 &4759307492403631979
+--- !u!23 &7581405836877486329
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747755548712176511}
+  m_GameObject: {fileID: 3215969195725280681}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,21 +79,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6027029259549431165
+--- !u!114 &5112876405387604137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747755548712176511}
+  m_GameObject: {fileID: 3215969195725280681}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abeec3c90f4f4814bafe3fedbd7142fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 8313082104580450478}
-  Muzzle: {fileID: 8313082104580450478}
---- !u!1 &8313082104580450478
+  Bullet: {fileID: 8911603509087186023, guid: 01720962604976142ad84fd18c38a298, type: 3}
+  Muzzle: {fileID: 4535716062676778637}
+  uderot: {fileID: 0}
+--- !u!1 &4535716062676778637
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +102,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6449251016084758097}
+  - component: {fileID: 3442761841911973646}
   m_Layer: 0
   m_Name: AS_Mazull
   m_TagString: Untagged
@@ -109,17 +110,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6449251016084758097
+--- !u!4 &3442761841911973646
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313082104580450478}
+  m_GameObject: {fileID: 4535716062676778637}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9181951545028557554}
+  m_Father: {fileID: 6594700225094813791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
