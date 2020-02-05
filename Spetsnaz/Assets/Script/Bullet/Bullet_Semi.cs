@@ -25,7 +25,7 @@ public class Bullet_Semi : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         hreaction = uderot.GetComponent<Bullet_Reaction>();
-        ammocnt = script.IsBeforeAmmocnt;
+        ammocnt = 8;
     }
     // Update is called once per frame
     void Update()
