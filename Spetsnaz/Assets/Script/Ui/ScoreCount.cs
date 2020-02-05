@@ -36,11 +36,13 @@ public class ScoreCount : MonoBehaviour
     float alfa;
     bool inFlag;
     float leftTime;
+    float stateTime;
     
     // Start is called before the 
     
     void Start()
     {
+        stateTime = Time.time;
         timeMagnification = magnification;
         inFlag = false;
         count = 0;
@@ -119,7 +121,7 @@ public class ScoreCount : MonoBehaviour
     }
     void TimeCount()
     {
-        clearTime = Time.time;
+        clearTime = Time.time-stateTime;
 
         leftTime -= Time.deltaTime;
         if (leftTime <= 0.0)

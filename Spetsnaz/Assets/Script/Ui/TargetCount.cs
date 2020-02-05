@@ -39,14 +39,17 @@ public class TargetCount : MonoBehaviour
     {
         if (!starteFlag)
         {
-            maxTargetCount = managerScript.TargetMax;
+           maxTargetCount = managerScript.TargetMax;
             
             starteFlag = true;
         }
         numberOfTargetsBroken = managerScript.TargetMax-managerScript.TargetCnt;
 
 
-        image[0].sprite = numberFont[maxTargetCount];
-        image[1].sprite = numberFont[numberOfTargetsBroken];
+        image[0].sprite = numberFont[maxTargetCount%10];
+        image[1].sprite = numberFont[(maxTargetCount/10)%10];
+
+        image[2].sprite = numberFont[numberOfTargetsBroken%10];
+        image[3].sprite = numberFont[(numberOfTargetsBroken/10)%10];
     }
 }

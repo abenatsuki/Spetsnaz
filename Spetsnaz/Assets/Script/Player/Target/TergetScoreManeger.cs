@@ -33,6 +33,6 @@ public class TergetScoreManeger : MonoBehaviour
         //Debug.Log(TargetMax);
 
         //Debug.Log(Score);
-        //Debug.Log(TargetCnt);
+       // Debug.Log(TargetCnt);
     }
 }

@@ -113,7 +113,6 @@ public class InstanceWeapon : MonoBehaviour
                 break;
 
         }
-
         var weapon = Instantiate(ResouseWeapon[(int)selectAssault]);
         weapon.SetActive(true);
         SetTranceForm(weapon);
