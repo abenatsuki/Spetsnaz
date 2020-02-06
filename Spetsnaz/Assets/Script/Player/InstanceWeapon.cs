@@ -24,6 +24,7 @@ public class InstanceWeapon : MonoBehaviour
     Bullet_Semi handGunScript;
     Bullet_Fullauto assultScript;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,10 @@ public class InstanceWeapon : MonoBehaviour
         //ResouseWeapon[3] = (GameObject)Resources.Load("an94");//バースト
 
         //stageType = GameManager.Instance.stageType;
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
-        Debug.Log(playerScript);
+      
         if (GameManager.Instance.stageType == StageType.HandGun)
         {
             SetHandGun();
@@ -59,6 +61,7 @@ public class InstanceWeapon : MonoBehaviour
         {
             return;
         }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             ChangeWeapon();
@@ -70,7 +73,6 @@ public class InstanceWeapon : MonoBehaviour
     {
 
         changeFlag = true;
-        Debug.Log(changeFlag);
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             SetHandGun();
@@ -92,6 +94,7 @@ public class InstanceWeapon : MonoBehaviour
         weapon.SetActive(true);
         SetTranceForm(weapon);
     }
+
     void SetAssultRifle()
     {
         nowWeapon = Now_Weapon.Assult_Rifle;

@@ -41,7 +41,7 @@ public class BulletManager : MonoBehaviour
             {
              beforeAmmocnt = bulletSemiScript.ammocnt;
             }
-           
+            
             StartCoroutine("ScriptLoad");
         }
 
