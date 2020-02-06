@@ -9,8 +9,12 @@ public class BulletManager : MonoBehaviour
     public bool inFlag { get; private set; }
     public int beforeAmmocnt { get; private set; }
     GameObject gun;
-    Bullet_Semi bulletSemiScript;
+
+    //バレットスクリプト
+    Bullet_Semi bulletSemiScript;//ハンドガン
     Bullet_Fullauto fullautoScript;
+    Bullet_Burst burstScript;
+    Bullet_ASemi aSemiScript;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +39,22 @@ public class BulletManager : MonoBehaviour
         {
             if (fullautoScript != null)
             {
-             beforeAmmocnt = fullautoScript.fullammocnt;
+             GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Full] = fullautoScript.fullammocnt;
             }
             else if (bulletSemiScript != null)
             {
-             beforeAmmocnt = bulletSemiScript.ammocnt;
+                GameManager.Instance.BeforeAmmocnt[0] = bulletSemiScript.ammocnt;
             }
-            
+            else if (burstScript != null)
+            {
+                GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Burst] = burstScript.burstammocnt;
+            }
+            else if (aSemiScript != null)
+            {
+                GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi] = aSemiScript.Asemiammocnt;
+            }
+
+
             StartCoroutine("ScriptLoad");
         }
 
@@ -57,21 +70,37 @@ public class BulletManager : MonoBehaviour
                 case Now_Weapon.Hand_Gun:
                 if (bulletSemiScript == null)
                 {
-                   
+                    burstScript = null;
+                    aSemiScript = null;
                     fullautoScript = null;
                     bulletSemiScript = gun.GetComponent<Bullet_Semi>();
                     inFlag = true;
                 }
                     break;
                 case Now_Weapon.Assult_Rifle:
-                if (fullautoScript == null)
+                if (fullautoScript == null||burstScript==null||aSemiScript==null)
                 {
-                   
                     bulletSemiScript = null;
-                    fullautoScript = gun.GetComponent<Bullet_Fullauto>();
-                    inFlag = true;
+                    if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Full)
+                    {
+                      fullautoScript = gun.GetComponent<Bullet_Fullauto>();
+                      inFlag = true;
+                    }
+                    else if(GameManager.Instance.SelectAssault == SelectAssaultEnum.Burst)
+                    {
+                        burstScript = gun.GetComponent<Bullet_Burst>();
+                        inFlag = true;
+                    }
+                    else if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi)
+                    {
+                        aSemiScript = gun.GetComponent<Bullet_ASemi>();
+                        inFlag = true;
+                    }
+                    
                 }   
+                
                     break;
+               
             }
         
         }

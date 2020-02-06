@@ -26,7 +26,7 @@ public class Bullet_Burst : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         abreaction = uderot.GetComponent<Bullet_ABReaction>();
-        burstammocnt = 30;
+        burstammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Burst]; ;
         burstcnt = 2;
     }
 

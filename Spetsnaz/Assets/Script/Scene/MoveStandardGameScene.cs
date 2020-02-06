@@ -20,4 +20,14 @@ public class MoveStandardGameScene : MonoBehaviour
         MoveSceneManager.Instance.MoveToStage(Scene_Enum.StandardGame_Scene);
         GameManager.Instance.SelectAssault = SelectAssaultEnum.Full;
     }
+    public void MoveStandardGameAn()
+    {
+        MoveSceneManager.Instance.MoveToStage(Scene_Enum.StandardGame_Scene);
+        GameManager.Instance.SelectAssault = SelectAssaultEnum.Burst;
+    }
+    public void MoveStandardGameAsval()
+    {
+        MoveSceneManager.Instance.MoveToStage(Scene_Enum.StandardGame_Scene);
+        GameManager.Instance.SelectAssault = SelectAssaultEnum.Semi;
+    }
 }

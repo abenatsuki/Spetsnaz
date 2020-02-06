@@ -25,7 +25,7 @@ public class Bullet_ASemi : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         asreaction = uderot.GetComponent<Bullet_ASReaction>();
-        Asemiammocnt = 30;
+        Asemiammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi];
     }
 
     // Update is called once per frame

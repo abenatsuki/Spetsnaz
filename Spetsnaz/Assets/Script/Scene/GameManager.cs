@@ -16,8 +16,15 @@ public enum SelectAssaultEnum
     None
     
 }
+
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    //初期弾数
+    const int handGunStarteAmmo=8;
+    const int fullAutoStarteAmmo = 30;
+    const int semiAutoStarteAmmo = 30;
+    const int burstStateAmmo = 30;
+    
     [SerializeField]
     float maxhandGunGameScore = 999999;
    
@@ -34,6 +41,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     bool newRecordFlag = false;//newRecordが出たかどうか
     SelectAssaultEnum selectAssault;//選択アサルトライフル
 
+    int[] beforeAmmocnt ={handGunStarteAmmo,fullAutoStarteAmmo,semiAutoStarteAmmo,burstStateAmmo };
+
     public bool NewRecordFlag { get { return newRecordFlag; } set { newRecordFlag = value; } }
    
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
@@ -43,8 +52,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
     public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
 
-    public float HandGunGameScore{set{ handGunGameScore = value; }get{return handGunGameScore;}}
-    public float StandardGameScore {set { standardGameScore = value; } get { return standardGameScore;  } }
+    public float HandGunGameScore { set { handGunGameScore = value; } get { return handGunGameScore; } }
+    public float StandardGameScore { set { standardGameScore = value; } get { return standardGameScore; } }
+
+    public int[] BeforeAmmocnt { get => beforeAmmocnt; set => beforeAmmocnt = value; }
 
     public void Awake()
     {

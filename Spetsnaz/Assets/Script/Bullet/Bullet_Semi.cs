@@ -25,13 +25,13 @@ public class Bullet_Semi : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         hreaction = uderot.GetComponent<Bullet_Reaction>();
-        ammocnt = 8;
+        ammocnt = GameManager.Instance.BeforeAmmocnt[0];
     }
     // Update is called once per frame
     void Update()
     {
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
-                                                   // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
+        // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && ammocnt > 0  && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {

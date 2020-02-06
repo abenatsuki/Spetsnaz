@@ -25,7 +25,7 @@ public class Bullet_Fullauto : MonoBehaviour
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         areaction = uderot.GetComponent<Bullet_AFReaction>();
-        fullammocnt = 30;
+        fullammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Full];
     }
 
     // Update is called once per frame
