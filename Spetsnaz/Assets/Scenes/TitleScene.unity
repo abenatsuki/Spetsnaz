@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512bedaec9a66604099aa1f36169a8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScore: 999999
+  maxhandGunGameScore: 999999
   maxSensitivity: 10
 --- !u!1 &1959893254
 GameObject:

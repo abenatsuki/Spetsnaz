@@ -10,7 +10,7 @@ public class ObjectRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ワールドのy軸に沿って1秒間に90度回転
+        // y軸に沿って1秒間に90度回転
         this.transform.Rotate(new Vector3(0, degree, 0) * Time.deltaTime);
     }
 }

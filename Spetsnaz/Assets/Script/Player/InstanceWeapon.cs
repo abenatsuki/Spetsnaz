@@ -120,8 +120,12 @@ public class InstanceWeapon : MonoBehaviour
     void SetTranceForm(GameObject _obj)
     {
         _obj.transform.parent = transform;
-        _obj.transform.localPosition = new Vector3(-0.2239521f, 0.0221633f, 0.5132202f);
-        _obj.transform.localEulerAngles = new Vector3(-2.472f, -39.502f, -16.644f);
+        //_obj.transform.localPosition = new Vector3(-0.2239521f, 0.0221633f, 0.5132202f);
+        //_obj.transform.localEulerAngles = new Vector3(-2.472f, -39.502f, -16.644f);
+        //_obj.transform.localScale = new Vector3(1, 1, 1);
+
+        _obj.transform.localPosition = new Vector3(.0f, .0f, 0.5132202f);
+        _obj.transform.localEulerAngles = new Vector3(.0f, .0f, .0f);
         _obj.transform.localScale = new Vector3(1, 1, 1);
 
     }
