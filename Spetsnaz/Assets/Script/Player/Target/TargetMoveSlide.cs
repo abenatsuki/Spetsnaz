@@ -11,6 +11,9 @@ public class TargetMoveSlide : MonoBehaviour
     public Transform startMarker;
     public Transform endMarker;
 
+    float stateTime;
+    float cntTime;
+
     // スピード
     public float speed = 1.0f;
 
@@ -19,6 +22,7 @@ public class TargetMoveSlide : MonoBehaviour
 
     void Start()
     {
+        stateTime = Time.time;
         target = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
     }
@@ -29,7 +33,7 @@ public class TargetMoveSlide : MonoBehaviour
         distance_two = Vector3.Distance(startMarker.position, endMarker.position);
 
         // 現在の位置
-        float present_Location = (Time.time * speed) / distance_two;
+        float present_Location = (Time.deltaTime * speed) / distance_two;
 
         // オブジェクトの移動
         transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
@@ -38,7 +42,7 @@ public class TargetMoveSlide : MonoBehaviour
     void Update()
     {
         if (activationAreaScript.activationFlag)
-        {     
+        {
             Slide();
         }
     }
