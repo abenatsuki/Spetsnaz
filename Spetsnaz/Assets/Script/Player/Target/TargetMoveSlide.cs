@@ -7,11 +7,6 @@ public class TargetMoveSlide : MonoBehaviour
     GameObject target;
     ActivationArea activationAreaScript;
 
-    [SerializeField, Tooltip("ターゲットの回転値")]
-    Vector3 rotation;
-
-    float xRotation=0.0f;
-
     //スタートと終わりの目印
     public Transform startMarker;
     public Transform endMarker;
@@ -44,11 +39,6 @@ public class TargetMoveSlide : MonoBehaviour
     {
         if (activationAreaScript.activationFlag)
         {     
-            if (Mathf.Abs(xRotation - 90f) > 0.1f)
-            {
-                xRotation += 5f;
-                transform.eulerAngles += new Vector3(-5f, 0f, 0f);   
-            }
             Slide();
         }
     }
