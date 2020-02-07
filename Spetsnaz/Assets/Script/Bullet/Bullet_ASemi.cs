@@ -31,6 +31,10 @@ public class Bullet_ASemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)

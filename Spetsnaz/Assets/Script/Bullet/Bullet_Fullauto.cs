@@ -31,6 +31,10 @@ public class Bullet_Fullauto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
                                                    // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時

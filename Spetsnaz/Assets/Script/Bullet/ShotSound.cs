@@ -21,6 +21,10 @@ public class ShotSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (Mathf.Approximately(Time.timeScale, 0f))
+        //{
+        //    return;
+        //}
         //if (bulletScript.reloadFlag == false && bulletScript.ammocnt > 0)
         //{
         //    if (Input.GetMouseButtonDown(0))
