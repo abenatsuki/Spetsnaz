@@ -353,6 +353,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6626614915544745179, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6626614915544745183, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,11 +492,45 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300002, guid: 44139887dbde3bc46920b73618900b1c,
-        type: 3}
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6626614916045435333, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
       propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916825987887, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916825987887, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9027058
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916825987887, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916908633042, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916908633042, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.97088087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916908633042, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916908633042, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
