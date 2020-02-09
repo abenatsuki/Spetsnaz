@@ -9,6 +9,7 @@ public class SensitivityManager : MonoBehaviour
     InputField inputFieldHight=null;
     [SerializeField]
     InputField inputFieldWidth=null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +23,9 @@ public class SensitivityManager : MonoBehaviour
     }
     public void Convey()
     {
-        GameManager.Instance.VerticalSensitivity = int.Parse(inputFieldHight.text);
-        GameManager.Instance.LateralSensitivity = int.Parse(inputFieldHight.text);
-
-       // Debug.Log(int.Parse(inputFieldHight.text));
+        PlayerPrefs.SetInt("縦感度", int.Parse(inputFieldHight.text));
+        PlayerPrefs.SetInt("横感度", int.Parse(inputFieldWidth.text));
+        
     }
 
 }

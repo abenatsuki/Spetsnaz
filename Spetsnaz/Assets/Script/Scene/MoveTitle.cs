@@ -10,18 +10,12 @@ public class MoveTitle : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
-        flag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)&&!flag)
-        {
-           // MoveTitleScene();
-            flag = true;
-           // SceneManager.LoadScene("TitleScene");
-        }
+       
     }
 
     public void MoveTitleScene()
@@ -29,10 +23,8 @@ public class MoveTitle : MonoBehaviour
         MoveSceneManager.Instance.MoveToStage(Scene_Enum.Title_Scene);
         if (Time.timeScale == 0)
         {
-        
          Time.timeScale = 1f;
         }
       
-        
     }
 }

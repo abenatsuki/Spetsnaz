@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b343265b61a66654aac6629f17a60cc9
+guid: d64227269be9c2c4a995eb6ca1317b5b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -51,16 +51,16 @@ ModelImporter:
     100090: joint7
     100092: joint8
     100094: joint9
-    100096: l_arm
-    100098: l_wrist1
-    100100: mag2
-    100102: mag3
-    100104: mag4
-    100106: Makarov
-    100108: polySurface10
-    100110: polySurface11
-    100112: r_arm
-    100114: r_wrist1
+    100096: mag4
+    100098: mag5
+    100100: Makarov
+    100102: pCube20
+    100104: pCube3
+    100106: pCube4
+    100108: pCylinder1
+    100110: pCylinder2
+    100112: polySurface1
+    100114: polySurface2
     400000: //RootNode
     400002: joint1
     400004: joint10
@@ -109,34 +109,45 @@ ModelImporter:
     400090: joint7
     400092: joint8
     400094: joint9
-    400096: l_arm
-    400098: l_wrist1
-    400100: mag2
-    400102: mag3
-    400104: mag4
-    400106: Makarov
-    400108: polySurface10
-    400110: polySurface11
-    400112: r_arm
-    400114: r_wrist1
-    2100000: lambert5
-    2300000: mag2
-    2300002: mag3
-    2300004: mag4
-    2300006: polySurface10
-    2300008: polySurface11
-    3300000: mag2
-    3300002: mag3
-    3300004: mag4
-    3300006: polySurface10
-    3300008: polySurface11
-    4300000: mag2
-    4300002: mag3
-    4300004: polySurface10
-    4300006: mag4
-    4300008: polySurface11
-    7400000: makarovReroad
+    400096: mag4
+    400098: mag5
+    400100: Makarov
+    400102: pCube20
+    400104: pCube3
+    400106: pCube4
+    400108: pCylinder1
+    400110: pCylinder2
+    400112: polySurface1
+    400114: polySurface2
+    2100000: lambert2
+    2300000: mag4
+    2300002: mag5
+    2300004: pCube3
+    2300006: pCube4
+    2300008: pCylinder1
+    2300010: pCylinder2
+    2300012: polySurface1
+    2300014: polySurface2
+    3300000: mag4
+    3300002: mag5
+    3300004: pCube3
+    3300006: pCube4
+    3300008: pCylinder1
+    3300010: pCylinder2
+    3300012: polySurface1
+    3300014: polySurface2
+    4300000: mag4
+    4300002: mag5
+    4300004: polySurface2
+    4300006: pCylinder1
+    4300008: pCube3
+    4300010: pCube4
+    4300012: pCylinder2
+    4300014: polySurface1
+    4300016: pCube20
+    7400000: Take 001
     9500000: //RootNode
+    13700000: pCube20
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -164,63 +175,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: makarovReroad
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 120
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.23037975
-        functionName: Mag5Undo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.41989693
-        functionName: Mag4Undo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.7316456
-        functionName: Mag5MakeItTransparent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.8306222
-        functionName: Mag4MakeItTransparent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

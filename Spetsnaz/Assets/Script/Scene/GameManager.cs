@@ -24,20 +24,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     const int fullAutoStarteAmmo = 30;
     const int semiAutoStarteAmmo = 30;
     const int burstStateAmmo = 30;
-    
-    [SerializeField]
-    float maxhandGunGameScore = 999999;
    
-    [SerializeField]
-    int maxSensitivity=10;
-
     float handGunGameScore = 0;
     float standardGameScore = 0;
 
-    string[] Sensitivity = { "縦感度", "横感度" };
-
-    int verticalSensitivity=5;
-    int lateralSensitivity=5;
     bool newRecordFlag = false;//newRecordが出たかどうか
     SelectAssaultEnum selectAssault;//選択アサルトライフル
 
@@ -48,9 +38,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public StageType stageType { get; private set; }//HandGunSceneかStandardSceneか
 
     public SelectAssaultEnum SelectAssault { get { return selectAssault; }set { selectAssault = value; } }//選択武器
-
-    public int VerticalSensitivity { get { return verticalSensitivity; } set { verticalSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//縦感度
-    public int LateralSensitivity { get { return lateralSensitivity; } set { lateralSensitivity = Mathf.Clamp(value, 0, maxSensitivity); } }//横感度
 
     public float HandGunGameScore { set { handGunGameScore = value; } get { return handGunGameScore; } }
     public float StandardGameScore { set { standardGameScore = value; } get { return standardGameScore; } }
@@ -84,10 +71,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         stageType = _stageType;
     }
-    public void SetSensitivity(int _value)
-    {
-
-    }
+   
     void Start()
     {
 

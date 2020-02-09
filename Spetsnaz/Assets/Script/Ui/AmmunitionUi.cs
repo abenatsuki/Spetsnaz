@@ -49,6 +49,7 @@ public class AmmunitionUi : MonoBehaviour
                         gun = GameObject.FindGameObjectWithTag("Gun");
                         bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
                         flag = true;
+                        Debug.Log(bulletFullauto);
                         break;
                     case SelectAssaultEnum.Semi:
                         gun = GameObject.FindGameObjectWithTag("Gun");

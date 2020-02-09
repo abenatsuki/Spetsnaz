@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class RankingScript : MonoBehaviour
 {
     
-    [SerializeField, Header("数値")]
-    int point;
+   
+    
     string[] ranking = { "ランキング1位", "ランキング2位", "ランキング3位", "ランキング4位", "ランキング5位" };
     int[] rankingValue = new int[5];
 

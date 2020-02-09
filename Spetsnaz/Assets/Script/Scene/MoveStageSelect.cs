@@ -17,13 +17,6 @@ public class MoveStageSelect : MonoBehaviour
 
     // Update is called once per frame
     void Update() { 
-    //{
-    //    if (Input.GetMouseButtonDown(0)&&!flag)
-    //    {
-        
-    //        MoveSceneManager.Instance.MoveToStage(1);
-    //        flag = true; 
-    //    }
         
     }
    public void MoveStage()
