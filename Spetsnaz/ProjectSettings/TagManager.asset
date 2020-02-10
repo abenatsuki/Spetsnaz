@@ -17,6 +17,7 @@ TagManager:
   - TargetHead
   - GazePoint
   - Smoke
+  - ScorpImage
   layers:
   - Default
   - TransparentFX
