@@ -54,7 +54,6 @@ public class BulletManager : MonoBehaviour
                 GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi] = aSemiScript.Asemiammocnt;
             }
 
-
             StartCoroutine("ScriptLoad");
         }
 
