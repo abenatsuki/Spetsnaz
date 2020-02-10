@@ -19,13 +19,9 @@ public class GoalCheck : MonoBehaviour
     {
         if (other.gameObject.tag == "GoalPoint")
         {
-            if (managerScript.TargetMax - managerScript.TargetCnt >= managerScript.TargetMax)
-            {
-                goalFlag = true;
+            
+          goalFlag = true;
               
-            }
-            
-            
         }
     }
 }
