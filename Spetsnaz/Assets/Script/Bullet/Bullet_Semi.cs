@@ -20,10 +20,6 @@ public class Bullet_Semi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Mathf.Approximately(Time.timeScale, 0f))
-        {
-            return;
-        }
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
@@ -34,6 +30,10 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (Mathf.Approximately(Time.timeScale, 0f))
+        //{
+        //    return;
+        //}
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時
