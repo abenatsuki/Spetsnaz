@@ -11,6 +11,13 @@ public class Bullet_Semi : MonoBehaviour
     public GameObject Bullet;
     public GameObject Muzzle;
 
+    [SerializeField]
+    Vector3 muzzleFlashScale;
+    [SerializeField]
+    GameObject muzzleFlashPrefab;
+
+    GameObject muzzleFlash;
+
     public GameObject uderot;
 
     public int ammocnt { get; private set; } //残弾数
@@ -30,22 +37,31 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Approximately(Time.timeScale, 0f))
-        //{
-        //    return;
-        //}
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
                                                    //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && ammocnt > 0  && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             hreaction.HReaction();
+            
         }
         //腰うち
         else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             hreaction.HReaction();

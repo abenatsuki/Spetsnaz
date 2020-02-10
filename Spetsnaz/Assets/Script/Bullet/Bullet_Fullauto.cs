@@ -40,6 +40,10 @@ public class Bullet_Fullauto : MonoBehaviour
                                                    //弾の発射 エイム時
         if (Input.GetMouseButton(0) && fullammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             areaction.Areaction();
@@ -47,6 +51,10 @@ public class Bullet_Fullauto : MonoBehaviour
         //腰うち
         else if (Input.GetMouseButton(0) && fullammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             areaction.Areaction();

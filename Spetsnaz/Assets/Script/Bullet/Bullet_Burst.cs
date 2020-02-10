@@ -41,6 +41,10 @@ public class Bullet_Burst : MonoBehaviour
         //弾の発射 エイム時
         if (Input.GetMouseButton(0) && burstcnt > 0 && burstammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
@@ -54,6 +58,10 @@ public class Bullet_Burst : MonoBehaviour
         {
             if (burstcnt > 0)
             {
+                if (Mathf.Approximately(Time.timeScale, 0f))
+                {
+                    return;
+                }
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);

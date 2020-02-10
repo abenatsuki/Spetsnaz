@@ -39,6 +39,10 @@ public class Bullet_ASemi : MonoBehaviour
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             asreaction.ASReaction();
@@ -46,6 +50,10 @@ public class Bullet_ASemi : MonoBehaviour
         //腰うち
         else if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
+            if (Mathf.Approximately(Time.timeScale, 0f))
+            {
+                return;
+            }
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
             asreaction.ASReaction();
