@@ -18,14 +18,12 @@ public class HostageCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hostageg = GameObject.Find("TargetGizmo").gameObject;
+        hostageg = GameObject.Find("HostageGizmo").gameObject;
         manager = GameObject.FindGameObjectWithTag("TargetManager");
         script = manager.GetComponent<TergetScoreManeger>();
         hostage = transform.Find("ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = hostage.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
-
         Hitflg = false;
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,5 +39,6 @@ public class HostageCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 }

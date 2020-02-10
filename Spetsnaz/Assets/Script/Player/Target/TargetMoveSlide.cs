@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TargetMoveSlide : MonoBehaviour
 {
-    GameObject target;
+    public GameObject target;//ターゲット
+    Transform targettransform;
+
+    GameObject targetA; //エリア
     ActivationArea activationAreaScript;
 
     //スタートと終わりの目印
@@ -25,14 +28,16 @@ public class TargetMoveSlide : MonoBehaviour
     //二点間の距離を入れる
     //private float distance_two;
 
-    Vector3 pos; 
+    Vector3 pos;
 
     void Start()
     {
         //stateTime = Time.time;
-        target = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
-        activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
-        pos = target.transform.localPosition;
+        targetA = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
+        activationAreaScript = targetA.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
+        targettransform = target.transform;
+        pos = targettransform.position;
+        Debug.Log(pos);
     }
 
     void RSlide()
@@ -46,17 +51,19 @@ public class TargetMoveSlide : MonoBehaviour
         //// オブジェクトの移動
         //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
         posScnt++;
-        if (posScnt < poscnt)
+        if (posScnt <= poscnt)
         {
             pos.x += speed;
+            Debug.Log(pos.x);
         }
     }
     void LSlide()
     {
         posScnt++;
-        if (posScnt < poscnt)
+        if (posScnt <= poscnt)
         {
             pos.x -= speed;
+            Debug.Log(pos.x);
         }
     }
 
