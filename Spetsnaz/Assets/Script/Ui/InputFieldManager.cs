@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+enum SensitivityType
+{
+    Hight,
+    Width
+}
 public class InputFieldManager : MonoBehaviour
 {
+    [SerializeField]
+    SensitivityType type;
+
     InputField inputField;
     [SerializeField]
     Slider slider=null;
     string inputValue="";
+
+
     /// <summary>
     /// Startメソッド
     /// InputFieldコンポーネントの取得および初期化メソッドの実行
@@ -42,7 +52,6 @@ public class InputFieldManager : MonoBehaviour
       
         slider.value =float.Parse( inputValue);
 
-      
     }
 
 
@@ -55,9 +64,17 @@ public class InputFieldManager : MonoBehaviour
 
     void InitInputField()
     {
-
-        // 値をリセット
-        inputField.text = "5";
+        if (type == SensitivityType.Hight)
+        {
+// 値をリセット
+        inputField.text =  PlayerPrefs.GetInt("縦感度").ToString();
+        }
+        else
+        {
+            inputField.text = PlayerPrefs.GetInt("横感度").ToString();
+        }
+        
+       
 
         inputValue = inputField.text;
 

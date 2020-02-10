@@ -8,8 +8,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField]
     //　ポーズした時に表示するUIのプレハブ
     private GameObject pauseUIPrefab=null;
-    [SerializeField]
-    Button returnButton=null;
+  
     //　ポーズUIのインスタンス
     private GameObject pauseUIInstance=null;
 

@@ -22,8 +22,8 @@ public class ReturnGame : MonoBehaviour
     }
     public void Return()
     {
-        GameManager.Instance.VerticalSensitivity = int.Parse(inputFieldHight.text);
-        GameManager.Instance.LateralSensitivity = int.Parse(inputFieldHight.text);
+        PlayerPrefs.SetInt("縦感度", int.Parse(inputFieldHight.text));
+        PlayerPrefs.SetInt("横感度", int.Parse(inputFieldWidth.text));
         Time.timeScale = 1f;
     }
 }

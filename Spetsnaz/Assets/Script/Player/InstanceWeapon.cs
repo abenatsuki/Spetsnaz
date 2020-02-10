@@ -115,7 +115,7 @@ public class InstanceWeapon : MonoBehaviour
         }
         var weapon = Instantiate(ResouseWeapon[(int)selectAssault]);
         weapon.SetActive(true);
-        SetTranceForm(weapon);
+        SetTransFormAssault(weapon);
     }
     void SetTranceForm(GameObject _obj)
     {
@@ -124,10 +124,17 @@ public class InstanceWeapon : MonoBehaviour
         //_obj.transform.localEulerAngles = new Vector3(-2.472f, -39.502f, -16.644f);
         //_obj.transform.localScale = new Vector3(1, 1, 1);
 
-        _obj.transform.localPosition = new Vector3(.0f, .0f, 0.5132202f);
-        _obj.transform.localEulerAngles = new Vector3(.0f, .0f, .0f);
+        _obj.transform.localPosition = new Vector3(-.2766342f, .01066801f, 0.5174159f);
+        _obj.transform.localEulerAngles = new Vector3(1.551f, -41.297f, -16.203f);
         _obj.transform.localScale = new Vector3(1, 1, 1);
 
+    }
+    void SetTransFormAssault(GameObject _obj)
+    {
+        _obj.transform.parent = transform;
+        _obj.transform.localPosition = new Vector3(.019f, .051f, 0.6f);
+        _obj.transform.localEulerAngles = new Vector3(.0f, .0f, .0f);
+        _obj.transform.localScale = new Vector3(1, 1, 1);
     }
 
 

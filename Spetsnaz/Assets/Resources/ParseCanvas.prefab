@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4601e90aea4a2234fa6491fc36fb7701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   slider: {fileID: 1749846052452492321}
 --- !u!1 &1749846051884726772
 GameObject:
@@ -300,7 +301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 0b5fd30fc21852b458a0d8782d35f748, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -562,7 +563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 0b5fd30fc21852b458a0d8782d35f748, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -634,8 +635,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b323f463b48915b489f0ed031abcc7fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1382,8 +1383,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b323f463b48915b489f0ed031abcc7fa, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2001,6 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4601e90aea4a2234fa6491fc36fb7701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   slider: {fileID: 1749846053571852609}
 --- !u!1 &1749846053775036143
 GameObject:
@@ -2246,6 +2248,7 @@ GameObject:
   - component: {fileID: 4973198511476294382}
   - component: {fileID: 8442343949972072848}
   - component: {fileID: 2859299257307474463}
+  - component: {fileID: 3937018273865545179}
   m_Layer: 5
   m_Name: GameReturnButton
   m_TagString: Untagged
@@ -2359,6 +2362,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3937018273865545179}
+        m_MethodName: Convey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2859299257307474463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,6 +2383,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b97db57202dcc1e4aab373cba4dff585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFieldHight: {fileID: 1749846053696202365}
+  inputFieldWidth: {fileID: 1749846051873889018}
+--- !u!114 &3937018273865545179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5164068961167451139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aeb69101a3654f41aaf8e27485240b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputFieldHight: {fileID: 1749846053696202365}

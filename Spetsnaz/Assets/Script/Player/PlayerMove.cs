@@ -63,6 +63,7 @@ public class PlayerMove : MonoBehaviour
         {
             playerState = PlayerStateEnum.RELOAD;
         }
+
     else if (Input.GetMouseButton(1))
         {
             playerState = PlayerStateEnum.EIM;
