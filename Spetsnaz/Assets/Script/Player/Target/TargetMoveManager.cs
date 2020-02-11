@@ -28,6 +28,7 @@ public class TargetMoveManager : MonoBehaviour
         targetcollisionscript = body.GetComponent<TargetCollision>();
         script.TargetCnt += 1;
         Hitflg = false;
+        Debug.Log(targetcollisionscript);
     }
     // Update is called once per frame
     void Update()

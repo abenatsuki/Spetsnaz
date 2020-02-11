@@ -40,12 +40,16 @@ public class ResultScore : MonoBehaviour
         {
             counter.sprite = numberFont[0];
         }
-        image[0].sprite = numberFont[displayScore % 10];
-        image[1].sprite = numberFont[(displayScore / 10) % 10];
-        image[2].sprite = numberFont[(displayScore / 100) % 10];
-        image[3].sprite = numberFont[(displayScore / 1000) % 10];
-        image[4].sprite = numberFont[(displayScore / 10000) % 10];
-        image[5].sprite = numberFont[displayScore / 100000];
+        if (displayScore >= 0)
+        {
+         image[0].sprite = numberFont[displayScore % 10];
+         image[1].sprite = numberFont[(displayScore / 10) % 10];
+         image[2].sprite = numberFont[(displayScore / 100) % 10];
+         image[3].sprite = numberFont[(displayScore / 1000) % 10];
+         image[4].sprite = numberFont[(displayScore / 10000) % 10];
+         image[5].sprite = numberFont[displayScore / 100000];
+        }
+        
 
         if (GameManager.Instance.stageType == StageType.HandGun)
         {

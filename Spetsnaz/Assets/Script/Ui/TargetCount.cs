@@ -33,27 +33,38 @@ public class TargetCount : MonoBehaviour
         {
             counter.sprite = numberFont[0];
         }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
+        numberOfTargetsBroken = managerScript.TargetMax-managerScript.TargetCnt;
+
+        if (maxTargetCount >= 0)
+        {
+         image[0].sprite = numberFont[maxTargetCount%10];
+         image[1].sprite = numberFont[(maxTargetCount/10)%10];
+        }
+       
+
+        if (numberOfTargetsBroken >= 0)
+        {
+         image[2].sprite = numberFont[numberOfTargetsBroken%10];
+         image[3].sprite = numberFont[(numberOfTargetsBroken/10)%10];
+        }
         if (!starteFlag)
         {
-           maxTargetCount = managerScript.TargetMax;
+            maxTargetCount = managerScript.TargetMax-1;
             
             starteFlag = true;
         }
-        numberOfTargetsBroken = managerScript.TargetMax-managerScript.TargetCnt;
-        
-        image[0].sprite = numberFont[maxTargetCount%10];
-        image[1].sprite = numberFont[(maxTargetCount/10)%10];
-
-        //if (numberOfTargetsBroken >= 10)
+       //if (numberOfTargetsBroken >= 10)
         //{
-        image[2].sprite = numberFont[numberOfTargetsBroken%10];
-        image[3].sprite = numberFont[(numberOfTargetsBroken/10)%10];
         //}
+
         //else
         //{
         //    image[2].sprite = numberFont[(numberOfTargetsBroken % 10)];
