@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 4100687372486689587}
   - component: {fileID: 1417922027598247437}
   - component: {fileID: 634168538770382734}
+  - component: {fileID: 6107549221786286900}
   m_Layer: 0
   m_Name: AR_reroad_02
   m_TagString: Untagged
@@ -1384,6 +1385,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd07b8dfd81e81143beda6399b60d027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6107549221786286900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100687372477182195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fd13b6a2da97e488b412247f238141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mag23: {fileID: 4100687372477182293}
+  mag11: {fileID: 4100687372477182289}
 --- !u!1 &4100687372477182197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1640,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b9ca36bb87690f469135858c6a8d124, type: 3}
+  - {fileID: 2100000, guid: 4d5f05653e9ccf249997e8cebef52b55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1829,7 +1844,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b9ca36bb87690f469135858c6a8d124, type: 3}
+  - {fileID: 2100000, guid: cf3c2fca94eca9049806a89acabdc4e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
