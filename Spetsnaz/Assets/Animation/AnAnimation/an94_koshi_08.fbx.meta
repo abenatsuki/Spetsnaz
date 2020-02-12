@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b9ca36bb87690f469135858c6a8d124
+guid: f6714bcdfaf031c49a0c9d25c31465b5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -52,9 +52,8 @@ ModelImporter:
     100092: joint8
     100094: joint9
     100096: pCube20
-    100098: polySurface11
-    100100: polySurface22
-    100102: polySurface23
+    100098: polySurfaceAK47
+    100100: polySurfaceAK47_mag
     400000: //RootNode
     400002: joint1
     400004: joint10
@@ -104,21 +103,17 @@ ModelImporter:
     400092: joint8
     400094: joint9
     400096: pCube20
-    400098: polySurface11
-    400100: polySurface22
-    400102: polySurface23
+    400098: polySurfaceAK47
+    400100: polySurfaceAK47_mag
     2100000: lambert8
     2100002: lambert2
-    2300000: polySurface11
-    2300002: polySurface22
-    2300004: polySurface23
-    3300000: polySurface11
-    3300002: polySurface22
-    3300004: polySurface23
-    4300000: polySurface23
-    4300002: polySurface22
-    4300004: polySurface11
-    4300006: pCube20
+    2300000: polySurfaceAK47
+    2300002: polySurfaceAK47_mag
+    3300000: polySurfaceAK47
+    3300002: polySurfaceAK47_mag
+    4300000: polySurfaceAK47
+    4300002: polySurfaceAK47_mag
+    4300004: pCube20
     7400000: Take 001
     9500000: //RootNode
     13700000: pCube20
@@ -149,63 +144,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 115
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0
-        functionName: GunUndo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.14477062
-        functionName: Mag23Undo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6497561
-        functionName: Mag23MakeItTransparent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0
-        functionName: ArmUndo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

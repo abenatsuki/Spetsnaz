@@ -8,9 +8,11 @@ public class ImageFaid : MonoBehaviour
 {
     [SerializeField]
     Image image = null;
-    [SerializeField]
-    float fadeSpeed = 0.02f;
-
+    //[SerializeField]
+    //float fadeSpeed = 0.02f;
+   // [SerializeField]
+    int count=20;
+    
     float red, green, blue, alpha;
 
     GunFind gunFind;
@@ -18,6 +20,8 @@ public class ImageFaid : MonoBehaviour
 
     GameObject player;
     PlayerDataProvider playerScript;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +39,23 @@ public class ImageFaid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1)&&GameManager.Instance.SelectAssault==SelectAssaultEnum.Semi&&playerScript.IsNowWepon==Now_Weapon.Assult_Rifle)
+        if (Input.GetMouseButton(1)
+            &&GameManager.Instance.SelectAssault==SelectAssaultEnum.Semi
+            &&playerScript.IsNowWepon==Now_Weapon.Assult_Rifle
+            &&playerScript.IsPlayerStateEnum==PlayerStateEnum.EIM)
         {
+            count--;
+            if (count <= 0)
+            {
+                count = -1;
             FadeIn();
+            }
+           
+            
         }
         else
         {
+            count = 20;
             FadeOut();
         }
 
@@ -65,5 +80,12 @@ public class ImageFaid : MonoBehaviour
     void SetAlpha()
     {
         image.color = new Color(red, green, blue, alpha);
+    }
+
+    IEnumerable FaidInScorp()
+    {
+        
+        yield return new WaitForSeconds(0.2f);
+        FadeIn();
     }
 }

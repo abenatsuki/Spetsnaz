@@ -6,8 +6,8 @@ public class ArMagScript : MonoBehaviour
 {
     [SerializeField]
     GameObject mag23;
-    [SerializeField]
-    GameObject mag11;
+   // [SerializeField]
+   //// GameObject mag11;
 
     Color color_mag23;
     Color color_mag11;
@@ -15,7 +15,7 @@ public class ArMagScript : MonoBehaviour
     void Start()
     {
         color_mag23 = mag23.GetComponent<Renderer>().material.color;
-        color_mag11 = mag11.GetComponent<Renderer>().material.color;
+       // color_mag11 = mag11.GetComponent<Renderer>().material.color;
     }
 
     // Update is called once per frame
@@ -37,17 +37,17 @@ public class ArMagScript : MonoBehaviour
         mag23.GetComponent<Renderer>().material.color = color_mag23;
     }
 
-    //透明
-    public void Mag11MakeItTransparent()
-    {
-        //透明に
-        color_mag11.a = 0.0f;
-        mag11.GetComponent<Renderer>().material.color = color_mag11;
-    }
-    //もとに戻す
-    public void Mag11Undo()
-    {
-        color_mag11.a = 1.0f;
-        mag11.GetComponent<Renderer>().material.color = color_mag11;
-    }
+    ////透明
+    //public void Mag11MakeItTransparent()
+    //{
+    //    //透明に
+    //    color_mag11.a = 0.0f;
+    //    mag11.GetComponent<Renderer>().material.color = color_mag11;
+    //}
+    ////もとに戻す
+    //public void Mag11Undo()
+    //{
+    //    color_mag11.a = 1.0f;
+    //    mag11.GetComponent<Renderer>().material.color = color_mag11;
+    //}
 }
