@@ -33,7 +33,7 @@ public class TargetMoveSlide : MonoBehaviour
     void Start()
     {
         //stateTime = Time.time;
-        targetA = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
+        targetA = transform.Find("SlideTarget/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = targetA.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
         targettransform = target.transform;
         pos = targettransform.position;

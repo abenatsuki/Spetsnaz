@@ -24,7 +24,6 @@ public class TargetHedCollision : MonoBehaviour
         if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !HeadHitflg)
         {
             HeadHitflg = true;
-            Debug.Log("あたまあたたたた");
         }
     }
 
