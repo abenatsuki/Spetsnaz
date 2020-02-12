@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimatorAsval
+  m_Name: PlayerAnimatorAn
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: PlayerState
@@ -298,7 +298,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4583b8966a08bba4d9c8892c827bc898, type: 3}
+  m_Motion: {fileID: 7400000, guid: f6714bcdfaf031c49a0c9d25c31465b5, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -326,7 +326,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0b9ca36bb87690f469135858c6a8d124, type: 3}
+  m_Motion: {fileID: 7400000, guid: 658a72820cb65c246971b6203b7d8c4f, type: 3}
   m_Tag: Reload
   m_SpeedParameter: 
   m_MirrorParameter: 
