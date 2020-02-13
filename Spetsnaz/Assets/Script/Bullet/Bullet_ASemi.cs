@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Bullet_ASemi : MonoBehaviour
 {
+   
+
     Bullet_ASReaction asreaction;
     PlayerDataProvider script;
     GameObject player;
+    [SerializeField]
+    GameObject muzzleFlashPrefab;
+    [SerializeField]
+    GameObject muzzleFlashAimPrefab;
 
     public GameObject Bullet;
     public GameObject Muzzle;
+    GameObject muzzleFlash;
 
     public GameObject uderot;
 
     public int Asemiammocnt { get; private set; } //残弾数
 
     PlayerStateEnum playerStateEnum;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +39,7 @@ public class Bullet_ASemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
@@ -43,8 +52,13 @@ public class Bullet_ASemi : MonoBehaviour
             {
                 return;
             }
+
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashAimPrefab, Muzzle.transform);
+            }
             asreaction.ASReaction();
         }
         //腰うち
@@ -54,9 +68,18 @@ public class Bullet_ASemi : MonoBehaviour
             {
                 return;
             }
-            Asemiammocnt--;
-            Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+             Asemiammocnt--;
+             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
+
             asreaction.ASReaction();
+        }
+        else
+        {
+            Destroy(muzzleFlash,0.1f);
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && Asemiammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
@@ -64,4 +87,6 @@ public class Bullet_ASemi : MonoBehaviour
             Asemiammocnt = 30;
         }
     }
+
+   
 }

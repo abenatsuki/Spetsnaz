@@ -27,17 +27,28 @@ public class CameraFiledOfView : MonoBehaviour
     void Update()
     {
         playerState = playerScript.IsPlayerStateEnum;
-
+        
         if (playerState==PlayerStateEnum.EIM)
         {
-            //camera.fieldOfView = 50;
-            if (camera.fieldOfView >= zoomMaximam)
-            {
-                camera.fieldOfView -= zoomSpeed;
+            if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi) {
+                if (camera.fieldOfView >= 30)
+                {
+                    camera.fieldOfView -= zoomSpeed;
+                }
             }
+            else
+            {
+             if (camera.fieldOfView >= zoomMaximam)
+                {
+                camera.fieldOfView -= zoomSpeed;
+                }
+            }
+                //camera.fieldOfView = 50;
+           
           //  transform.localPosition=new Vector3(0, 0, 0.45f);
           
         }
+        
         else
         {
             if (camera.fieldOfView <= zoomDefault)

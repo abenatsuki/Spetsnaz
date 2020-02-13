@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Bullet_Burst : MonoBehaviour
 {
+
+    [SerializeField]
+    GameObject muzzleFlashPrefab;
+    GameObject muzzleFlash;
+
     Bullet_ABReaction abreaction; 
     PlayerDataProvider script;
     GameObject player;
@@ -27,7 +32,7 @@ public class Bullet_Burst : MonoBehaviour
         uderot = GameObject.Find("UdeRot").gameObject;
         abreaction = uderot.GetComponent<Bullet_ABReaction>();
         burstammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Burst]; ;
-        burstcnt = 2;
+        burstcnt = 2;//バーストの2発
     }
 
     // Update is called once per frame
@@ -48,11 +53,23 @@ public class Bullet_Burst : MonoBehaviour
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
+
+        }
+        else
+        {
+            Destroy(muzzleFlash, 0.5f);
         }
         if (Input.GetMouseButton(0) && burstcnt <= 0)
         {
             abreaction.ASReaction();
+          
         }
+        
         //腰うち
         else if (Input.GetMouseButton(0) && burstammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
@@ -65,9 +82,12 @@ public class Bullet_Burst : MonoBehaviour
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                
                 abreaction.ASReaction();
             }
+           
         }
+        
         //弾のリロード
         else if (Input.GetKeyDown(KeyCode.R) && burstammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
@@ -75,7 +95,10 @@ public class Bullet_Burst : MonoBehaviour
         }
         else
         {
+            Destroy(muzzleFlash, 0.1f);
             burstcnt = 2;
         }
+           
+        
     }
 }

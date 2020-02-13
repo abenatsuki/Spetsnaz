@@ -42,7 +42,7 @@ public class AsvalMag : MonoBehaviour
 
     public void ArmMakeItTransparent()
     {
-        Debug.Log("aaa");
+      
         //透明に
         color_arm.a = 0.0f;
         arm.GetComponent<Renderer>().material.color = color_arm;
