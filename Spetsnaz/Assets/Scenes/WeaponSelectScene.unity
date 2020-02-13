@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 295469693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.028, y: 1.362, z: -5.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1786918592}
   m_Father: {fileID: 0}
@@ -318,8 +318,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 317671705}
+        m_MethodName: MoveStandardGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 349871708}
   - component: {fileID: 349871711}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: AsvalButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d4a33c9e2d1028a489ae7316944f650b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c0ff7900d87c964b9cc098c54acd8b8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a33c9e2d1028a489ae7316944f650b, type: 3}
 --- !u!1 &702537250
@@ -1053,7 +1057,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "AK74 Update\u3067\u8FFD\u52A0\n"
+  m_Text: 'AK74
+
+'
 --- !u!222 &722726586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1135,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c0a56dda0ccd757489b996358e4fa18e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a80d4918b851cc4c815f04b4bee3646, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a56dda0ccd757489b996358e4fa18e, type: 3}
 --- !u!1 &1108787720
@@ -1190,8 +1200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108787720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.761, y: 0.875, z: -5.839}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.698, y: 0.875, z: -5.839}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children:
   - {fileID: 1637642373}
   m_Father: {fileID: 0}
@@ -1211,7 +1221,7 @@ GameObject:
   - component: {fileID: 1129906371}
   - component: {fileID: 1129906374}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: AnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1385,7 @@ Transform:
   m_GameObject: {fileID: 1480357680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.012, y: 0.854, z: -5.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 846816446}
   m_Father: {fileID: 0}
@@ -1469,7 +1479,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "AN94\u3000Update\u3067\u8FFD\u52A0\n"
+  m_Text: 'AN94
+
+'
 --- !u!222 &1651193554
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1551,5 +1563,9 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.49999994
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: fee6efb44b2206844a0e687bd92802a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d5f05653e9ccf249997e8cebef52b55, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee6efb44b2206844a0e687bd92802a8, type: 3}

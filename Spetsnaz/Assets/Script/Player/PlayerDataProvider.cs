@@ -19,5 +19,4 @@ public class PlayerDataProvider : MonoBehaviour
     {
       //  Debug.Log(IsNowWepon);
     }
-
 }

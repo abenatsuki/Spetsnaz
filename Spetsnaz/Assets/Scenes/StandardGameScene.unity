@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 6647939733766882624, guid: e8493fc54d87bd84daedbfe04842984d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.93
+      value: -5.843
       objectReference: {fileID: 0}
     - target: {fileID: 6647939733766882624, guid: e8493fc54d87bd84daedbfe04842984d,
         type: 3}
@@ -260,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.13746
+      objectReference: {fileID: 0}
+    - target: {fileID: 6647939733766882624, guid: e8493fc54d87bd84daedbfe04842984d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6689695
       objectReference: {fileID: 0}
     - target: {fileID: 6647939733766882631, guid: e8493fc54d87bd84daedbfe04842984d,
         type: 3}
@@ -393,9 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResouseWeapon:
   - {fileID: 2569488984536567333, guid: 19470b29fb787ed42b21b8989c1b261b, type: 3}
-  - {fileID: 8174787371683332769, guid: 5bf9bd497d410e545a2291e1872f3559, type: 3}
+  - {fileID: 545209365031174499, guid: 776dcb46e66f6614c926d527080c55c7, type: 3}
   - {fileID: 4100687372477182195, guid: affa51b033bac1046a59aa98384afc17, type: 3}
-  - {fileID: 7591269942010657214, guid: 5d4a43976985a3d47b8de25be074c289, type: 3}
+  - {fileID: 6841375035923651612, guid: da178828276e5f347bd1f7d0cfbde16a, type: 3}
 --- !u!114 &149693034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2372,7 +2377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 989121582}
-  fadeSpeed: 10
   fade: 0
 --- !u!1 &1149782552
 GameObject:
