@@ -25,7 +25,7 @@ public class TargetMoveManager : MonoBehaviour
     {
         TArea = GameObject.Find("Target/ActivationArea").gameObject;
         targetg = GameObject.FindGameObjectWithTag("Target");
-        manager = GameObject.FindGameObjectWithTag("TargetManager");
+        manager = GameObject.Find("Targets").gameObject; 
         activationArea = TArea.GetComponent<ActivationArea>();
         script = manager.GetComponent<TergetScoreManeger>();
         targethedcollisionscript = head.GetComponent<TargetHedCollision>();
@@ -37,24 +37,30 @@ public class TargetMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Hitflg && targethedcollisionscript.HeadHitflg && activationArea.activationFlag)
+        if (targethedcollisionscript.HeadHitflg && activationArea.activationFlag)
         {
-            Hitflg = true;
-            script.TargetCnt -= 1;
-            rotation.x += 90;
-            script.Score += 10000;
-            Debug.Log("頭当たった");
-            transform.Rotate(rotation.x, rotation.y, rotation.z);
+            if (!Hitflg)
+            {
+                Hitflg = true;
+                script.TargetCnt -= 1;
+                rotation.x += 90;
+                script.Score += 10000;
+                Debug.Log("頭当たった");
+                transform.Rotate(rotation.x, rotation.y, rotation.z);
+            }
         }
 
-        else if (!Hitflg && targetcollisionscript.BodyHitflg && activationArea.activationFlag)
+        else if (targetcollisionscript.BodyHitflg && activationArea.activationFlag)
         {
-            Hitflg = true;
-            script.TargetCnt -= 1;
-            rotation.x += 90;
-            script.Score += 5000;
-            Debug.Log("体当たった");
-            transform.Rotate(rotation.x, rotation.y, rotation.z);
+            if (!Hitflg)
+            {
+                Hitflg = true;
+                script.TargetCnt -= 1;
+                rotation.x += 90;
+                script.Score += 5000;
+                Debug.Log("体当たった");
+                transform.Rotate(rotation.x, rotation.y, rotation.z);
+            }
         }
     }
 }
