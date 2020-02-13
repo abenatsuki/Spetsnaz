@@ -21,7 +21,8 @@ public class TargetHedCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !HeadHitflg)
+        Debug.Log(transform.eulerAngles.x);
+        if (other.gameObject.tag == "Bullet"  && !HeadHitflg && transform.eulerAngles.x >= 80)
         {
             HeadHitflg = true;
         }

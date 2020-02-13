@@ -22,6 +22,7 @@ public class TargetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+  
         if (activationAreaScript.activationFlag)
         {
             if (Mathf.Abs(xRotation - 90f) > 0.1f)

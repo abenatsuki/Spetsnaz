@@ -18,14 +18,17 @@ public class TargetCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("TargetArea");//孫オブジェクトを取得
-        activationAreaScript = target.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
+        target = GameObject.FindGameObjectWithTag("TargetArea");
+        activationAreaScript = target.GetComponent<ActivationArea>();
 
         BodyHitflg = false;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !BodyHitflg)
+        //BodyHitflg = true;
+
+        Debug.Log(transform.eulerAngles.x);
+        if (other.gameObject.tag == "Bullet" && !BodyHitflg && transform.eulerAngles.x >= 250)
         {
             BodyHitflg = true;
         }
