@@ -27,7 +27,7 @@ public class HostageCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet" && activationAreaScript.activationFlag && !Hitflg)
+        if (other.gameObject.tag == "Bullet" && !Hitflg && transform.eulerAngles.x >= 80)
         {
             rotation.x += 90;
             script.Score -= 10000;

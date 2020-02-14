@@ -22,7 +22,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     //初期弾数
     const int handGunStarteAmmo=8;
     const int fullAutoStarteAmmo = 30;
-    const int semiAutoStarteAmmo = 30;
+    const int semiAutoStarteAmmo = 20;
     const int burstStateAmmo = 30;
    
     float handGunGameScore = 0;
