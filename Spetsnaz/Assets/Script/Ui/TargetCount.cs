@@ -57,7 +57,7 @@ public class TargetCount : MonoBehaviour
         }
         if (!starteFlag)
         {
-            maxTargetCount = managerScript.TargetMax-1;
+            maxTargetCount = managerScript.TargetMax;
             
             starteFlag = true;
         }

@@ -41,8 +41,8 @@ public class TargetMoveManager : MonoBehaviour
     void Update()
     {
 
-        if(text)
-            text.text = targetcollisionscript.BodyHitflg.ToString();
+        //if(text)
+        //    text.text = targetcollisionscript.BodyHitflg.ToString();
 
 
         //頭のHitフラグがtrueになって、かつ、エリアのフラグがtrueのとき
@@ -65,8 +65,8 @@ public class TargetMoveManager : MonoBehaviour
 
             if (!Hitflg)
             {
-                if (text)
-                    text.text = "Hit";
+                //if (text)
+                //    text.text = "Hit";
                 Hitflg = true;
                 script.TargetCnt -= 1;
                 rotation.x += 90;
