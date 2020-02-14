@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Bullet_ASemi : MonoBehaviour
 {
-   
-
     Bullet_ASReaction asreaction;
     PlayerDataProvider script;
     GameObject player;
@@ -82,9 +80,9 @@ public class Bullet_ASemi : MonoBehaviour
             Destroy(muzzleFlash,0.1f);
         }
         //弾のリロード
-        if (Input.GetKeyDown(KeyCode.R) && Asemiammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
+        if (Input.GetKeyDown(KeyCode.R) && Asemiammocnt < 20 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
-            Asemiammocnt = 30;
+            Asemiammocnt = 20;
         }
     }
 
