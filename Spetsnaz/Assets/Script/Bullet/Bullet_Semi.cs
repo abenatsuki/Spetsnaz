@@ -12,9 +12,8 @@ public class Bullet_Semi : MonoBehaviour
     public GameObject Muzzle;
 
     [SerializeField]
-    Vector3 muzzleFlashScale;
-    [SerializeField]
     GameObject muzzleFlashPrefab;
+    
 
     GameObject muzzleFlash;
 
@@ -52,6 +51,10 @@ public class Bullet_Semi : MonoBehaviour
             }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
             hreaction.HReaction();
             
         }
@@ -64,7 +67,15 @@ public class Bullet_Semi : MonoBehaviour
             }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
             hreaction.HReaction();
+        }
+        else
+        {
+            Destroy(muzzleFlash, 0.1f);
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && ammocnt < 8 && playerStateEnum == PlayerStateEnum.RELOAD)

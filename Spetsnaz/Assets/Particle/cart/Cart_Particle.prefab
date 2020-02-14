@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 684051903992336893}
   - component: {fileID: 682347033898000633}
   m_Layer: 0
-  m_Name: cart
+  m_Name: Cart_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,8 +168,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 6
+      scalar: 4
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -609,7 +609,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1
+    maxNumParticles: 30
     size3D: 0
     rotation3D: 0
     gravityModifier:

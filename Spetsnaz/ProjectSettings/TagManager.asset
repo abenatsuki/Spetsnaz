@@ -18,6 +18,7 @@ TagManager:
   - GazePoint
   - Smoke
   - ScorpImage
+  - Cell
   layers:
   - Default
   - TransparentFX

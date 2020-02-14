@@ -33,23 +33,16 @@ public class TargetCount : MonoBehaviour
         {
             counter.sprite = numberFont[0];
         }
-       
+         image[2].sprite = numberFont[7];
+         image[3].sprite = numberFont[1];
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
         numberOfTargetsBroken = managerScript.TargetMax-managerScript.TargetCnt;
-
-        if (maxTargetCount >= 0)
-        {
-         image[2].sprite = numberFont[7];
-         image[3].sprite = numberFont[1];
-        }
-       
-
+        
         if (numberOfTargetsBroken >= 0)
         {
          image[0].sprite = numberFont[numberOfTargetsBroken%10];
