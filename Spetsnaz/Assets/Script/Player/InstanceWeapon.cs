@@ -132,9 +132,20 @@ public class InstanceWeapon : MonoBehaviour
     void SetTransFormAssault(GameObject _obj)
     {
         _obj.transform.parent = transform;
+        if (GameManager.Instance.SelectAssault==SelectAssaultEnum.Full)
+        {
+            _obj.transform.localPosition = new Vector3(0.02219872f, 0.05100942f, 0.5996163f);
+            _obj.transform.localEulerAngles = new Vector3(.0f, -0.343f, .0f);
+            _obj.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
         _obj.transform.localPosition = new Vector3(.019f, .051f, 0.6f);
         _obj.transform.localEulerAngles = new Vector3(.0f, .0f, .0f);
         _obj.transform.localScale = new Vector3(1, 1, 1);
+
+        }
+       
     }
 
 
