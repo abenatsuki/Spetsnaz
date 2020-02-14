@@ -30,7 +30,7 @@ public class CameraFiledOfView : MonoBehaviour
         
         if (playerState==PlayerStateEnum.EIM)
         {
-            if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi) {
+            if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi&&playerScript.IsNowWepon==Now_Weapon.Assult_Rifle) {
                 if (camera.fieldOfView >= 30)
                 {
                     camera.fieldOfView -= zoomSpeed;
