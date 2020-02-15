@@ -12,6 +12,8 @@ public class Bullet_ASemi : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashAimPrefab;
 
+    SpownCell cellScript;
+
     public GameObject Bullet;
     public GameObject Muzzle;
     GameObject muzzleFlash;
@@ -26,12 +28,14 @@ public class Bullet_ASemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
         uderot = GameObject.Find("UdeRot").gameObject;
         asreaction = uderot.GetComponent<Bullet_ASReaction>();
         Asemiammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi];
+        cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class Bullet_ASemi : MonoBehaviour
 
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            cellScript.throwCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashAimPrefab, Muzzle.transform);
@@ -68,6 +73,7 @@ public class Bullet_ASemi : MonoBehaviour
             }
              Asemiammocnt--;
              Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            cellScript.throwCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);

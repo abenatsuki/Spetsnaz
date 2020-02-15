@@ -9,6 +9,11 @@ public class Bullet_Burst : MonoBehaviour
     GameObject muzzleFlashPrefab;
     GameObject muzzleFlash;
 
+    [SerializeField]
+    GameObject shellCasePrefab;
+    GameObject shellCase;
+
+
     Bullet_ABReaction abreaction; 
     PlayerDataProvider script;
     GameObject player;
@@ -58,7 +63,10 @@ public class Bullet_Burst : MonoBehaviour
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
             }
-
+            if (shellCase == null)//薬莢
+            {
+                shellCase = Instantiate(shellCasePrefab, transform);
+            }
         }
         else
         {
@@ -82,7 +90,14 @@ public class Bullet_Burst : MonoBehaviour
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-                
+                if (muzzleFlash == null)
+                {
+                    muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                }
+                if (shellCase == null)//薬莢
+                {
+                    shellCase = Instantiate(shellCasePrefab, transform);
+                }
                 abreaction.ASReaction();
             }
            
@@ -95,10 +110,10 @@ public class Bullet_Burst : MonoBehaviour
         }
         else
         {
-            Destroy(muzzleFlash, 0.1f);
+            Destroy(muzzleFlash, 0.08f);
+            Destroy(shellCase, 0.5f);
             burstcnt = 2;
         }
            
-        
     }
 }

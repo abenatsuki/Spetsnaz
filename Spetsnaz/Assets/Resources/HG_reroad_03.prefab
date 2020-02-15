@@ -1702,6 +1702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 8911603509087186023, guid: 01720962604976142ad84fd18c38a298, type: 3}
   Muzzle: {fileID: 6950399272198510436}
+  muzzleFlashScale: {x: 0, y: 0, z: 0}
+  muzzleFlashPrefab: {fileID: 645112979581128824, guid: 6021b3e17718fe640b706c2b50e1a7b6,
+    type: 3}
   uderot: {fileID: 0}
 --- !u!1 &2569488984536567683
 GameObject:

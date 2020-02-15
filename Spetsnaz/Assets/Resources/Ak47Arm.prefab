@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d0466b0a6cd7646896647f08cefe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleFlashPrefab: {fileID: 645112979581128824, guid: 6021b3e17718fe640b706c2b50e1a7b6,
+    type: 3}
   Bullet: {fileID: 8911603509087186023, guid: 01720962604976142ad84fd18c38a298, type: 3}
   Muzzle: {fileID: 6314427072890822565}
   uderot: {fileID: 0}
@@ -1416,7 +1418,7 @@ GameObject:
   - component: {fileID: 289791177265131573}
   - component: {fileID: 3203474442392185143}
   m_Layer: 0
-  m_Name: AK47_reroad_02
+  m_Name: Ak47Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

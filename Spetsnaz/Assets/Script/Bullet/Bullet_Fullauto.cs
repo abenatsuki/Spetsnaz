@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bullet_Fullauto : MonoBehaviour
 {
+    [SerializeField]
+    GameObject muzzleFlashPrefab;
+
+    GameObject muzzleFlash;
     Bullet_AFReaction areaction;
     PlayerDataProvider script;
     GameObject player;
@@ -46,6 +50,10 @@ public class Bullet_Fullauto : MonoBehaviour
             }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
             areaction.Areaction();
         }
         //腰うち
@@ -57,7 +65,15 @@ public class Bullet_Fullauto : MonoBehaviour
             }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            if (muzzleFlash == null)
+            {
+                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+            }
             areaction.Areaction();
+        }
+        else
+        {
+            Destroy(muzzleFlash, 0.1f);
         }
         //弾のリロード
         if (Input.GetKeyDown(KeyCode.R) && fullammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
