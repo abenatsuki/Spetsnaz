@@ -40,6 +40,7 @@ public class Bullet_AFReaction : MonoBehaviour
                 Reactioncnt = 3;
             }
         }
+       
     }
 
     // Update is called once per frame

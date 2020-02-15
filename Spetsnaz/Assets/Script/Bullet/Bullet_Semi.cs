@@ -17,7 +17,7 @@ public class Bullet_Semi : MonoBehaviour
 
     GameObject muzzleFlash;
 
-    SpownCell cellScript;
+    SpownCell cellScript=null;
 
     public GameObject uderot;
 
@@ -39,9 +39,14 @@ public class Bullet_Semi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
+        }
+        if (cellScript == null)
+        {
+            cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
         }
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
@@ -54,14 +59,14 @@ public class Bullet_Semi : MonoBehaviour
             }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-           
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
             }
             
             hreaction.HReaction();
-             cellScript.throwCell();
+             
         }
         //腰うち
         else if (Input.GetMouseButtonDown(0) && ammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -72,14 +77,14 @@ public class Bullet_Semi : MonoBehaviour
             }
             ammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
             }
             
             hreaction.HReaction();
-            cellScript.throwCell();
+            
         }
         else
         {

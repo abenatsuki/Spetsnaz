@@ -12,7 +12,7 @@ public class Bullet_ASemi : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashAimPrefab;
 
-    SpownCell cellScript;
+    SpownCell cellScript=null;
 
     public GameObject Bullet;
     public GameObject Muzzle;
@@ -46,6 +46,9 @@ public class Bullet_ASemi : MonoBehaviour
         {
             return;
         }
+
+        if (cellScript == null)
+            cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
         if (Input.GetMouseButtonDown(0) && Asemiammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -57,7 +60,7 @@ public class Bullet_ASemi : MonoBehaviour
 
             Asemiammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            cellScript.throwCell();
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashAimPrefab, Muzzle.transform);
@@ -73,7 +76,7 @@ public class Bullet_ASemi : MonoBehaviour
             }
              Asemiammocnt--;
              Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            cellScript.throwCell();
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);

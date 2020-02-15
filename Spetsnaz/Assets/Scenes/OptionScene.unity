@@ -492,11 +492,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300000, guid: 9c71b936d825db7479fc2a32ab2cd46b,
+        type: 3}
     - target: {fileID: 6626614916045435333, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6626614916825987887, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
         type: 3}
@@ -537,6 +538,38 @@ PrefabInstance:
         type: 3}
       propertyPath: type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916651104406, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916651104406, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916651104404, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 439945d2041944a4982976cfa1cc1782,
+        type: 3}
+    - target: {fileID: 6626614916651104404, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6626614916968515862, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c71b936d825db7479fc2a32ab2cd46b,
+        type: 3}
+    - target: {fileID: 6626614916968515862, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82eb35f5a1f2ed74a98043dc2f14f6f4, type: 3}

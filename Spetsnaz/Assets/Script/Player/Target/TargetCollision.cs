@@ -27,7 +27,7 @@ public class TargetCollision : MonoBehaviour
     {
         //BodyHitflg = true;
 
-        Debug.Log(transform.eulerAngles.x);
+      //  Debug.Log(transform.eulerAngles.x);
         if (other.gameObject.tag == "Bullet" && !BodyHitflg && transform.eulerAngles.x >= 80)
         {
             BodyHitflg = true;

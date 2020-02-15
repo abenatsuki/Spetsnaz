@@ -6,8 +6,7 @@ public class BulletManager : MonoBehaviour
 {
     GameObject player;
     PlayerDataProvider playerScript;
-    public bool inFlag { get; private set; }
-    public int beforeAmmocnt { get; private set; }
+   // public bool inFlag { get; private set; }
     GameObject gun;
 
     //バレットスクリプト
@@ -21,7 +20,7 @@ public class BulletManager : MonoBehaviour
     {
         bulletSemiScript = null;
         fullautoScript = null;
-        inFlag = false;
+       // inFlag = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
         
@@ -30,12 +29,8 @@ public class BulletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(beforeAmmocnt);
-          if (playerScript.IsChangeFlag)
-        {
-            inFlag = false;
-        }
-        if (transform.childCount != 0 && !inFlag)
+        
+        if (transform.childCount != 0 )
         {
             if (fullautoScript != null)
             {
@@ -54,54 +49,50 @@ public class BulletManager : MonoBehaviour
                 GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi] = aSemiScript.Asemiammocnt;
             }
 
-            StartCoroutine("ScriptLoad");
+            ScriptLoad();
         }
 
     } 
-    //コルーチン
-        IEnumerator ScriptLoad()
+    void ScriptLoad()
+    {
+
+        if(gun = GameObject.FindGameObjectWithTag("Gun"))
         {
-            gun = GameObject.FindGameObjectWithTag("Gun");
-            Debug.Log(gun);
-            yield return null;//1フレームまつ
-           
             switch (playerScript.IsNowWepon)
             {
                 case Now_Weapon.Hand_Gun:
-                if (bulletSemiScript == null)
-                {
-                    burstScript = null;
-                    aSemiScript = null;
-                    fullautoScript = null;
-                    bulletSemiScript = gun.GetComponent<Bullet_Semi>();
-                    inFlag = true;
-                }
+                    if (bulletSemiScript == null)
+                    {
+                        burstScript = null;
+                        aSemiScript = null;
+                        fullautoScript = null;
+                        bulletSemiScript = gun.GetComponent<Bullet_Semi>();
+                    }
                     break;
                 case Now_Weapon.Assult_Rifle:
-                if (fullautoScript == null||burstScript==null||aSemiScript==null)
-                {
-                    bulletSemiScript = null;
-                    if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Full)
+                    if (fullautoScript == null || burstScript == null || aSemiScript == null)
                     {
-                      fullautoScript = gun.GetComponent<Bullet_Fullauto>();
-                      inFlag = true;
+                        bulletSemiScript = null;
+                        if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Full)
+                        {
+                            fullautoScript = gun.GetComponent<Bullet_Fullauto>();
+                        }
+                        else if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Burst)
+                        {
+                            burstScript = gun.GetComponent<Bullet_Burst>();
+                          
+                        }
+                        else if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi)
+                        {
+                            aSemiScript = gun.GetComponent<Bullet_ASemi>();
+                           
+                        }
+
                     }
-                    else if(GameManager.Instance.SelectAssault == SelectAssaultEnum.Burst)
-                    {
-                        burstScript = gun.GetComponent<Bullet_Burst>();
-                        inFlag = true;
-                    }
-                    else if (GameManager.Instance.SelectAssault == SelectAssaultEnum.Semi)
-                    {
-                        aSemiScript = gun.GetComponent<Bullet_ASemi>();
-                        inFlag = true;
-                    }
-                    
-                }   
-                
                     break;
-               
             }
-        
         }
+      
+    }
+    
 }

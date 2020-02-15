@@ -19,8 +19,7 @@ public class AmmunitionUi : MonoBehaviour
     int ammuniton;//表示する弾数
     GameObject player;
     PlayerDataProvider playerScript;
-    bool flag = false;
-
+   
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,65 +33,44 @@ public class AmmunitionUi : MonoBehaviour
 
     private void Update()
     {
-        if (playerScript.IsChangeFlag)
-        {
-            flag = false;
-        }
-
-        if (!flag)
-        {
-            if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
+        
+            if ( playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
             {
                 switch(GameManager.Instance.SelectAssault)
                 {
                     case SelectAssaultEnum.Full:
                         gun = GameObject.FindGameObjectWithTag("Gun");
                         bulletFullauto = gun.GetComponent<Bullet_Fullauto>();
-                        flag = true;
-                        Debug.Log(bulletFullauto);
-                        break;
+                        if(bulletFullauto!=null)
+                        ammuniton = bulletFullauto.fullammocnt;
+                   
+                    break;
                     case SelectAssaultEnum.Semi:
                         gun = GameObject.FindGameObjectWithTag("Gun");
                         bulletASemi = gun.GetComponent<Bullet_ASemi>();
-                        flag = true;
-                        break;
+                        if(bulletASemi!=null)
+                        ammuniton = bulletASemi.Asemiammocnt;
+                    
+                    break;
                     case SelectAssaultEnum.Burst:
                         gun = GameObject.FindGameObjectWithTag("Gun");
                         bulletBurst = gun.GetComponent<Bullet_Burst>();
-                        flag = true;
-                        break;
+                    if(bulletBurst!=null)
+                    ammuniton = bulletBurst.burstammocnt;
+                    
+                    break;
                 }
                
             }
-            else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
+            else if ( playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
             {
                 gun = GameObject.FindGameObjectWithTag("Gun");
                 bulletScript = gun.GetComponent<Bullet_Semi>();
-                flag = true;
-            }
+            if(bulletScript!=null)
+                ammuniton = bulletScript.ammocnt;
+            
         }
-        //マイフレーム弾数取得
-        if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Hand_Gun)
-        {
-            ammuniton = bulletScript.ammocnt;
-        }
-        else if (playerScript.IsInFlag && playerScript.IsNowWepon == Now_Weapon.Assult_Rifle)
-        {
-            switch (GameManager.Instance.SelectAssault)
-            {
-                case SelectAssaultEnum.Full:
-                    ammuniton = bulletFullauto.fullammocnt;
-                    break;
-                case SelectAssaultEnum.Semi:
-                    ammuniton = bulletASemi.Asemiammocnt;
-                    break;
-                case SelectAssaultEnum.Burst:
-                    ammuniton = bulletBurst.burstammocnt;
-                    break;
-
-            }
-
-        }
+      
 
         image[0].sprite = numberFont[ammuniton % 10];
         image[1].sprite = numberFont[(ammuniton / 10) % 10];

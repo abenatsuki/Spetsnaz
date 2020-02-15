@@ -8,11 +8,8 @@ public class Bullet_Burst : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashPrefab;
     GameObject muzzleFlash;
-
-    [SerializeField]
-    GameObject shellCasePrefab;
-    GameObject shellCase;
-
+    
+    SpownCell cellScript=null;
 
     Bullet_ABReaction abreaction; 
     PlayerDataProvider script;
@@ -38,6 +35,7 @@ public class Bullet_Burst : MonoBehaviour
         abreaction = uderot.GetComponent<Bullet_ABReaction>();
         burstammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Burst]; ;
         burstcnt = 2;//バーストの2発
+        cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
     }
 
     // Update is called once per frame
@@ -47,6 +45,8 @@ public class Bullet_Burst : MonoBehaviour
         {
             return;
         }
+        if (cellScript == null)
+            cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
         if (Input.GetMouseButton(0) && burstcnt > 0 && burstammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -58,15 +58,12 @@ public class Bullet_Burst : MonoBehaviour
             burstcnt--;
             burstammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
             }
-            if (shellCase == null)//薬莢
-            {
-                shellCase = Instantiate(shellCasePrefab, transform);
-            }
+           
         }
         else
         {
@@ -90,14 +87,12 @@ public class Bullet_Burst : MonoBehaviour
                 burstcnt--;
                 burstammocnt--;
                 Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                cellScript.ThrowCell();
                 if (muzzleFlash == null)
                 {
                     muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
                 }
-                if (shellCase == null)//薬莢
-                {
-                    shellCase = Instantiate(shellCasePrefab, transform);
-                }
+                
                 abreaction.ASReaction();
             }
            
@@ -111,7 +106,7 @@ public class Bullet_Burst : MonoBehaviour
         else
         {
             Destroy(muzzleFlash, 0.08f);
-            Destroy(shellCase, 0.5f);
+            
             burstcnt = 2;
         }
            

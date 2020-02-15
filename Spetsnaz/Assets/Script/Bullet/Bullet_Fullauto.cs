@@ -7,6 +7,8 @@ public class Bullet_Fullauto : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashPrefab;
 
+    SpownCell cellScript=null;
+
     GameObject muzzleFlash;
     Bullet_AFReaction areaction;
     PlayerDataProvider script;
@@ -30,6 +32,7 @@ public class Bullet_Fullauto : MonoBehaviour
         uderot = GameObject.Find("UdeRot").gameObject;
         areaction = uderot.GetComponent<Bullet_AFReaction>();
         fullammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Full];
+        cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,12 @@ public class Bullet_Fullauto : MonoBehaviour
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
+        }
+        if(cellScript==null)
+        cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
+        if (areaction == null)
+        {
+            areaction = uderot.GetComponent<Bullet_AFReaction>();
         }
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
                                                    // Debug.Log(playerStateEnum);//プレイヤーの状態見たいときはつかってね
@@ -50,6 +59,7 @@ public class Bullet_Fullauto : MonoBehaviour
             }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
@@ -65,6 +75,7 @@ public class Bullet_Fullauto : MonoBehaviour
             }
             fullammocnt--;
             Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+            cellScript.ThrowCell();
             if (muzzleFlash == null)
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);

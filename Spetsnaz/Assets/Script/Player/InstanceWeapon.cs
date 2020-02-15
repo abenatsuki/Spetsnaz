@@ -16,7 +16,7 @@ public class InstanceWeapon : MonoBehaviour
 
     public Now_Weapon nowWeapon { get; private set; }
 
-    public bool changeFlag { get; private set; }
+   // public bool changeFlag { get; private set; }
 
     StageType stageType;
     GameObject player;
@@ -28,13 +28,7 @@ public class InstanceWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ResouseWeapon[0] = (GameObject)Resources.Load("makarov_arm");//ハンドガン
-        //ResouseWeapon[1] = (GameObject)Resources.Load("ak74");//フルオート
-        //ResouseWeapon[2] = (GameObject)Resources.Load("asval");//セミオート
-        //ResouseWeapon[3] = (GameObject)Resources.Load("an94");//バースト
-
-        //stageType = GameManager.Instance.stageType;
-
+     
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerDataProvider>();
       
@@ -53,23 +47,19 @@ public class InstanceWeapon : MonoBehaviour
     void Update()
     {
 
-        if (playerScript.IsInFlag)
-        {
-            changeFlag = false;
-        }
         if (GameManager.Instance.stageType == StageType.HandGun)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)&&playerScript.IsPlayerStateEnum!=PlayerStateEnum.RELOAD)
         {
             ChangeWeapon();
         }
     }
     void ChangeWeapon()
     {
-        changeFlag = true;
+       
         if (nowWeapon == Now_Weapon.Assult_Rifle)
         {
             SetHandGun();
@@ -120,10 +110,6 @@ public class InstanceWeapon : MonoBehaviour
     void SetTranceForm(GameObject _obj)
     {
         _obj.transform.parent = transform;
-        //_obj.transform.localPosition = new Vector3(-0.2239521f, 0.0221633f, 0.5132202f);
-        //_obj.transform.localEulerAngles = new Vector3(-2.472f, -39.502f, -16.644f);
-        //_obj.transform.localScale = new Vector3(1, 1, 1);
-
         _obj.transform.localPosition = new Vector3(-.2766342f, .01066801f, 0.5174159f);
         _obj.transform.localEulerAngles = new Vector3(1.551f, -41.297f, -16.203f);
         _obj.transform.localScale = new Vector3(1, 1, 1);
