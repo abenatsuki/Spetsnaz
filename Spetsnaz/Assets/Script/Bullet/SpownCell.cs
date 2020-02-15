@@ -26,8 +26,10 @@ public class SpownCell : MonoBehaviour
     public void throwCell()
     {
         var obj = Instantiate(Cell, transform.position, transform.rotation);
-        obj.transform.parent = transform;
-        //var smokeRigidBody = obj.GetComponent<Rigidbody>();
-        //smokeRigidBody.AddForce(transform.forward * throwSpeed);
+        //obj.transform.parent = transform;
+        var cellRigitBody = obj.GetComponent<Rigidbody>();
+        cellRigitBody.AddForce(transform.forward * throwSpeed);
+        cellRigitBody.AddTorque(Random.insideUnitSphere * 360.0f);
+
     }
 }

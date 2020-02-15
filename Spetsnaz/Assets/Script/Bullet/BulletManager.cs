@@ -62,7 +62,7 @@ public class BulletManager : MonoBehaviour
         IEnumerator ScriptLoad()
         {
             gun = GameObject.FindGameObjectWithTag("Gun");
-        Debug.Log(gun);
+            Debug.Log(gun);
             yield return null;//1フレームまつ
            
             switch (playerScript.IsNowWepon)
