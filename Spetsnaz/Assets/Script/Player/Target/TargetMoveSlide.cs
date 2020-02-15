@@ -21,7 +21,7 @@ public class TargetMoveSlide : MonoBehaviour
     // スピード
     public float speed = 0.2f;
     //上限値
-    public int poscnt = 5000;
+    public int poscnt = 500;
     //スライドし続けるカウント
     public int posScnt = 0;
 
@@ -32,8 +32,9 @@ public class TargetMoveSlide : MonoBehaviour
 
     void Start()
     {
+        pos = GameObject.Find("Target").transform.position;
         //stateTime = Time.time;
-        targetA = transform.Find("SlideTarget/ActivationArea").gameObject;//孫オブジェクトを取得
+        targetA = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = targetA.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
         targettransform = target.transform;
         pos = targettransform.position;
@@ -51,30 +52,36 @@ public class TargetMoveSlide : MonoBehaviour
         //// オブジェクトの移動
         //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
         posScnt++;
-        if (posScnt <= poscnt)
+        if (posScnt < poscnt)
         {
-            pos.x += speed;
+            //pos.x += speed;
+            GameObject.Find("Target").transform.position = new Vector3(pos.x += speed, pos.y, pos.z);
             Debug.Log(pos.x);
         }
+        else
+            posScnt = poscnt;
     }
     void LSlide()
     {
         posScnt++;
-        if (posScnt <= poscnt)
+        if (posScnt < poscnt)
         {
-            pos.x -= speed;
+            //pos.x -= speed;
+            GameObject.Find("Target").transform.position = new Vector3(pos.x -= speed, pos.y, pos.z);
             Debug.Log(pos.x);
         }
+        else
+            posScnt = poscnt;
     }
 
     void Update()
     {
-        if (activationAreaScript.activationFlag && posVec == true)
+        if (/*activationAreaScript.activationFlag &&*/ posVec == true)
         {
             RSlide();
             Debug.Log("右に動いている");
         }
-        else if (activationAreaScript.activationFlag && posVec == false)
+        if (/*activationAreaScript.activationFlag &&*/ posVec == false)
         {
             LSlide();
             Debug.Log("左に動いている");
