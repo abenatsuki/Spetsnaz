@@ -8,7 +8,7 @@ public class Bullet_ASemi : MonoBehaviour
     PlayerDataProvider script;
     GameObject player;
     [SerializeField]
-    GameObject muzzleFlashPrefab;
+    GameObject muzzleFlashPrefab=null;
     [SerializeField]
     GameObject muzzleFlashAimPrefab;
 

@@ -5,9 +5,9 @@ using UnityEngine;
 public class MagScript : MonoBehaviour
 {
     [SerializeField]
-    GameObject mag4;
+    GameObject mag4=null;
     [SerializeField]
-    GameObject mag5;
+    GameObject mag5=null;
 
     Color color_mag4;
     Color color_mag5;

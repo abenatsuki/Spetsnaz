@@ -15,7 +15,7 @@ public class SliderManager : MonoBehaviour
     [SerializeField]
     int maxValue=0;
 
-    float value;
+    float value=1.0f;
     // Start is called before the first frame update
     void Start()
     {

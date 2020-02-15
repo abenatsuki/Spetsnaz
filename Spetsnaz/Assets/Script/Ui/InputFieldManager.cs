@@ -16,7 +16,7 @@ public class InputFieldManager : MonoBehaviour
     InputField inputField;
     [SerializeField]
     Slider slider=null;
-    string inputValue="";
+    string inputValue="1";
 
 
     /// <summary>

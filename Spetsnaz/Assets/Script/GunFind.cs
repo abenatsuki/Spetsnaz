@@ -8,15 +8,12 @@ public class GunFind : MonoBehaviour
     Color gunColor;
     [SerializeField]
     GameObject gun;
-    //[SerializeField]
-    //Image scorpImage;
-
+   
     ImageFaid imageFaid;
     // Start is called before the first frame update
     void Start()
     {
-        //scorpImage = GameObject.FindGameObjectWithTag("ScorpImage").GetComponent<Image>();
-        //imageFaid = scorpImage.GetComponent<ImageFaid>();
+        
         gunColor = gun.GetComponent<Renderer>().material.color;
         
     }
@@ -34,15 +31,12 @@ public class GunFind : MonoBehaviour
         gun.GetComponent<Renderer>().material.color = gunColor;
        
     }
-    //public void ImageFaide()
-    //{
-    //    imageFaid.fade = true;
-    //}
+   
     //もとに戻す
     public void GunUndo()
     {
         gunColor.a = 1.0f;
         gun.GetComponent<Renderer>().material.color = gunColor;
-       // imageFaid.fade = false;
+       
     }
 }

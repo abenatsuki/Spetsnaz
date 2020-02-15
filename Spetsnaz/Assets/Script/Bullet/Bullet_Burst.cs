@@ -6,19 +6,19 @@ public class Bullet_Burst : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject muzzleFlashPrefab;
-    GameObject muzzleFlash;
+    GameObject muzzleFlashPrefab=null;
+    GameObject muzzleFlash=null;
     
     SpownCell cellScript=null;
 
-    Bullet_ABReaction abreaction; 
-    PlayerDataProvider script;
-    GameObject player;
+    Bullet_ABReaction abreaction=null; 
+    PlayerDataProvider script=null;
+    GameObject player=null;
 
-    public GameObject Bullet;
-    public GameObject Muzzle;
+    public GameObject Bullet=null;
+    public GameObject Muzzle=null;
 
-    public GameObject uderot;
+    public GameObject uderot=null;
 
     private int burstcnt; //2発目を出すためのカウント
     public int burstammocnt { get; private set; } //残弾数

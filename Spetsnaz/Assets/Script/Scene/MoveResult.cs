@@ -24,12 +24,8 @@ public class MoveResult : MonoBehaviour
 
             MoveSceneManager.Instance.MoveToStage(Scene_Enum.Result_Scene);
             flag = true;
-            Debug.Log("aaa");
+
         }
-        //if (Input.GetMouseButtonDown(0) && !flag)
-        //{
-        //    MoveSceneManager.Instance.MoveToStage(Scene_Enum.Result_Scene);
-        //    flag = true;
-        //}
+       
     }
 }
