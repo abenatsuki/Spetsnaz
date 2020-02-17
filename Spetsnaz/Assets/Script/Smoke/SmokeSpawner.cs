@@ -20,7 +20,7 @@ public class SmokeSpawner : MonoBehaviour
         
         activationAreaScript= GetComponent<ActivationArea>();
        
-        smokeGrenade =(GameObject)Resources.Load("SmokeGrenade");
+        smokeGrenade =(GameObject)Resources.Load("smoke_grenade");
     }
 
     // Update is called once per frame
