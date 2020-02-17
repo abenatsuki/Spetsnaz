@@ -21,7 +21,7 @@ public class Bullet_AFReaction : MonoBehaviour
     void Start()
     {
         Reaction = .0f;
-        Reactioncnt = 3;
+        Reactioncnt = 0;
         FGun = (GameObject)Resources.Load("ak74");
         fullauto = FGun.GetComponent<Bullet_Fullauto>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける

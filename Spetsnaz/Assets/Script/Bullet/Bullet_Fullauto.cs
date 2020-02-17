@@ -19,6 +19,8 @@ public class Bullet_Fullauto : MonoBehaviour
 
     public GameObject uderot;
 
+    private int Interval;
+
     public int fullammocnt { get; private set; } //残弾数
 
     PlayerStateEnum playerStateEnum;
@@ -26,6 +28,7 @@ public class Bullet_Fullauto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Interval = 0;
         Bullet = (GameObject)Resources.Load("BulletPrefab");
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
@@ -57,14 +60,19 @@ public class Bullet_Fullauto : MonoBehaviour
             {
                 return;
             }
-            fullammocnt--;
-            Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            cellScript.ThrowCell();
-            if (muzzleFlash == null)
+            Interval--;
+            if (Interval <= 0)
             {
-                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                fullammocnt--;
+                Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                cellScript.ThrowCell();
+                if (muzzleFlash == null)
+                {
+                    muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                }
+                areaction.Areaction();
+                Interval = 3;
             }
-            areaction.Areaction();
         }
         //腰うち
         else if (Input.GetMouseButton(0) && fullammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
@@ -73,14 +81,19 @@ public class Bullet_Fullauto : MonoBehaviour
             {
                 return;
             }
-            fullammocnt--;
-            Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            cellScript.ThrowCell();
-            if (muzzleFlash == null)
+            Interval--;
+            if (Interval <= 0)
             {
-                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                fullammocnt--;
+                Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                cellScript.ThrowCell();
+                if (muzzleFlash == null)
+                {
+                    muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                }
+                areaction.Areaction();
+                Interval = 3;
             }
-            areaction.Areaction();
         }
         else
         {
