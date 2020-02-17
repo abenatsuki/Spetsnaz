@@ -8,6 +8,9 @@ public class Bullet_ABReaction : MonoBehaviour
     PlayerDataProvider script;
     GameObject player;
 
+    public AudioClip shotSound;
+    AudioSource audioSource;
+
     public GameObject ude;
     public GameObject BGun;
 
@@ -25,6 +28,8 @@ public class Bullet_ABReaction : MonoBehaviour
         burst = BGun.GetComponent<Bullet_Burst>();
         player = GameObject.FindGameObjectWithTag("Player");//タグでオブジェクトを見つける
         script = player.GetComponent<PlayerDataProvider>();//Playerオブジェクトからスクリプトを持ってくる
+        //サウンドを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ASReaction()

@@ -7,6 +7,10 @@ public class Bullet_Fullauto : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashPrefab;
 
+    //音
+    public AudioClip shotSound;
+    AudioSource audioSource;
+
     SpownCell cellScript=null;
 
     GameObject muzzleFlash;
@@ -36,6 +40,8 @@ public class Bullet_Fullauto : MonoBehaviour
         areaction = uderot.GetComponent<Bullet_AFReaction>();
         fullammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Full];
         cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
+        //サウンドを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -72,6 +78,7 @@ public class Bullet_Fullauto : MonoBehaviour
                 }
                 areaction.Areaction();
                 Interval = 3;
+                audioSource.PlayOneShot(shotSound);
             }
         }
         //腰うち
@@ -93,6 +100,7 @@ public class Bullet_Fullauto : MonoBehaviour
                 }
                 areaction.Areaction();
                 Interval = 3;
+                audioSource.PlayOneShot(shotSound);
             }
         }
         else
