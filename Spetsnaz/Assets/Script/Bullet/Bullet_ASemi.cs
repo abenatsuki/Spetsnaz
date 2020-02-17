@@ -12,6 +12,10 @@ public class Bullet_ASemi : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashAimPrefab;
 
+    //音
+    public AudioClip shotSound;
+    AudioSource audioSource;
+
     SpownCell cellScript=null;
 
     public GameObject Bullet;
@@ -36,6 +40,8 @@ public class Bullet_ASemi : MonoBehaviour
         asreaction = uderot.GetComponent<Bullet_ASReaction>();
         Asemiammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Semi];
         cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
+        //サウンドを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,6 +71,7 @@ public class Bullet_ASemi : MonoBehaviour
             {
                 muzzleFlash = Instantiate(muzzleFlashAimPrefab, Muzzle.transform);
             }
+            audioSource.PlayOneShot(shotSound);
             asreaction.ASReaction();
         }
         //腰うち
@@ -81,7 +88,7 @@ public class Bullet_ASemi : MonoBehaviour
             {
                 muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
             }
-
+            audioSource.PlayOneShot(shotSound);
             asreaction.ASReaction();
         }
         else

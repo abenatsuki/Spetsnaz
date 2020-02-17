@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d0466b0a6cd7646896647f08cefe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muzzleFlashPrefab: {fileID: 0}
+  shotSound: {fileID: 8300000, guid: 2bf0f28c97c9845458c8ac9ec0fc413e, type: 3}
   Bullet: {fileID: 8911603509087186023, guid: 01720962604976142ad84fd18c38a298, type: 3}
   Muzzle: {fileID: 7825164089112993074}
   uderot: {fileID: 0}

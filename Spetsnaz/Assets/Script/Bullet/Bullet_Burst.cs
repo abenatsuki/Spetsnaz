@@ -8,7 +8,10 @@ public class Bullet_Burst : MonoBehaviour
     [SerializeField]
     GameObject muzzleFlashPrefab=null;
     GameObject muzzleFlash=null;
-    
+    //音
+    public AudioClip shotSound;
+    AudioSource audioSource;
+
     SpownCell cellScript=null;
 
     Bullet_ABReaction abreaction=null; 
@@ -36,6 +39,8 @@ public class Bullet_Burst : MonoBehaviour
         burstammocnt = GameManager.Instance.BeforeAmmocnt[(int)SelectAssaultEnum.Burst]; ;
         burstcnt = 2;//バーストの2発
         cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
+        //サウンドを取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,32 +54,32 @@ public class Bullet_Burst : MonoBehaviour
             cellScript = GameObject.FindGameObjectWithTag("Cell").GetComponent<SpownCell>();
         playerStateEnum = script.IsPlayerStateEnum;//プレイヤーのステータスを代入
         //弾の発射 エイム時
-        if (Input.GetMouseButton(0) && burstcnt > 0 && burstammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
+        if (Input.GetMouseButton(0) && burstammocnt > 0 && playerStateEnum == PlayerStateEnum.EIM && playerStateEnum != PlayerStateEnum.RELOAD)
         {
-            if (Mathf.Approximately(Time.timeScale, 0f))
+            if (burstcnt > 0)
             {
-                return;
+                if (Mathf.Approximately(Time.timeScale, 0f))
+                {
+                    return;
+                }
+                burstcnt--;
+                burstammocnt--;
+                Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
+                cellScript.ThrowCell();
+                if (muzzleFlash == null)
+                {
+                    muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                }
+                abreaction.ASReaction();
+                audioSource.PlayOneShot(shotSound);
             }
-            burstcnt--;
-            burstammocnt--;
-            Instantiate(Bullet, Muzzle.transform.position, transform.rotation);
-            cellScript.ThrowCell();
-            if (muzzleFlash == null)
+            else
             {
-                muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
+                Destroy(muzzleFlash, 0.5f);
             }
-           
         }
-        else
-        {
-            Destroy(muzzleFlash, 0.5f);
-        }
-        if (Input.GetMouseButton(0) && burstcnt <= 0)
-        {
-            abreaction.ASReaction();
-          
-        }
-        
+
+
         //腰うち
         else if (Input.GetMouseButton(0) && burstammocnt > 0 && playerStateEnum != PlayerStateEnum.RELOAD)
         {
@@ -92,12 +97,12 @@ public class Bullet_Burst : MonoBehaviour
                 {
                     muzzleFlash = Instantiate(muzzleFlashPrefab, Muzzle.transform);
                 }
-                
                 abreaction.ASReaction();
+                audioSource.PlayOneShot(shotSound);
             }
-           
+
         }
-        
+
         //弾のリロード
         else if (Input.GetKeyDown(KeyCode.R) && burstammocnt < 30 && playerStateEnum == PlayerStateEnum.RELOAD)
         {
@@ -106,7 +111,7 @@ public class Bullet_Burst : MonoBehaviour
         else
         {
             Destroy(muzzleFlash, 0.08f);
-            
+
             burstcnt = 2;
         }
            
