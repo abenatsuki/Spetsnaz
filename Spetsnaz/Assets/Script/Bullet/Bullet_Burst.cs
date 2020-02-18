@@ -100,7 +100,10 @@ public class Bullet_Burst : MonoBehaviour
                 abreaction.ASReaction();
                 audioSource.PlayOneShot(shotSound);
             }
-
+            else
+            {
+                Destroy(muzzleFlash, 0.5f);
+            }
         }
 
         //弾のリロード
