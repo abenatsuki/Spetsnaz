@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RankingScript : MonoBehaviour
 {
 
-    int counter = 0;
+    
     string[] ranking = { "ランキング1位", "ランキング2位", "ランキング3位", "ランキング4位", "ランキング5位" };
     int[] rankingValue = new int[5];
 
@@ -20,7 +20,7 @@ public class RankingScript : MonoBehaviour
         {
             rankingText[i].color = new Color(255, 255, 0);
         }
-        counter = 0;
+        
         GetRanking();
 
         SetRanking((int)GameManager.Instance.HandGunGameScore);
@@ -49,39 +49,41 @@ public class RankingScript : MonoBehaviour
     /// </summary>
     void SetRanking(int _value)
     {
+        if (_value > PlayerPrefs.GetInt(ranking[0]))
+        {
+            rankingText[0].color = new Color(255, 0, 0);
+        }
+        else if (_value > PlayerPrefs.GetInt(ranking[1]))
+        {
+            rankingText[1].color = new Color(255, 0, 0);
+        }
+        else if (_value > PlayerPrefs.GetInt(ranking[2]))
+        {
+            rankingText[2].color = new Color(255, 0, 0);
+        }
+        else if (_value > PlayerPrefs.GetInt(ranking[3]))
+        {
+            rankingText[3].color = new Color(255, 0, 0);
+        }
+        else if (_value > PlayerPrefs.GetInt(ranking[4]))
+        {
+            rankingText[4].color = new Color(255, 0, 0);
+        }
         //書き込み用
         for (int i = 0; i < ranking.Length; i++)
         {
+           
             //取得した値とRankingの値を比較して入れ替え
             if (_value > rankingValue[i])
             {
-                counter++;
+                
                 var change = rankingValue[i];
                 rankingValue[i] = _value;
                 _value = change;
                 
             }
         }
-        if (counter == 1)
-        {
-            rankingText[4].color = new Color(255, 0, 0);
-        }
-        else if (counter == 2)
-        {
-            rankingText[3].color = new Color(255, 0, 0);
-        }
-        else if (counter == 3)
-        {
-            rankingText[2].color = new Color(255, 0, 0);
-        }
-        else if (counter == 4)
-        {
-            rankingText[1].color = new Color(255, 0, 0);
-        }
-        else if (counter == 5)
-        {
-            rankingText[0].color = new Color(255, 0, 0);
-        }
+       
         //入れ替えた値を保存
         for (int i = 0; i < ranking.Length; i++)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFiledOfView : MonoBehaviour
 {
     const float zoomDefault=78.0f;
-    new Camera camera;
+    new Camera camera=null;
     GameObject player;
     PlayerDataProvider playerScript;
     PlayerStateEnum playerState;

@@ -17,8 +17,8 @@ public class ResultScore : MonoBehaviour
     public bool newRecordFlag { get; private set; }
 
     //ハンドガン
-    int farstHandGunRankingValue;
-    int farstStandardRankingValue;
+    int farstHandGunRankingValue=0;
+    int farstStandardRankingValue=0;
 
 
     string farstHandGunranking = "ランキング1位";
@@ -29,6 +29,9 @@ public class ResultScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        farstStandardRankingValue =0;
+        farstHandGunRankingValue = 0;
+
         newRecordFlag = false;
         score = ScoreCount.resultScore * ScoreCount.timeMagnification;
 

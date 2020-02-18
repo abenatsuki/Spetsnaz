@@ -55,7 +55,7 @@ public class TargetMoveManager : MonoBehaviour
                 script.TargetCnt -= 1;
                 rotation.x += 90;
                 script.Score += 10000;
-                Debug.Log("頭当たった");
+               // Debug.Log("頭当たった");
                 transform.Rotate(rotation.x, rotation.y, rotation.z);
             }
         }
@@ -71,7 +71,7 @@ public class TargetMoveManager : MonoBehaviour
                 script.TargetCnt -= 1;
                 rotation.x += 90;
                 script.Score += 5000;
-                Debug.Log("体当たった");
+               // Debug.Log("体当たった");
                 transform.Rotate(rotation.x, rotation.y, rotation.z);
             }
         }

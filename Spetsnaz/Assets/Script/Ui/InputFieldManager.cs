@@ -11,7 +11,7 @@ enum SensitivityType
 public class InputFieldManager : MonoBehaviour
 {
     [SerializeField]
-    SensitivityType type;
+    SensitivityType type=SensitivityType.Hight;
 
     InputField inputField;
     [SerializeField]
@@ -66,7 +66,7 @@ public class InputFieldManager : MonoBehaviour
     {
         if (type == SensitivityType.Hight)
         {
-// 値をリセット
+         // 値をリセット
         inputField.text =  PlayerPrefs.GetInt("縦感度").ToString();
         }
         else

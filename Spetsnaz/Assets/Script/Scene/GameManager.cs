@@ -61,11 +61,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     //タイトル時初期化
     public void ResetValue()
     {
+        newRecordFlag = false;
         handGunGameScore = 0;
         StandardGameScore = 0;
-        selectAssault = SelectAssaultEnum.Burst;
+        selectAssault = SelectAssaultEnum.None;
         stageType = StageType.None;
-        newRecordFlag = false;
+       
     }
     public void SetSceneMode(StageType _stageType)
     {

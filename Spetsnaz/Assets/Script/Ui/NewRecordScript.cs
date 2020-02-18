@@ -37,19 +37,19 @@ public class NewRecordScript : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.NewRecordFlag == false)
+        if (GameManager.Instance.NewRecordFlag )
         {
-            return;
+            //オブジェクトのAlpha値を更新
+            if (thisObjType == ObjType.IMAGE)
+            {
+                image.color = GetAlphaColor(image.color);
+            }
+            else if (thisObjType == ObjType.TEXT)
+            {
+                text.color = GetAlphaColor(text.color);
+            }
         }
-        //オブジェクトのAlpha値を更新
-        if (thisObjType == ObjType.IMAGE)
-        {
-            image.color = GetAlphaColor(image.color);
-        }
-        else if (thisObjType == ObjType.TEXT)
-        {
-            text.color = GetAlphaColor(text.color);
-        }
+        
     }
 
     //Alpha値を更新してColorを返す
