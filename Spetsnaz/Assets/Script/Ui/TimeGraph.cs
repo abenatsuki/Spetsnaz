@@ -14,6 +14,7 @@ public class TimeGraph : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        image[2].color = new Color(255, 255, 255, 255);
         displayTime = (int)ScoreCount.clearTime;
         foreach (var counter in image)
         {
@@ -30,6 +31,9 @@ public class TimeGraph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (displayTime <= 99)
+        {
+            image[2].color = new Color(255, 255, 255, 0);
+        }
     }
 }
