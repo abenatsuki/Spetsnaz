@@ -4,58 +4,39 @@ using UnityEngine;
 
 public class TargetMoveSlide : MonoBehaviour
 {
-    public GameObject target;//ターゲット
     Transform targettransform;
 
-    GameObject targetA; //エリア
+    [SerializeField]
+    private GameObject targetA; //エリア
     ActivationArea activationAreaScript;
 
-    //スタートと終わりの目印
-    //public Transform startMarker;
-    //public Transform endMarker;
-
-    //float stateTime;
-    //float cntTime;
     public bool posVec;
 
     // スピード
-    public float speed = 0.2f;
+    [SerializeField]
+    public float speed = 0.01f;
     //上限値
-    public int poscnt = 500;
+    public float poscnt;
     //スライドし続けるカウント
-    public int posScnt = 0;
-
-    //二点間の距離を入れる
-    //private float distance_two;
-
-    Vector3 pos;
+    public float posScnt;
+    [SerializeField]
+    private Vector3 pos;
 
     void Start()
     {
-        pos = GameObject.Find("Target").transform.position;
-        //stateTime = Time.time;
         targetA = transform.Find("Target/ActivationArea").gameObject;//孫オブジェクトを取得
         activationAreaScript = targetA.GetComponent<ActivationArea>();//孫オブジェクトからスクリプトを持ってくる
-        targettransform = target.transform;
+        targettransform = this.transform;
         pos = targettransform.position;
         Debug.Log(pos);
     }
 
     void RSlide()
     {
-        ////二点間の距離を代入(スピード調整に使う)
-        //distance_two = Vector3.Distance(startMarker.position, endMarker.position);
-
-        //// 現在の位置
-        //float present_Location = (Time.time * speed) / distance_two;
-
-        //// オブジェクトの移動
-        //transform.position = Vector3.Lerp(startMarker.position, endMarker.position, present_Location);
-        posScnt++;
+        posScnt += Time.deltaTime;
         if (posScnt < poscnt)
         {
-            //pos.x += speed;
-            GameObject.Find("Target").transform.position = new Vector3(pos.x += speed, pos.y, pos.z);
+            transform.position = new Vector3(pos.x += speed, pos.y, pos.z);
             Debug.Log(pos.x);
         }
         else
@@ -63,11 +44,10 @@ public class TargetMoveSlide : MonoBehaviour
     }
     void LSlide()
     {
-        posScnt++;
+        posScnt += Time.deltaTime;
         if (posScnt < poscnt)
         {
-            //pos.x -= speed;
-            GameObject.Find("Target").transform.position = new Vector3(pos.x -= speed, pos.y, pos.z);
+            transform.position = new Vector3(pos.x -= speed, pos.y, pos.z);
             Debug.Log(pos.x);
         }
         else
@@ -76,12 +56,12 @@ public class TargetMoveSlide : MonoBehaviour
 
     void Update()
     {
-        if (/*activationAreaScript.activationFlag &&*/ posVec == true)
+        if (activationAreaScript.activationFlag && posVec == true)
         {
             RSlide();
             Debug.Log("右に動いている");
         }
-        if (/*activationAreaScript.activationFlag &&*/ posVec == false)
+        if (activationAreaScript.activationFlag && posVec == false)
         {
             LSlide();
             Debug.Log("左に動いている");
